@@ -4,6 +4,7 @@ using System.Collections;
 public class Move : MonoBehaviour {
 
 	public float moveSpeed;
+	int stopSpeed = 0;
 	int Direction = 0; // 0=right, 1 = up, 2 = down, 4 = left.
 	// Use this for initialization
 	void Start () {
@@ -18,10 +19,12 @@ public class Move : MonoBehaviour {
 	void FixedUpdate (){
 
 		if (Direction == 0) {
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * moveSpeed, GetComponent<Rigidbody2D> ().velocity.y);
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * moveSpeed,transform.localScale.y *stopSpeed);
 		} else if (Direction == 2) {
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -transform.localScale.x *moveSpeed);
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * stopSpeed, -transform.localScale.y *moveSpeed);
 		}
+
+	
 	//	transform.Rotate (0, 0, 10);
 		//BARA FLIPP MEÐ IF OG ELSE EIGUM SENNILEGA eKKI að GERA ÞETTA SVONA
 
@@ -45,12 +48,24 @@ public class Move : MonoBehaviour {
 		//Destroy (other.gameObject);
 		float xValue;
 		float yValue;//, zValue;
-		yValue = GetComponent<Rigidbody2D> ().position.y;
-	//	zValue = GetComponent<Rigidbody2D> ().position.z;
-		xValue = GetComponent<Rigidbody2D> ().position.x - 0.05f;
-		transform.position = new Vector2(xValue, yValue);
-		Direction = 2;
-		transform.Rotate (0, 0, 90);
+		if (other.gameObject.name == "Grass") {
+			yValue = GetComponent<Rigidbody2D> ().position.y;
+			//	zValue = GetComponent<Rigidbody2D> ().position.z;
+			xValue = GetComponent<Rigidbody2D> ().position.x - 0.01f;
+			transform.position = new Vector2 (xValue, yValue);
+			Direction = 2;
+			transform.Rotate (0, 0, 90);
+		} else if (other.gameObject.name == "Horizontal Grass") {
+
+			yValue = GetComponent<Rigidbody2D> ().position.y + 0.01f;
+			xValue = GetComponent<Rigidbody2D> ().position.x;
+			transform.position = new Vector2 (xValue, yValue);
+			Direction=0;
+			transform.Rotate(0,0,-90);
+		
+		
+		}
+
 
 
 	}
