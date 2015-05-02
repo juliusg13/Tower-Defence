@@ -20,7 +20,7 @@ public class Move : MonoBehaviour {
 		if (Direction == 0) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * moveSpeed, GetComponent<Rigidbody2D> ().velocity.y);
 		} else if (Direction == 2) {
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * 0, GetComponent<Rigidbody2D> ().velocity.y * moveSpeed);
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -transform.localScale.x *moveSpeed);
 		}
 	//	transform.Rotate (0, 0, 10);
 		//BARA FLIPP MEÐ IF OG ELSE EIGUM SENNILEGA eKKI að GERA ÞETTA SVONA
@@ -42,10 +42,17 @@ public class Move : MonoBehaviour {
 		}*/
 	}
 	void OnTriggerEnter2D(Collider2D other){
+		//Destroy (other.gameObject);
 		float xValue;
-		xValue = GetComponent<Rigidbody2D> ().position.x - 1f;
+		float yValue;//, zValue;
+		yValue = GetComponent<Rigidbody2D> ().position.y;
+	//	zValue = GetComponent<Rigidbody2D> ().position.z;
+		xValue = GetComponent<Rigidbody2D> ().position.x - 0.05f;
+		transform.position = new Vector2(xValue, yValue);
 		Direction = 2;
 		transform.Rotate (0, 0, 90);
+
+
 	}
 
 	void OnCollisionEnter2D(Collision2D colis)
