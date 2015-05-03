@@ -253,6 +253,24 @@ SpriteRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 458642, guid: a23e7b7fb896d46aa8846f392dc5a102, type: 2}
   m_PrefabInternal: {fileID: 503535919}
+--- !u!1 &222475379 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 103962, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+  m_PrefabInternal: {fileID: 1223856206}
+--- !u!114 &222475380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 222475379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853fb976113a0374a9946a93cf309d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingPref: {fileID: 447694, guid: 6a32edd7aea48df4babb989e9f294879, type: 2}
+  fireRate: .5
+  nextShot: 0
 --- !u!1 &241654944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,6 +1152,48 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 43fc599e7422855468ce31f34354cd12, type: 3}
   m_Color: {r: .742647052, g: .120134063, b: .120134063, a: 1}
+--- !u!1001 &1223856206
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 457530, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.0399999991
+      objectReference: {fileID: 0}
+    - target: {fileID: 457530, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.13999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 457530, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457530, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457530, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457530, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457530, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457530, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1253785640 stripped
 Transform:
   m_PrefabParentObject: {fileID: 458642, guid: a23e7b7fb896d46aa8846f392dc5a102, type: 2}
@@ -1888,7 +1948,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.11514068
+  orthographic size: 5.15430689
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1907,11 +1967,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1834729207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.02800012, y: 1.03799999, z: -2}
+  m_LocalPosition: {x: -1.38, y: -4.51999998, z: -6.38999987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &1873411476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,6 +1981,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1873411477}
   - 212: {fileID: 1873411478}
+  - 114: {fileID: 1873411479}
   m_Layer: 0
   m_Name: Tower placement 5
   m_TagString: Buildable
@@ -1966,6 +2027,20 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 43fc599e7422855468ce31f34354cd12, type: 3}
   m_Color: {r: .742647052, g: .120134063, b: .120134063, a: 1}
+--- !u!114 &1873411479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1873411476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853fb976113a0374a9946a93cf309d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingPref: {fileID: 0}
+  fireRate: 0
+  nextShot: 0
 --- !u!1 &1891244310
 GameObject:
   m_ObjectHideFlags: 0

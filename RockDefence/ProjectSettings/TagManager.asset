@@ -8,6 +8,7 @@ TagManager:
   - Walkable
   - Buildable
   - goWest
+  - Note
   layers:
   - Default
   - TransparentFX
