@@ -16,9 +16,9 @@ public class Groupie : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	/*void OnCollisionEnter2D(Collision2D otherObj) {
+	void OnCollisionEnter2D(Collision2D otherObj) {
 		if (otherObj.gameObject.tag == "Stage") {
-			Destroy(gameObject,.5f);
+		//	Destroy(gameObject.name.CompareTo("Groupie"));
 		}
-	}*/
+	}
 }
