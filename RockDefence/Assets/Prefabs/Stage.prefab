@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 489414}
   - 212: {fileID: 21218914}
+  - 61: {fileID: 6163174}
   m_Layer: 9
   m_Name: Stage
   m_TagString: Hurtable
@@ -28,6 +29,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6163174
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195876}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .319999993, y: .319999993}
 --- !u!212 &21218914
 SpriteRenderer:
   m_ObjectHideFlags: 1

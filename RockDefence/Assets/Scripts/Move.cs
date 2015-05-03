@@ -25,9 +25,10 @@ public class Move : MonoBehaviour {
 			
 		} else if (direction == "south") {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * stopSpeed, -transform.localScale.y * moveSpeed);
-		}
-		else if (direction == "west") {
+		} else if (direction == "west") {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-transform.localScale.x * moveSpeed, transform.localScale.y * stopSpeed);
+		} else if (direction == "north") {
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-transform.localScale.x * stopSpeed, transform.localScale.y *moveSpeed);
 		}
 		
 		
@@ -36,28 +37,30 @@ public class Move : MonoBehaviour {
 		//Destroy (other.gameObject);
 //		float xValue;
 //		float yValue;//, zValue;
-		if (other.gameObject.name == "GoSouth") {
+		if (other.gameObject.name == "Go_south") {
 			//yValue = GetComponent<Rigidbody2D> ().position.y;
 			//	zValue = GetComponent<Rigidbody2D> ().position.z;
 			//xValue = GetComponent<Rigidbody2D> ().position.x - 0.01f;
 			//transform.position = new Vector2 (xValue, yValue);
 			direction = "south";
 			transform.Rotate (0, 0, 90);
-		} else if (other.gameObject.name == "GoWest") {
+		} else if (other.gameObject.name == "Go_west") {
 			
 			//yValue = GetComponent<Rigidbody2D> ().position.y + 0.01f;
 			//xValue = GetComponent<Rigidbody2D> ().position.x;
 			//transform.position = new Vector2 (xValue, yValue);
-			direction="west";
-			transform.Rotate(0,0,-90);
-		}
-		else if(other.gameObject.name == "GoEast") {
+			direction = "west";
+			transform.Rotate (0, 0, -90);
+		} else if (other.gameObject.name == "Go_east") {
 			
 			//yValue = GetComponent<Rigidbody2D> ().position.y;
 			//xValue = GetComponent<Rigidbody2D> ().position.x - 0.01f;
 			//transform.position = new Vector2 (xValue, yValue);
-			direction="east";
-			transform.Rotate(0,0,-90);
+			direction = "east";
+			transform.Rotate (0, 0, -90);
+		} else if (other.gameObject.name == "Go_north") {
+			direction = "north";
+			transform.Rotate (0, 0, 90);
 		}
 		
 	}
