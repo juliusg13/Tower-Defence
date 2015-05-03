@@ -61,6 +61,8 @@ public class Move : MonoBehaviour {
 		} else if (other.gameObject.name == "Go_north") {
 			direction = "north";
 			transform.Rotate (0, 0, 90);
+		} else if (other.gameObject.name == "Stage") {
+			Destroy(other.gameObject);
 		}
 		
 	}
