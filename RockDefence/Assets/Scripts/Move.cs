@@ -37,25 +37,25 @@ public class Move : MonoBehaviour {
 		float xValue;
 		float yValue;//, zValue;
 		if (other.gameObject.name == "GoSouth") {
-			yValue = GetComponent<Rigidbody2D> ().position.y;
+			//yValue = GetComponent<Rigidbody2D> ().position.y;
 			//	zValue = GetComponent<Rigidbody2D> ().position.z;
-			xValue = GetComponent<Rigidbody2D> ().position.x - 0.01f;
-			transform.position = new Vector2 (xValue, yValue);
+			//xValue = GetComponent<Rigidbody2D> ().position.x - 0.01f;
+			//transform.position = new Vector2 (xValue, yValue);
 			direction = "south";
 			transform.Rotate (0, 0, 90);
 		} else if (other.gameObject.name == "GoWest") {
 			
-			yValue = GetComponent<Rigidbody2D> ().position.y + 0.01f;
-			xValue = GetComponent<Rigidbody2D> ().position.x;
-			transform.position = new Vector2 (xValue, yValue);
+			//yValue = GetComponent<Rigidbody2D> ().position.y + 0.01f;
+			//xValue = GetComponent<Rigidbody2D> ().position.x;
+			//transform.position = new Vector2 (xValue, yValue);
 			direction="west";
 			transform.Rotate(0,0,-90);
 		}
 		else if(other.gameObject.name == "GoEast") {
 			
-			yValue = GetComponent<Rigidbody2D> ().position.y;
-			xValue = GetComponent<Rigidbody2D> ().position.x - 0.01f;
-			transform.position = new Vector2 (xValue, yValue);
+			//yValue = GetComponent<Rigidbody2D> ().position.y;
+			//xValue = GetComponent<Rigidbody2D> ().position.x - 0.01f;
+			//transform.position = new Vector2 (xValue, yValue);
 			direction="east";
 			transform.Rotate(0,0,-90);
 		}
