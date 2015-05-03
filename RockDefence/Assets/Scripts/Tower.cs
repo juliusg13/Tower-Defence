@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Tower : MonoBehaviour {
-
+	/*
 <<<<<<< Updated upstream
 	public GameObject Note;
 	public Transform shotSpawn;
@@ -25,5 +25,5 @@ public class Tower : MonoBehaviour {
 		Instantiate(Note, shotSpawn.position, shotSpawn.rotation);
 	}
 =======
->>>>>>> Stashed changes
+>>>>>>> Stashed changes */
 }

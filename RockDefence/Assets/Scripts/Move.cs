@@ -34,8 +34,8 @@ public class Move : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D other){
 		//Destroy (other.gameObject);
-		float xValue;
-		float yValue;//, zValue;
+//		float xValue;
+//		float yValue;//, zValue;
 		if (other.gameObject.name == "GoSouth") {
 			//yValue = GetComponent<Rigidbody2D> ().position.y;
 			//	zValue = GetComponent<Rigidbody2D> ().position.z;
