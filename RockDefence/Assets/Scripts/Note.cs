@@ -7,9 +7,9 @@ public class Note : MonoBehaviour {
 	void Start () {
 	
 	}
-	void OnCollisionEnter2D(Collision2D otherObj) {
-		if (otherObj.gameObject.tag == "Hurtable") {
-			//Destroy(otherObj.gameObject);
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.name == "Groupie") {
+			Destroy (this.gameObject);
 		}
 	}
 	// Update is called once per frame
