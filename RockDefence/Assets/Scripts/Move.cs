@@ -20,13 +20,13 @@ public class Move : MonoBehaviour {
 	
 	void FixedUpdate (){
 		
-		if (direction == "west") {
+		if (direction == "east") {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * moveSpeed, transform.localScale.y * stopSpeed);
 			
 		} else if (direction == "south") {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * stopSpeed, -transform.localScale.y * moveSpeed);
 		}
-		else if (direction == "east") {
+		else if (direction == "west") {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-transform.localScale.x * moveSpeed, transform.localScale.y * stopSpeed);
 		}
 		
