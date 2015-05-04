@@ -1,17 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &124564
+--- !u!1 &186474
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 428694}
-  - 212: {fileID: 21271802}
-  - 50: {fileID: 5040232}
-  - 61: {fileID: 6163524}
-  - 114: {fileID: 11407912}
+  - 4: {fileID: 416298}
+  - 212: {fileID: 21242156}
+  - 50: {fileID: 5022766}
+  - 61: {fileID: 6164732}
+  - 114: {fileID: 11401300}
+  - 114: {fileID: 11493970}
   m_Layer: 0
   m_Name: Groupie
   m_TagString: Untagged
@@ -19,24 +20,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &428694
+--- !u!4 &416298
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124564}
+  m_GameObject: {fileID: 186474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: .970000029, y: 5.0999999, z: -1}
   m_LocalScale: {x: 3.125, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5040232
+--- !u!50 &5022766
 Rigidbody2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124564}
+  m_GameObject: {fileID: 186474}
   m_Mass: 1
   m_LinearDrag: .0500000007
   m_AngularDrag: .0500000007
@@ -46,12 +47,12 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6163524
+--- !u!61 &6164732
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124564}
+  m_GameObject: {fileID: 186474}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -59,24 +60,36 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .270000011, y: .270000011}
---- !u!114 &11407912
+--- !u!114 &11401300
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124564}
+  m_GameObject: {fileID: 186474}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76acc31472be123468799364cdf0c06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: .800000012
---- !u!212 &21271802
+--- !u!114 &11493970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cb841d574ae84cc4a64aa136ffdaa61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groupie: {fileID: 124564}
+--- !u!212 &21242156
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124564}
+  m_GameObject: {fileID: 186474}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -106,5 +119,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 124564}
+  m_RootGameObject: {fileID: 186474}
   m_IsPrefabParent: 1
