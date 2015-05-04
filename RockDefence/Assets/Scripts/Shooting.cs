@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 
 public class Shooting : MonoBehaviour {
-
+	
 	public GameObject Note; //Returns an error because it is not initialized
 	public float fireRate = 0.5f;
 	public double nextShot = 0.9;
 	public bool allowFire = true;
 	
 	public List<GameObject> ObjectsInRange = new List<GameObject>();
-
-
-
+	
+	
+	
 	// Use this for initialization
 	void Start () {
-
+		
 	}
 	// GameObject closestGameObject = GameObject.FindGameObjectsWithTag("MyTag")
 	//	.OrderBy(go => Vector3.Distance(go.transform.position, transform.position)
@@ -25,42 +25,41 @@ public class Shooting : MonoBehaviour {
 	void Update () {
 		
 	}
-	 
+	
 	
 	void FixedUpdate (){
+		if(ObjectsInRange.Count() > 0){
 
-		if ( allowFire && (ObjectsInRange.Count > 0)) {
-			StartCoroutine(Fire ());
+			if (ObjectsInRange.FirstOrDefault ().Equals (null)) { // If it is NULL then it has been destroyed
+				ObjectsInRange.Remove(ObjectsInRange.FirstOrDefault ());
+			}
 		}
-		/*if (Time.time >= nextShot) {
-			Instantiate (shootingPref, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-			nextShot = Time.time + fireRate;
-		}*/
-
+		if ( allowFire && (ObjectsInRange.Count > 0)) { //Locks out for a time corresponding to fireRate
+			StartCoroutine(Fire ());					//For IEnumerator.. not a function
+		}
 	}
-
 
 	IEnumerator Fire()
 	{
-		Debug.Log ("Fire");
+		
 		allowFire = false;
-		GameObject blah = (GameObject)Instantiate (Note, new Vector3 (transform.position.x , transform.position.y, transform.position.z), Quaternion.identity);
-		blah.GetComponent<Note>().target = ObjectsInRange[0];
-		yield return new WaitForSeconds (1);
-		Debug.Log ("Fire2");
+		GameObject newNote = (GameObject)Instantiate (Note, new Vector3 (transform.position.x , transform.position.y, transform.position.z), Quaternion.identity);
+		newNote.GetComponent<Note>().target = ObjectsInRange.FirstOrDefault();
+		yield return new WaitForSeconds (fireRate);
 		allowFire = true;
 	}
 	
-	void OnTriggerEnter2D(Collider2D other){
-
+	void OnTriggerEnter2D(Collider2D other){		//Groupie enters the range of a speaker
 		ObjectsInRange.Add (other.gameObject);
-		Debug.Log (ObjectsInRange[0]);
-
 	}
-
-	void OnTriggerExit2D(Collider2D other)
+	
+	void OnTriggerExit2D(Collider2D other)			//Groupie exits the range of a speaker
 	{
 		ObjectsInRange.Remove (other.gameObject);
+		if (other.gameObject.name == "Note" || other.gameObject.name == "Note(Clone)") {	//Note Exits the range of the speaker, 
+			Destroy(other.gameObject);													//does not work maybe because note never collides 
+																						//with speaker to begin with
+		}
 	}
 	//public void AddEnemiesToList()
 	//{
@@ -72,7 +71,7 @@ public class Shooting : MonoBehaviour {
 	//}
 }
 
-	
+
 
 
 //using UnityEngine;
