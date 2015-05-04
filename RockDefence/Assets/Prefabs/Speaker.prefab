@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 457530}
   - 212: {fileID: 21273748}
+  - 114: {fileID: 11421762}
   m_Layer: 8
   m_Name: Speaker
   m_TagString: Buildable
@@ -28,6 +29,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11421762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853fb976113a0374a9946a93cf309d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingPref: {fileID: 447694, guid: 6a32edd7aea48df4babb989e9f294879, type: 2}
+  fireRate: .5
+  nextShot: 0
 --- !u!212 &21273748
 SpriteRenderer:
   m_ObjectHideFlags: 1
