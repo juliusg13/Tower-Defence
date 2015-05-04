@@ -1475,6 +1475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groupie: {fileID: 186474, guid: fc966b3caaad1c94399922208e5d3efe, type: 2}
+  YoungGroupie: {fileID: 186474, guid: ce8023ce6eae64ae28c48f5396a56c6d, type: 2}
   Groupie_count: 5
   length_between_groupies: 1
 --- !u!1 &982738726
