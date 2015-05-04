@@ -1479,6 +1479,8 @@ MonoBehaviour:
   OldGroupie: {fileID: 186474, guid: f059f50bc1cdc407497401d44d875b28, type: 2}
   Groupie_count: 5
   length_between_groupies: 1
+  x_coord_start: 1
+  y_coord_start: 6
 --- !u!1 &982738726
 GameObject:
   m_ObjectHideFlags: 0
