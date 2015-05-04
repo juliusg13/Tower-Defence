@@ -11,6 +11,9 @@ public class Note : MonoBehaviour {
 		if (other.gameObject.name == "Groupie" || other.gameObject.name == "Groupie(Clone)") {
 			Destroy (this.gameObject);
 			Destroy (other.gameObject);
+			//Ekki deletea næstu 2 linum. Gott ad sja taer tvi taer virka til ad breyta public tolum i odrm scrips.
+			//Move move = other.GetComponent<Move>();
+			//move.moveSpeed -= 1; 
 		}
 
 	}
