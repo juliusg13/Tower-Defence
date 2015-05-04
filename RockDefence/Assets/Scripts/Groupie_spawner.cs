@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Groupie : MonoBehaviour {
+public class Groupie_spawner : MonoBehaviour {
 
 	public GameObject groupie;
 
@@ -16,9 +16,5 @@ public class Groupie : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void OnCollisionEnter2D(Collision2D otherObj) {
-		if (otherObj.gameObject.tag == "Stage") {
-		//	Destroy(gameObject.name.CompareTo("Groupie"));
-		}
-	}
+
 }

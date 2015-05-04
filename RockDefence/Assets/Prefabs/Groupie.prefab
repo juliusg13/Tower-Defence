@@ -12,7 +12,6 @@ GameObject:
   - 50: {fileID: 5022766}
   - 61: {fileID: 6164732}
   - 114: {fileID: 11401300}
-  - 114: {fileID: 11493970}
   m_Layer: 0
   m_Name: Groupie
   m_TagString: Untagged
@@ -72,18 +71,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: .800000012
---- !u!114 &11493970
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cb841d574ae84cc4a64aa136ffdaa61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groupie: {fileID: 124564}
 --- !u!212 &21242156
 SpriteRenderer:
   m_ObjectHideFlags: 1
