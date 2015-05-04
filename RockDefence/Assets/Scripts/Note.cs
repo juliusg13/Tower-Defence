@@ -8,9 +8,10 @@ public class Note : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.name == "Groupie") {
+		if (other.gameObject.name == "Groupie" || other.gameObject.name == "Groupie(Clone)") {
 			Destroy (this.gameObject);
 		}
+
 	}
 	// Update is called once per frame
 	void Update () {
