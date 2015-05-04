@@ -10,6 +10,7 @@ public class Note : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.name == "Groupie" || other.gameObject.name == "Groupie(Clone)") {
 			Destroy (this.gameObject);
+			Destroy (other.gameObject);
 		}
 
 	}

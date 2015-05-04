@@ -744,11 +744,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 457530, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.11000001
+      value: -1.12
       objectReference: {fileID: 0}
     - target: {fileID: 457530, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .239999995
+      value: .910000026
       objectReference: {fileID: 0}
     - target: {fileID: 457530, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1475,6 +1475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groupie: {fileID: 186474, guid: fc966b3caaad1c94399922208e5d3efe, type: 2}
+  Groupie_count: 5
+  length_between_groupies: 1
 --- !u!1 &982738726
 GameObject:
   m_ObjectHideFlags: 0
