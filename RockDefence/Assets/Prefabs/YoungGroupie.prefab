@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11401300}
   m_Layer: 0
   m_Name: YoungGroupie
-  m_TagString: Untagged
+  m_TagString: Destroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: .800000012
+  health: 0
 --- !u!212 &21242156
 SpriteRenderer:
   m_ObjectHideFlags: 1

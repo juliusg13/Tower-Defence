@@ -62,14 +62,14 @@ public class Shooting : MonoBehaviour {
 	{
 		ObjectsInRange.Remove (other.gameObject);
 	}
-	public void AddEnemiesToList()
-	{
-		GameObject[] ItemsInList = GameObject.FindGameObjectsWithTag("Destroy");
-		foreach(GameObject _Enemy in ItemsInList)
-		{
-			AddTarget(_Enemy.transform);
-		}
-	}
+	//public void AddEnemiesToList()
+	//{
+	//	GameObject[] ItemsInList = GameObject.FindGameObjectsWithTag("Destroy");
+	//	foreach(GameObject _Enemy in ItemsInList)
+	//	{
+	//		AddTarget(_Enemy.transform);
+	//	}
+	//}
 }
 
 	
