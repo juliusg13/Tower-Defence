@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6164732}
   - 114: {fileID: 11401300}
   m_Layer: 0
-  m_Name: Groupie
+  m_Name: OldGroupie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: .400000006
+  health: 0
 --- !u!212 &21242156
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,7 +96,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7fd0036e6a976634098e2fd1be6017e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8dc0416eddc84a3589ea46370365510, type: 3}
   m_Color: {r: .635294139, g: .635294139, b: .635294139, a: 1}
 --- !u!1001 &100100000
 Prefab:

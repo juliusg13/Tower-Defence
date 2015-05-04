@@ -54,9 +54,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853fb976113a0374a9946a93cf309d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingPref: {fileID: 447694, guid: 6a32edd7aea48df4babb989e9f294879, type: 2}
+  Note: {fileID: 191366, guid: 6a32edd7aea48df4babb989e9f294879, type: 2}
   fireRate: .5
   nextShot: 0
+  allowFire: 1
+  ObjectsInRange: []
 --- !u!212 &21256144
 SpriteRenderer:
   m_ObjectHideFlags: 1
