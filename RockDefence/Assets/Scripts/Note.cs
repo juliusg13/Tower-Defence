@@ -3,6 +3,10 @@ using System.Collections;
 
 public class Note : MonoBehaviour {
 	public float speed;
+<<<<<<< HEAD
+=======
+	public GameObject target;
+>>>>>>> parent of 59b51a1... Revert "aiming"
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +19,6 @@ public class Note : MonoBehaviour {
 		    other.gameObject.name == "OldGroupie" || other.gameObject.name == "OldGroupie(Clone)") {
 			Destroy (this.gameObject);
 		}
-
 	}
 
 	// Update is called once per frame
@@ -24,7 +27,9 @@ public class Note : MonoBehaviour {
 	}
 
 	void FixedUpdate (){
-		transform.Translate(new Vector3(0,speed*Time.deltaTime,0));
+		float step = speed * Time.deltaTime;
+		transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
+		//transform.Translate(new Vector3(0,speed*Time.deltaTime,0));
 	}
 
 }

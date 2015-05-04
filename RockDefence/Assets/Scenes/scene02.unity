@@ -744,11 +744,19 @@ Prefab:
     m_Modifications:
     - target: {fileID: 408504, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: -1.12
+=======
+      value: -1.92999995
+>>>>>>> parent of 59b51a1... Revert "aiming"
       objectReference: {fileID: 0}
     - target: {fileID: 408504, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: .910000026
+=======
+      value: 2.97000003
+>>>>>>> parent of 59b51a1... Revert "aiming"
       objectReference: {fileID: 0}
     - target: {fileID: 408504, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -773,6 +781,14 @@ Prefab:
     - target: {fileID: 408504, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421762, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+      propertyPath: fireRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421762, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+      propertyPath: nextShot
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
@@ -1477,8 +1493,11 @@ MonoBehaviour:
   groupie: {fileID: 186474, guid: fc966b3caaad1c94399922208e5d3efe, type: 2}
   Groupie_count: 5
   length_between_groupies: 1
+<<<<<<< HEAD
   x_coord_start: 1
   y_coord_start: 6
+=======
+>>>>>>> parent of 59b51a1... Revert "aiming"
 --- !u!1 &982738726
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,7 +3177,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 416298, guid: fc966b3caaad1c94399922208e5d3efe, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
