@@ -9,7 +9,8 @@ public class Note : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.name == "Groupie" || other.gameObject.name == "Groupie(Clone)" || 
-		    other.gameObject.name == "YoungGroupie" || other.gameObject.name == "YoungGroupie(Clone)") {
+		    other.gameObject.name == "YoungGroupie" || other.gameObject.name == "YoungGroupie(Clone)"|| 
+		    other.gameObject.name == "OldGroupie" || other.gameObject.name == "OldGroupie(Clone)") {
 			Destroy (this.gameObject);
 			Destroy (other.gameObject);
 			//Ekki deletea næstu 2 linum. Gott ad sja taer tvi taer virka til ad breyta public tolum i odrm scrips.
