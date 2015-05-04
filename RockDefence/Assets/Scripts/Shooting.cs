@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Shooting : MonoBehaviour {
 
@@ -17,11 +18,14 @@ public class Shooting : MonoBehaviour {
 	void Start () {
 
 	}
-	
+	// GameObject closestGameObject = GameObject.FindGameObjectsWithTag("MyTag")
+	//	.OrderBy(go => Vector3.Distance(go.transform.position, transform.position)
+	//	         .FirstOrDefault();
 	// Update is called once per frame
 	void Update () {
 		
 	}
+	 
 	
 	void FixedUpdate (){
 
@@ -32,11 +36,8 @@ public class Shooting : MonoBehaviour {
 			Instantiate (shootingPref, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 			nextShot = Time.time + fireRate;
 		}*/
-		
+
 	}
-
-
-	
 
 
 	IEnumerator Fire()
@@ -61,4 +62,68 @@ public class Shooting : MonoBehaviour {
 	{
 		ObjectsInRange.Remove (other.gameObject);
 	}
+	public void AddEnemiesToList()
+	{
+		GameObject[] ItemsInList = GameObject.FindGameObjectsWithTag("Destroy");
+		foreach(GameObject _Enemy in ItemsInList)
+		{
+			AddTarget(_Enemy.transform);
+		}
+	}
 }
+
+	
+
+
+//using UnityEngine;
+//		using System.Collections;
+//		using System.Collections.Generic;
+//		
+//		public class Turret : MonoBehaviour {
+//			public List <Transform> Enemies;
+//			public Transform SelectedTarget;
+//			
+//			void Start () 
+//			{
+//				SelectedTarget = null;
+//				Enemies = new List<Transform>();
+//				AddEnemiesToList();
+//			}
+//			
+//			
+//			
+//			public void AddTarget(Transform enemy)
+//			{
+//				Enemies.Add(enemy);
+//			}
+//			
+//			public void DistanceToTarget()
+//			{
+//				Enemies.Sort(delegate( Transform t1, Transform t2){ 
+//					return Vector3.Distance(t1.transform.position,transform.position).CompareTo(Vector3.Distance(t2.transform.position,transform.position)); 
+//				});
+//				
+//			}
+//			
+//			public void TargetedEnemy() 
+//			{
+//				if(SelectedTarget == null)
+//				{
+//					DistanceToTarget();
+//					SelectedTarget = Enemies[0];
+//				}
+//				
+//				
+//			}
+//			
+//			void Update () 
+//			{
+//				TargetedEnemy();
+//				float dist = Vector3.Distance(SelectedTarget.transform.position,transform.position);
+//				//if(dist <150)
+//				//{
+//				transform.position = Vector3.MoveTowards(transform.position, SelectedTarget.position, 60 * Time.deltaTime);
+//				//}
+//				
+//			}
+//		}
