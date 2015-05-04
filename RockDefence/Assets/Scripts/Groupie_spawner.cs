@@ -9,8 +9,7 @@ public class Groupie_spawner : MonoBehaviour {
 	public float length_between_groupies;
 
 	void Start() {
-		float x = 1f;
-		float y = 6f;
+
 		float z = -1f;
 		for (int i = 0; i < Groupie_count; i++) {
 			Instantiate(groupie, new Vector3(x, y, z), transform.rotation);
