@@ -3,18 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Shooting : MonoBehaviour {
-	
+
 	public GameObject Note; //Returns an error because it is not initialized
 	public float fireRate = 0.5f;
 	public double nextShot = 0.9;
 	public bool allowFire = true;
 	
 	public List<GameObject> ObjectsInRange = new List<GameObject>();
-	
+
+
+
 	// Use this for initialization
 	void Start () {
-		
-		
+
 	}
 	
 	// Update is called once per frame
@@ -23,7 +24,7 @@ public class Shooting : MonoBehaviour {
 	}
 	
 	void FixedUpdate (){
-		
+
 		if ( allowFire && (ObjectsInRange.Count > 0)) {
 			StartCoroutine(Fire ());
 		}
@@ -33,6 +34,11 @@ public class Shooting : MonoBehaviour {
 		}*/
 		
 	}
+
+
+	
+
+
 	IEnumerator Fire()
 	{
 		Debug.Log ("Fire");
@@ -45,12 +51,12 @@ public class Shooting : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
-		
+
 		ObjectsInRange.Add (other.gameObject);
 		Debug.Log (ObjectsInRange[0]);
-		
-		
+
 	}
+
 	void OnTriggerExit2D(Collider2D other)
 	{
 		ObjectsInRange.Remove (other.gameObject);
