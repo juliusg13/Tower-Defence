@@ -12,6 +12,13 @@ public class Groupie_Behaviour : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		if (this.gameObject.name == "Groupie") {
+			moveSpeed = 0.4f;
+			health = 2;
+		} else if (this.gameObject.name == "YoungGroupie") {
+			moveSpeed = 0.6f;
+			health = 1;
+		}
 		
 	}
 	
