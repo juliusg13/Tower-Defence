@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Move : MonoBehaviour {
+public class Groupie_Behaviour : MonoBehaviour {
 	
 	public float moveSpeed;
 	int stopSpeed = 0;
