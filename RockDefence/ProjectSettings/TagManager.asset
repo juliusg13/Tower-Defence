@@ -9,7 +9,6 @@ TagManager:
   - Buildable
   - goWest
   - Note
-  - Destroy
   layers:
   - Default
   - TransparentFX
