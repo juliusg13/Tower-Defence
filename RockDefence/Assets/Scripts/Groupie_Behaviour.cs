@@ -18,7 +18,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 			health = 2;
 		} else if (this.gameObject.name == "YoungGroupie") {
 			moveSpeed = 0.6f;
-			health = 1;
+			health = 5;
 		}
 		
 	}
