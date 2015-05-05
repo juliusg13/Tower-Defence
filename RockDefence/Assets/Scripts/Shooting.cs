@@ -18,9 +18,7 @@ public class Shooting : MonoBehaviour {
 	void Start () {
 		
 	}
-	// GameObject closestGameObject = GameObject.FindGameObjectsWithTag("MyTag")
-	//	.OrderBy(go => Vector3.Distance(go.transform.position, transform.position)
-	//	         .FirstOrDefault();
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -57,9 +55,16 @@ public class Shooting : MonoBehaviour {
 	
 	void OnTriggerExit2D(Collider2D other)			//Groupie exits the range of a speaker
 	{
+
 		if (other.gameObject.tag == "Destroy") {	
 			Debug.Log ("DestroyGroup");
 			ObjectsInRange.Remove (other.gameObject);
+		}
+		ObjectsInRange.Remove (other.gameObject);
+		if (other.gameObject.tag == "Note") {	//Note Exits the range of the speaker, 
+			Destroy(other.gameObject);													//does not work maybe because note never collides 
+																						//with speaker to begin with
+
 		}
 			
 		if (other.gameObject.tag == "Note") {	//Note Exits the range of the speaker, 
@@ -79,6 +84,7 @@ public class Shooting : MonoBehaviour {
 	//	}
 	//}
 }
+
 
 
 
