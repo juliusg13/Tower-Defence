@@ -55,6 +55,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speaker: {fileID: 182836, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+  highlight: {fileID: 21300000, guid: 9f05fe2bc75b27e46b2767bd37146c76, type: 3}
+  normal: {fileID: 21300000, guid: 425e695e3751433428659cd0db44dd5a, type: 3}
 --- !u!212 &21229896
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -79,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 43fc599e7422855468ce31f34354cd12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 425e695e3751433428659cd0db44dd5a, type: 3}
   m_Color: {r: .742647052, g: .120134063, b: .120134063, a: 1}
 --- !u!1001 &100100000
 Prefab:
