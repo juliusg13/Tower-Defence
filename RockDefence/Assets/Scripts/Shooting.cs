@@ -9,14 +9,14 @@ public class Shooting : MonoBehaviour {
 	public float fireRate = 0.5f;
 	public double nextShot = 0.9;
 	public bool allowFire = true;
-	
+	//public float radius = transform.GetComponent<CircleCollider2D>().radius;
 	public List<GameObject> ObjectsInRange = new List<GameObject>();
 	
 	
 	
 	// Use this for initialization
 	void Start () {
-		
+	
 	}
 
 	// Update is called once per frame
@@ -44,11 +44,14 @@ public class Shooting : MonoBehaviour {
 		allowFire = false;
 		GameObject newNote = (GameObject)Instantiate (Note, new Vector3 (transform.position.x , transform.position.y, transform.position.z), Quaternion.identity);
 		newNote.GetComponent<Note>().target = ObjectsInRange.FirstOrDefault();
+		newNote.GetComponent<Note> ().initialPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+		newNote.GetComponent<Note>().radius = this.GetComponent<CircleCollider2D>().radius;
 		yield return new WaitForSeconds (fireRate);
 		allowFire = true;
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){		//Groupie enters the range of a speaker
+
 		ObjectsInRange.Add (other.gameObject);
 
 	}
@@ -57,23 +60,24 @@ public class Shooting : MonoBehaviour {
 	{
 
 		if (other.gameObject.tag == "Destroy") {	
-			Debug.Log ("DestroyGroup");
+
 			ObjectsInRange.Remove (other.gameObject);
 		}
-		ObjectsInRange.Remove (other.gameObject);
-		if (other.gameObject.tag == "Note") {	//Note Exits the range of the speaker, 
-			Destroy(other.gameObject);													//does not work maybe because note never collides 
-																						//with speaker to begin with
-
+		else if (other.gameObject.tag == "Note") {	//Note Exits the range of the speaker, 
+			Debug.Log ("DestroyGroup");
+			Destroy(other.gameObject);			//does not work maybe because note never collides 
+												//with speaker to begin with
 		}
 			
+
+	}
+	void OnCollisionExit2D(Collision2D other)			//Groupie exits the range of a speaker
+	{
 		if (other.gameObject.tag == "Note") {	//Note Exits the range of the speaker, 
-			Destroy (other.gameObject);	
 			Debug.Log ("DestroyNote");
-			//does not work maybe because note never collides 
+			Destroy(other.gameObject);			//does not work maybe because note never collides 
 			//with speaker to begin with
 		}
-
 	}
 	//public void AddEnemiesToList()
 	//{

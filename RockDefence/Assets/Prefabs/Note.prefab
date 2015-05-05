@@ -38,7 +38,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 191366}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: -.270000011}
   serializedVersion: 2
@@ -55,7 +55,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  initialPos: {x: 0, y: 0, z: 0}
   target: {fileID: 186474, guid: fc966b3caaad1c94399922208e5d3efe, type: 2}
+  initialPosTarget: {x: 0, y: 0, z: 0}
+  radius: 0
 --- !u!212 &21285040
 SpriteRenderer:
   m_ObjectHideFlags: 1
