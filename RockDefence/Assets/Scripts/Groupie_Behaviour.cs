@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Groupie_Behaviour : MonoBehaviour {
 	
 	public float moveSpeed;
 	public float health;
+	public Quaternion rotation = Quaternion.identity;
 
 	int stopSpeed = 0;
 	//int direction = 1; // 0 = West, 1 = South, 2 = East.
@@ -34,9 +35,11 @@ public class Groupie_Behaviour : MonoBehaviour {
 		} 
 		else if (direction == "south") {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * stopSpeed, -transform.localScale.y * moveSpeed);
+
 		} 
 		else if (direction == "west") {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-transform.localScale.x * moveSpeed, transform.localScale.y * stopSpeed);
+		
 		} 
 		else if (direction == "north") {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-transform.localScale.x * stopSpeed, transform.localScale.y *moveSpeed);
@@ -44,36 +47,60 @@ public class Groupie_Behaviour : MonoBehaviour {
 		
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		//Destroy (other.gameObject);
-//		float xValue;
-//		float yValue;//, zValue;
+
+
+		//Groupies turn south depending on their current rotation
 		if (other.gameObject.name == "Go_south") {
-			//yValue = GetComponent<Rigidbody2D> ().position.y;
-			//	zValue = GetComponent<Rigidbody2D> ().position.z;
-			//xValue = GetComponent<Rigidbody2D> ().position.x - 0.01f;
-			//transform.position = new Vector2 (xValue, yValue);
+			float zrotation = transform.localRotation.eulerAngles.z;
+			if (zrotation== 270){
+				transform.Rotate (0, 0, +90);
+			}
+			else if((zrotation > 85) && (zrotation < 95)){
+				transform.Rotate (0, 0, -90);
+			}
 			direction = "south";
-			transform.Rotate (0, 0, 90);
-		} else if (other.gameObject.name == "Go_west") {
-			
-			//yValue = GetComponent<Rigidbody2D> ().position.y + 0.01f;
-			//xValue = GetComponent<Rigidbody2D> ().position.x;
-			//transform.position = new Vector2 (xValue, yValue);
+
+
+		} 
+		//Groupies turn west depending on their current rotation
+		else if (other.gameObject.name == "Go_west") {
+
+			float zrotation = transform.localRotation.eulerAngles.z;
+			if(zrotation == 0){
+				transform.Rotate (0, 0, -90);
+			}
 			direction = "west";
-			transform.Rotate (0, 0, -90);
-		} else if (other.gameObject.name == "Go_east") {
+
+		} 
+		//Groupies turn east depending on their current rotation
+		else if (other.gameObject.name == "Go_east") {
 			
-			//yValue = GetComponent<Rigidbody2D> ().position.y;
-			//xValue = GetComponent<Rigidbody2D> ().position.x - 0.01f;
-			//transform.position = new Vector2 (xValue, yValue);
+			float zrotation = transform.localRotation.eulerAngles.z;
+			if(zrotation == 0){
+				transform.Rotate (0, 0, 90);
+			}
+			else if((zrotation > 178) && (zrotation < 182)){
+				transform.Rotate (0, 0, -90);
+			}
 			direction = "east";
-			transform.Rotate (0, 0, -90);
-		} else if (other.gameObject.name == "Go_north") {
+
+		} 
+		//Groupies turn north depending on their current rotation
+		else if (other.gameObject.name == "Go_north") {
+			float zrotation = transform.localRotation.eulerAngles.z;
+			if (zrotation == 270){
+				transform.Rotate (0, 0, -90);
+			}
+			else if((zrotation > 85) && (zrotation < 95)){
+				transform.Rotate (0, 0, 90);
+			}
 			direction = "north";
-			transform.Rotate (0, 0, 90);
-		} else if (other.gameObject.name == "Stage") {
+		
+		} 
+		else if (other.gameObject.name == "Stage") {
 			Destroy (this.gameObject);
-		} else if (other.gameObject.tag == "Note") {
+		} 
+		else if (other.gameObject.tag == "Note") {
 			health = health - 1;
 			if(health <= 0){
 				Destroy(this.gameObject);

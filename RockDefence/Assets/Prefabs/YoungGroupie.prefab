@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: .800000012
-  health: 0
+  health: 4
 --- !u!212 &21242156
 SpriteRenderer:
   m_ObjectHideFlags: 1
