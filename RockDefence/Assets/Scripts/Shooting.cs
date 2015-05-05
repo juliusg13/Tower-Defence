@@ -35,6 +35,7 @@ public class Shooting : MonoBehaviour {
 		if ( allowFire && (ObjectsInRange.Count > 0)) { //Locks out for a time corresponding to fireRate
 			StartCoroutine(Fire ());					//For IEnumerator.. not a function
 		}
+
 	}
 
 	IEnumerator Fire()
@@ -49,15 +50,30 @@ public class Shooting : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other){		//Groupie enters the range of a speaker
 		ObjectsInRange.Add (other.gameObject);
+
 	}
 	
 	void OnTriggerExit2D(Collider2D other)			//Groupie exits the range of a speaker
 	{
+
+		if (other.gameObject.tag == "Destroy") {	
+			Debug.Log ("DestroyGroup");
+			ObjectsInRange.Remove (other.gameObject);
+		}
 		ObjectsInRange.Remove (other.gameObject);
 		if (other.gameObject.tag == "Note") {	//Note Exits the range of the speaker, 
 			Destroy(other.gameObject);													//does not work maybe because note never collides 
 																						//with speaker to begin with
+
 		}
+			
+		if (other.gameObject.tag == "Note") {	//Note Exits the range of the speaker, 
+			Destroy (other.gameObject);	
+			Debug.Log ("DestroyNote");
+			//does not work maybe because note never collides 
+			//with speaker to begin with
+		}
+
 	}
 	//public void AddEnemiesToList()
 	//{
@@ -68,6 +84,7 @@ public class Shooting : MonoBehaviour {
 	//	}
 	//}
 }
+
 
 
 
