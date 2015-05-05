@@ -102,6 +102,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 		} 
 		else if (other.gameObject.tag == "Note") {
 			health = health - 1;
+			Destroy (other.gameObject);
 			if(health <= 0){
 				Destroy(this.gameObject);
 			}
