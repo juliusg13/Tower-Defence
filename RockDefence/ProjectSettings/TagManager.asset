@@ -47,3 +47,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tiles
+    uniqueID: 2039958209
+    locked: 0
+  - name: Speakers
+    uniqueID: 1439385611
+    locked: 0

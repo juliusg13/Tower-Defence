@@ -11,12 +11,12 @@ public class Note : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.name == "Groupie" || other.gameObject.name == "Groupie(Clone)" || 
-		    other.gameObject.name == "YoungGroupie" || other.gameObject.name == "YoungGroupie(Clone)"|| 
-		    other.gameObject.name == "OldGroupie" || other.gameObject.name == "OldGroupie(Clone)") {
+		if (other.gameObject.tag == "Groupie" ) {
 			Destroy (this.gameObject);
 		}
+
 	}
+
 	
 	// Update is called once per frame
 	void Update () {
