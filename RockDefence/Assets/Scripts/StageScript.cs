@@ -30,7 +30,6 @@ public class StageScript : MonoBehaviour {
 				Destroy(this.gameObject);
 				Instantiate(explosion, transform.position, transform.rotation);
 				GameOverText.text = "ROCK OVER";
-
 			}
 			Destroy(other.gameObject);
 			StageHealth = StageHealth - 1;
