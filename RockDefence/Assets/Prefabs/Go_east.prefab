@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .639999986, y: .959999979, z: 0}
+  m_LocalPosition: {x: 0, y: -.319999993, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,8 +54,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d36d2caa9abc6b41b5d71ce836171c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orange: {fileID: 103270, guid: 4aeb0c2eda43999428582c39c2166804, type: 2}
-  blue: {fileID: 146092, guid: 310f2f702bf7e1349a4f4a53da09e774, type: 2}
+  orange: {fileID: 175356, guid: 492e2ff3fe43b1b4ba3d8602777d1980, type: 2}
+  blue: {fileID: 114666, guid: af00af5fa4492b1438544a6eb44a26f9, type: 2}
+  TowerRange: {fileID: 124422, guid: 2a89b21f527253d48bef3838ed192f16, type: 2}
+  built: 0
   highlight: {fileID: 21300000, guid: 9f05fe2bc75b27e46b2767bd37146c76, type: 3}
   normal: {fileID: 21300000, guid: 425e695e3751433428659cd0db44dd5a, type: 3}
 --- !u!212 &21279404

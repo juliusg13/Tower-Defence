@@ -96,11 +96,18 @@ public class Groupie_Behaviour : MonoBehaviour {
 		
 		} else if (other.gameObject.name == "Stage") {
 			Destroy (this.gameObject);
+		
+		//If the groupie faints you gain x amount of rock dollars
 		} else if (other.gameObject.tag == "Note") {
 			health = health - 1;
 			Destroy (other.gameObject);
+
 			if (health <= 0) {
 				Destroy (this.gameObject);
+				GameObject Controller = GameObject.Find ("Controller");
+				Controller gameController = Controller.GetComponent<Controller> ();
+				gameController.RockDollars = gameController.RockDollars + 2;
+				gameController.RockDollarText.text = "Rock Dollars: " + gameController.RockDollars.ToString ();
 			}
 		} else if (other.gameObject.tag == "Beer") {
 
