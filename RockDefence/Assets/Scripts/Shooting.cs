@@ -7,6 +7,8 @@ public class Shooting : MonoBehaviour {
 	
 	public GameObject Note; //Returns an error because it is not initialized
 	public GameObject BeerSpillSmall;
+	public GameObject BeerSpillMedium;
+	public GameObject BeerSpillBig;
 	public float fireRate = 0.5f;
 	public double nextShot = 0.9;
 	public bool allowFire = true;
@@ -66,18 +68,23 @@ public class Shooting : MonoBehaviour {
 		if (this.gameObject.tag == "BarAoE") {
 			Groupie_Behaviour gScript = other.GetComponent<Groupie_Behaviour>();
 			gScript.moveSpeed /= slowing;
-			//StartCoroutine(SpillBeer());
+			StartCoroutine(SpillBeer());
 			//other.gameObject.moveSpeed -= 0.5;
 		}
 	}
-	//IEnumerator SpillBeer()
-//	{
+	IEnumerator SpillBeer()
+	{
 		
-//		Instantiate (BeerSpillSmall, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-	//	yield return new WaitForSeconds (2);
-
-		
-	//}
+		GameObject Small = (GameObject)Instantiate (BeerSpillSmall, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+		yield return new WaitForSeconds (0.5f);
+		GameObject Medium = (GameObject)Instantiate (BeerSpillMedium, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+		yield return new WaitForSeconds (0.5f);
+		GameObject Big = (GameObject)Instantiate (BeerSpillBig, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+		yield return new WaitForSeconds (3);
+		Destroy (Small.gameObject);
+		Destroy (Medium.gameObject);
+		Destroy (Big.gameObject);
+	}
 	
 	void OnTriggerExit2D(Collider2D other)			//Groupie exits the range of a speaker
 	{
