@@ -84,10 +84,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speaker: {fileID: 182836, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
-  bar: {fileID: 182836, guid: c472e43c263fcb546a8092f1f31ae22e, type: 2}
+  bar: {fileID: 182836, guid: eeea28acd3705452fbfe5099b63a6953, type: 2}
   SourceTile: {fileID: 0}
-  SpeakerPrice: 0
-  BarPrice: 0
 --- !u!212 &21221336
 SpriteRenderer:
   m_ObjectHideFlags: 1
