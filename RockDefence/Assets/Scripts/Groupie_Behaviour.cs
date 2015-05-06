@@ -109,6 +109,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 				//Shooting gScript = other.GetComponent<Shooting>();
 				//if(gScript != null)
 				//{
+				
 					StartCoroutine(Slow ());
 					//Debug.Log("Dec");
 					//moveSpeed -= gScript.slowing;
@@ -120,6 +121,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 	}
 	IEnumerator Slow()
 	{
+
 		moveSpeed = moveSpeed / 2;
 		yield return new WaitForSeconds (2);
 		moveSpeed = moveSpeed * 2;

@@ -65,7 +65,7 @@ public class Shooting : MonoBehaviour {
 		}
 		if (this.gameObject.tag == "BarAoE") {
 			Groupie_Behaviour gScript = other.GetComponent<Groupie_Behaviour>();
-			gScript.moveSpeed -= slowing;
+			gScript.moveSpeed /= slowing;
 			//other.gameObject.moveSpeed -= 0.5;
 		}
 	}
@@ -83,7 +83,7 @@ public class Shooting : MonoBehaviour {
 		}
 		if (this.gameObject.tag == "BarAoE") {
 			Groupie_Behaviour gScript = other.GetComponent<Groupie_Behaviour>();
-			gScript.moveSpeed += slowing;
+			gScript.moveSpeed *= slowing;
 			//other.gameObject.moveSpeed -= 0.5;
 		}
 			

@@ -13,7 +13,7 @@ GameObject:
   - 58: {fileID: 5868388}
   m_Layer: 8
   m_Name: BarShoot
-  m_TagString: BarAoE
+  m_TagString: BarShootStraight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
