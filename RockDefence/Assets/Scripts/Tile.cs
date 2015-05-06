@@ -11,9 +11,10 @@ public class Tile : MonoBehaviour {
 
 	public Sprite highlight;
 	public Sprite normal;
+
+
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -56,7 +57,11 @@ public class Tile : MonoBehaviour {
 			GetComponent<SpriteRenderer> ().sprite = highlight;
 		}
 		if (this.gameObject.tag == "MenuBarRange" || this.gameObject.tag == "MenuSpeakerRange") {
-			this.GetComponentInChildren<SpriteRenderer>().enabled = true;
+			//this.GetComponentInChildren<SpriteRenderer>().enabled = true;
+			GameObject child = GameObject.FindWithTag("MenuChild");
+			child.GetComponent<SpriteRenderer>().enabled = true;
+
+			//this.GetComponent<Renderer>().GetComponent<SpriteRenderer>().enabled = true;
 		}
 	}
 
@@ -64,8 +69,12 @@ public class Tile : MonoBehaviour {
 		if (this.gameObject.tag == "Buildable") {
 			GetComponent<SpriteRenderer> ().sprite = normal;
 		}
-		/*if (this.gameObject.tag == "MenuBarRange" || this.gameObject.tag == "MenuSpeakerRange") {
-			this.GetComponentsInChildren<SpriteRenderer>().enabled = false;
-		}*/
+		if (this.gameObject.tag == "MenuBarRange" || this.gameObject.tag == "MenuSpeakerRange") {
+			//this.GetComponentInChildren<SpriteRenderer>().enabled =false;
+			//this.GetComponentsInChildren<SpriteRenderer>().enabled = false;
+			//this.GetComponentsInChildren<SpriteRenderer>().SetValue = false;
+			//this.GetComponent<Renderer>().GetComponentsInChildren().Initialize();
+
+		}
 	}
 }
