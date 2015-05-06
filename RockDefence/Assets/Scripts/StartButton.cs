@@ -13,6 +13,8 @@ public class StartButton : MonoBehaviour {
 	public float y_coord_start;
 	bool gameOn = false;
 	bool level2 = false;
+	bool level3 = false; 
+	bool level4 = false;
 	public Sprite RockHighlight;
 	public Sprite Rockon;
 	public float TimeBetweenLevel = 5;
@@ -33,8 +35,18 @@ public class StartButton : MonoBehaviour {
 			StartCoroutine (Level1());
 		}
 		else if (level2 == true) {
+			level2 = false;
 			StartCoroutine (Level2());
-
+		}
+		else if (level3 == true)
+		{	level3 = false;
+			StartCoroutine (Level3());
+			
+		}
+		else if (level4 == true)
+		{	level4 = false;
+			StartCoroutine (Level4());
+			
 		}
 	}
 
@@ -43,18 +55,27 @@ public class StartButton : MonoBehaviour {
 		yield return new WaitForSeconds (TimeBetweenLevel);
 
 	}
-
 	IEnumerator Level1()
 	{	float z = -1f;
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 5; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-			yield return new WaitForSeconds (0.5f);
+			yield return new WaitForSeconds (0.9f);
 		}
 		StartCoroutine (WaitBetweenLevel());
 		level2 = true;
 	}
 
 	IEnumerator Level2()
+	{	float z = -1f;
+		for (int i = 0; i < 10; i++) {
+			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
+		StartCoroutine (WaitBetweenLevel());
+		level3 = true;
+	}
+
+	IEnumerator Level3()
 	{
 		float z = -1f;
 
@@ -62,11 +83,37 @@ public class StartButton : MonoBehaviour {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
-		yield return new WaitForSeconds (2f);
+		yield return new WaitForSeconds (1.6f);
 		for (int i = 0; i < 5; i++) {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
+		StartCoroutine (WaitBetweenLevel());
+		level4 = true;
+	}
+
+	IEnumerator Level4()
+	{
+		float z = -1f;
+
+		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+		yield return new WaitForSeconds (1f);
+
+		for (int i = 0; i < 4; i++) {
+			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
+		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+		for (int i = 0; i < 4; i++) {
+			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
+		yield return new WaitForSeconds (1.6f);
+		for (int i = 0; i < 5; i++) {
+			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
+		StartCoroutine (WaitBetweenLevel());
 	}
 
 	IEnumerator WaitOneSecond()
@@ -91,12 +138,7 @@ public class StartButton : MonoBehaviour {
 }
 
 
-//for (int i = 0; i < Groupie_count; i++) {
-//	Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-//	Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-//	Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-//	y_coord_start += length_between_groupies;
-//} 
+
 //public void AddEnemiesToList()
 //{
 //	GameObject[] ItemsInList = GameObject.FindGameObjectsWithTag("Destroy");
