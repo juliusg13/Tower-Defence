@@ -52,10 +52,9 @@ public class Groupie_Behaviour : MonoBehaviour {
 		//Groupies turn south depending on their current rotation
 		if (other.gameObject.name == "Go_south") {
 			float zrotation = transform.localRotation.eulerAngles.z;
-			if (zrotation== 270){
+			if (zrotation == 270) {
 				transform.Rotate (0, 0, +90);
-			}
-			else if((zrotation > 85) && (zrotation < 95)){
+			} else if ((zrotation > 85) && (zrotation < 95)) {
 				transform.Rotate (0, 0, -90);
 			}
 			direction = "south";
@@ -66,7 +65,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 		else if (other.gameObject.name == "Go_west") {
 
 			float zrotation = transform.localRotation.eulerAngles.z;
-			if(zrotation == 0){
+			if (zrotation == 0) {
 				transform.Rotate (0, 0, -90);
 			}
 			direction = "west";
@@ -76,10 +75,9 @@ public class Groupie_Behaviour : MonoBehaviour {
 		else if (other.gameObject.name == "Go_east") {
 			
 			float zrotation = transform.localRotation.eulerAngles.z;
-			if(zrotation == 0){
+			if (zrotation == 0) {
 				transform.Rotate (0, 0, 90);
-			}
-			else if((zrotation > 178) && (zrotation < 182)){
+			} else if ((zrotation > 178) && (zrotation < 182)) {
 				transform.Rotate (0, 0, -90);
 			}
 			direction = "east";
@@ -88,24 +86,31 @@ public class Groupie_Behaviour : MonoBehaviour {
 		//Groupies turn north depending on their current rotation
 		else if (other.gameObject.name == "Go_north") {
 			float zrotation = transform.localRotation.eulerAngles.z;
-			if (zrotation == 270){
+			if (zrotation == 270) {
 				transform.Rotate (0, 0, -90);
-			}
-			else if((zrotation > 85) && (zrotation < 95)){
+			} else if ((zrotation > 85) && (zrotation < 95)) {
 				transform.Rotate (0, 0, 90);
 			}
 			direction = "north";
 		
-		} 
-		else if (other.gameObject.name == "Stage") {
+		} else if (other.gameObject.name == "Stage") {
 			Destroy (this.gameObject);
-		} 
-		else if (other.gameObject.tag == "Note") {
+		} else if (other.gameObject.tag == "Note") {
 			health = health - 1;
 			Destroy (other.gameObject);
-			if(health <= 0){
-				Destroy(this.gameObject);
+			if (health <= 0) {
+				Destroy (this.gameObject);
 			}
+		} else if (other.gameObject.tag == "Beer") {
+			if (moveSpeed > 0.3f)
+			{
+				Shooting gScript = other.GetComponent<Shooting>();
+				if(gScript != null)
+				{
+					moveSpeed -= gScript.slowing;
+				}
+			}
+
 		}
 		
 	}

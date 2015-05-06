@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour {
 	public float fireRate = 0.5f;
 	public double nextShot = 0.9;
 	public bool allowFire = true;
+	public float slowing = 0;
 	//public float radius = transform.GetComponent<CircleCollider2D>().radius;
 	public List<GameObject> ObjectsInRange = new List<GameObject>();
 	
@@ -32,10 +33,14 @@ public class Shooting : MonoBehaviour {
 				ObjectsInRange.Remove(ObjectsInRange.FirstOrDefault ());
 			}
 		}
-		if ( allowFire && (ObjectsInRange.Count > 0)) { //Locks out for a time corresponding to fireRate
+		if ( allowFire && (ObjectsInRange.Count > 0) && this.gameObject.tag == "BarShootStraight") { //Locks out for a time corresponding to fireRate
 			StartCoroutine(Fire ());					//For IEnumerator.. not a function
 		}
-
+		if ( allowFire && (ObjectsInRange.Count > 0) && this.gameObject.tag == "Speaker") { //Locks out for a time corresponding to fireRate
+			StartCoroutine(Fire ());					//For IEnumerator.. not a function
+		}
+		
+		
 	}
 
 	IEnumerator Fire()
@@ -49,18 +54,26 @@ public class Shooting : MonoBehaviour {
 		yield return new WaitForSeconds (fireRate);
 		allowFire = true;
 	}
+
+		
 	
 	void OnTriggerEnter2D(Collider2D other){		//Groupie enters the range of a speaker
 
-		ObjectsInRange.Add (other.gameObject);
+		if (other.gameObject.tag == "Destroy") {	
 
+			ObjectsInRange.Add (other.gameObject);
+		}
+		if (this.gameObject.tag == "BarAoE") {
+			Groupie_Behaviour gScript = other.GetComponent<Groupie_Behaviour>();
+			gScript.moveSpeed -= slowing;
+			//other.gameObject.moveSpeed -= 0.5;
+		}
 	}
 	
 	void OnTriggerExit2D(Collider2D other)			//Groupie exits the range of a speaker
 	{
 
 		if (other.gameObject.tag == "Destroy") {	
-
 			ObjectsInRange.Remove (other.gameObject);
 		}
 		else if (other.gameObject.tag == "Note") {	//Note Exits the range of the speaker, 
@@ -68,17 +81,15 @@ public class Shooting : MonoBehaviour {
 			Destroy(other.gameObject);			//does not work maybe because note never collides 
 												//with speaker to begin with
 		}
+		if (this.gameObject.tag == "BarAoE") {
+			Groupie_Behaviour gScript = other.GetComponent<Groupie_Behaviour>();
+			gScript.moveSpeed += slowing;
+			//other.gameObject.moveSpeed -= 0.5;
+		}
 			
 
 	}
-	void OnCollisionExit2D(Collision2D other)			//Groupie exits the range of a speaker
-	{
-		if (other.gameObject.tag == "Note") {	//Note Exits the range of the speaker, 
-			Debug.Log ("DestroyNote");
-			Destroy(other.gameObject);			//does not work maybe because note never collides 
-			//with speaker to begin with
-		}
-	}
+
 	//public void AddEnemiesToList()
 	//{
 	//	GameObject[] ItemsInList = GameObject.FindGameObjectsWithTag("Destroy");
