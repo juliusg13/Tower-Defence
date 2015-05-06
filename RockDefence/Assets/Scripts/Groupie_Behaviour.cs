@@ -5,6 +5,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 	
 	public float moveSpeed;
 	public float health;
+	public bool drunk = false;
 	public Quaternion rotation = Quaternion.identity;
 
 	int stopSpeed = 0;
@@ -102,17 +103,29 @@ public class Groupie_Behaviour : MonoBehaviour {
 				Destroy (this.gameObject);
 			}
 		} else if (other.gameObject.tag == "Beer") {
-			if (moveSpeed > 0.3f)
-			{
-				Shooting gScript = other.GetComponent<Shooting>();
-				if(gScript != null)
-				{
-					moveSpeed -= gScript.slowing;
-				}
-			}
+
+			//if (moveSpeed > 0.3f)
+			//{
+				//Shooting gScript = other.GetComponent<Shooting>();
+				//if(gScript != null)
+				//{
+				
+					StartCoroutine(Slow ());
+					//Debug.Log("Dec");
+					//moveSpeed -= gScript.slowing;
+				//}
+			//}
 
 		}
 		
+	}
+	IEnumerator Slow()
+	{
+
+		moveSpeed = moveSpeed / 2;
+		yield return new WaitForSeconds (2);
+		moveSpeed = moveSpeed * 2;
+
 	}
 	
 	void OnCollisionEnter2D(Collision2D colis)

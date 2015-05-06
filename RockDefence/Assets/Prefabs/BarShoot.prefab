@@ -13,7 +13,7 @@ GameObject:
   - 58: {fileID: 5868388}
   m_Layer: 8
   m_Name: BarShoot
-  m_TagString: BarAoE
+  m_TagString: BarShootStraight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,6 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Note: {fileID: 191366, guid: 885582b5128b04d7c9bd79557147a705, type: 2}
+  BeerSpillSmall: {fileID: 0}
   fireRate: 2
   nextShot: 0
   allowFire: 1
