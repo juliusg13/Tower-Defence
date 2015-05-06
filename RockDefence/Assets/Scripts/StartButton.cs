@@ -6,12 +6,13 @@ public class StartButton : MonoBehaviour {
 	public GameObject groupie;
 	public GameObject YoungGroupie;
 	public GameObject OldGroupie;
-	public int GroupieCount;
+	//public int GroupieCount;
 	//public float length_between_groupies;
 	
 	public float x_coord_start;
 	public float y_coord_start;
 	bool gameOn = false;
+	bool level2 = false;
 	public Sprite RockHighlight;
 	public Sprite Rockon;
 	public float TimeBetweenLevel = 5;
@@ -25,13 +26,14 @@ public class StartButton : MonoBehaviour {
 	}
 	
 	void OnMouseDown() {
-		Debug.Log ("MousePressed");
+
 		if (gameOn == false) {
 			gameOn = true;
 
 			StartCoroutine (Level1());
-			StartCoroutine (WaitBetweenLevel());
-			Debug.Log ("Out of wait");
+		}
+		else if (level2 == true) {
+			StartCoroutine (Level2());
 
 		}
 	}
@@ -39,14 +41,30 @@ public class StartButton : MonoBehaviour {
 	IEnumerator WaitBetweenLevel()
 	{
 		yield return new WaitForSeconds (TimeBetweenLevel);
-		gameOn = false;
-		Debug.Log ("Wait");
+
 	}
 
 	IEnumerator Level1()
 	{	float z = -1f;
 		for (int i = 0; i < 10; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
+		StartCoroutine (WaitBetweenLevel());
+		level2 = true;
+	}
+
+	IEnumerator Level2()
+	{
+		float z = -1f;
+
+		for (int i = 0; i < 8; i++) {
+			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
+		yield return new WaitForSeconds (2f);
+		for (int i = 0; i < 5; i++) {
+			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
 	}
