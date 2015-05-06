@@ -54,7 +54,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d36d2caa9abc6b41b5d71ce836171c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: {fileID: 182836, guid: 87afbc4a21d4b9c40ab6b7fe703462a4, type: 2}
+  orange: {fileID: 103270, guid: 4aeb0c2eda43999428582c39c2166804, type: 2}
+  blue: {fileID: 146092, guid: 310f2f702bf7e1349a4f4a53da09e774, type: 2}
   highlight: {fileID: 21300000, guid: 9f05fe2bc75b27e46b2767bd37146c76, type: 3}
   normal: {fileID: 21300000, guid: 425e695e3751433428659cd0db44dd5a, type: 3}
 --- !u!212 &21245428
