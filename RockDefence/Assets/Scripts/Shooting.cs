@@ -6,6 +6,7 @@ using System.Linq;
 public class Shooting : MonoBehaviour {
 	
 	public GameObject Note; //Returns an error because it is not initialized
+	public GameObject BeerSpillSmall;
 	public float fireRate = 0.5f;
 	public double nextShot = 0.9;
 	public bool allowFire = true;
@@ -60,15 +61,23 @@ public class Shooting : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){		//Groupie enters the range of a speaker
 
 		if (other.gameObject.tag == "Destroy") {	
-
 			ObjectsInRange.Add (other.gameObject);
 		}
 		if (this.gameObject.tag == "BarAoE") {
 			Groupie_Behaviour gScript = other.GetComponent<Groupie_Behaviour>();
-			gScript.moveSpeed -= slowing;
+			gScript.moveSpeed /= slowing;
+			//StartCoroutine(SpillBeer());
 			//other.gameObject.moveSpeed -= 0.5;
 		}
 	}
+	//IEnumerator SpillBeer()
+//	{
+		
+//		Instantiate (BeerSpillSmall, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+	//	yield return new WaitForSeconds (2);
+
+		
+	//}
 	
 	void OnTriggerExit2D(Collider2D other)			//Groupie exits the range of a speaker
 	{
@@ -83,7 +92,7 @@ public class Shooting : MonoBehaviour {
 		}
 		if (this.gameObject.tag == "BarAoE") {
 			Groupie_Behaviour gScript = other.GetComponent<Groupie_Behaviour>();
-			gScript.moveSpeed += slowing;
+			gScript.moveSpeed *= slowing;
 			//other.gameObject.moveSpeed -= 0.5;
 		}
 			

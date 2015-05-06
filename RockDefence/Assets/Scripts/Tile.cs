@@ -33,8 +33,8 @@ public class Tile : MonoBehaviour {
 
 		if(c.isMenu == false) {
 
-			GameObject OBM = (GameObject)Instantiate(orange, new Vector3(x+0.2f,y-0.75f, -1), transform.rotation);
-			GameObject BBM = (GameObject)Instantiate(blue, new Vector3(x+0.9f,y-0.75f,-1), transform.rotation);
+			GameObject OBM = (GameObject)Instantiate(orange, new Vector3(x-0.3f,y, -1), transform.rotation);
+			GameObject BBM = (GameObject)Instantiate(blue, new Vector3(x+0.35f,y,-1), transform.rotation);
 			c.isMenu = true;
 
 			OBM.GetComponent<BuildMenu>().SourceTile = this.gameObject;
