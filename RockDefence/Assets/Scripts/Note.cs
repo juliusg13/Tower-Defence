@@ -5,11 +5,11 @@ public class Note : MonoBehaviour {
 	public float speed;
 	public Vector3 initialPos;
 	public GameObject target;
-	public Vector3 initialPosTarget;
+
 	public float radius;
 	// Use this for initialization
 	void Start () {
-		initialPosTarget = target.transform.position;
+
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
@@ -35,7 +35,6 @@ public class Note : MonoBehaviour {
 			float step = speed * Time.deltaTime;
 			transform.position = Vector3.MoveTowards (transform.position, target.transform.position, step);
 		}
-		Debug.Log (initialPosTarget.x);
 		if (transform.position.x > initialPos.x + 2*radius || transform.position.y > initialPos.y + 2*radius || transform.position.x < initialPos.x - 2*radius || transform.position.y < initialPos.y - 2*radius) {
 			Destroy (this.gameObject);
 		}
