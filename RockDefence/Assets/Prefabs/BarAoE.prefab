@@ -55,10 +55,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Note: {fileID: 191366, guid: 885582b5128b04d7c9bd79557147a705, type: 2}
+  BeerSpillSmall: {fileID: 163220, guid: 7ffae8bbe5298aa49b1f23875f030f28, type: 2}
   fireRate: 2
   nextShot: 0
   allowFire: 1
-  slowing: .200000003
+  slowing: 1.5
   ObjectsInRange: []
 --- !u!212 &21256144
 SpriteRenderer:
