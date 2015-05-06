@@ -5,11 +5,11 @@ public class Note : MonoBehaviour {
 	public float speed;
 	public Vector3 initialPos;
 	public GameObject target;
-	public Vector3 initialPosTarget;
+
 	public float radius;
 	// Use this for initialization
 	void Start () {
-		initialPosTarget = target.transform.position;
+
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){

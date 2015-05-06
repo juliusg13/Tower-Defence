@@ -12,8 +12,8 @@ GameObject:
   - 114: {fileID: 11440322}
   - 58: {fileID: 5868388}
   m_Layer: 8
-  m_Name: Bar
-  m_TagString: Buildable
+  m_Name: Bar 1
+  m_TagString: BarAoE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Note: {fileID: 191366, guid: 885582b5128b04d7c9bd79557147a705, type: 2}
-  fireRate: .5
+  fireRate: 2
   nextShot: 0
   allowFire: 1
   ObjectsInRange: []
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: aeaf2f4b53c4845ad8f59300232ab9ac, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: .00689649582, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
