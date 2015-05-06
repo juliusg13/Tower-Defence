@@ -35,7 +35,6 @@ public class Note : MonoBehaviour {
 			float step = speed * Time.deltaTime;
 			transform.position = Vector3.MoveTowards (transform.position, target.transform.position, step);
 		}
-		Debug.Log (initialPosTarget.x);
 		if (transform.position.x > initialPos.x + 2*radius || transform.position.y > initialPos.y + 2*radius || transform.position.x < initialPos.x - 2*radius || transform.position.y < initialPos.y - 2*radius) {
 			Destroy (this.gameObject);
 		}
