@@ -5,6 +5,7 @@ public class Tile : MonoBehaviour {
 
 	public GameObject orange;
 	public GameObject blue;
+	public GameObject TowerRange;
 
 	public bool built;
 
@@ -54,11 +55,17 @@ public class Tile : MonoBehaviour {
 		if (this.gameObject.tag == "Buildable") {
 			GetComponent<SpriteRenderer> ().sprite = highlight;
 		}
+		if (this.gameObject.tag == "MenuBarRange" || this.gameObject.tag == "MenuSpeakerRange") {
+			this.GetComponentInChildren<SpriteRenderer>().enabled = true;
+		}
 	}
 
 	void OnMouseExit() {
 		if (this.gameObject.tag == "Buildable") {
 			GetComponent<SpriteRenderer> ().sprite = normal;
 		}
+		/*if (this.gameObject.tag == "MenuBarRange" || this.gameObject.tag == "MenuSpeakerRange") {
+			this.GetComponentsInChildren<SpriteRenderer>().enabled = false;
+		}*/
 	}
 }

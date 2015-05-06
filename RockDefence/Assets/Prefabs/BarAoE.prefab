@@ -58,7 +58,7 @@ MonoBehaviour:
   fireRate: 2
   nextShot: 0
   allowFire: 1
-  slowing: 0
+  slowing: 2
   ObjectsInRange: []
 --- !u!212 &21256144
 SpriteRenderer:
