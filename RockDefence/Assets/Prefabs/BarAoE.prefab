@@ -12,8 +12,8 @@ GameObject:
   - 114: {fileID: 11440322}
   - 58: {fileID: 5868388}
   m_Layer: 8
-  m_Name: Bar
-  m_TagString: Bar
+  m_Name: BarAoE
+  m_TagString: BarAoE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,6 +58,7 @@ MonoBehaviour:
   fireRate: 2
   nextShot: 0
   allowFire: 1
+  slowing: 0
   ObjectsInRange: []
 --- !u!212 &21256144
 SpriteRenderer:

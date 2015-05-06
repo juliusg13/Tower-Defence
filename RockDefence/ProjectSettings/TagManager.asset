@@ -13,6 +13,8 @@ TagManager:
   - BarAoE
   - Beer
   - Bar
+  - BarShootStraight
+  - Speaker
   layers:
   - Default
   - TransparentFX

@@ -57,7 +57,6 @@ MonoBehaviour:
   speed: 3
   initialPos: {x: 0, y: 0, z: 0}
   target: {fileID: 186474, guid: fc966b3caaad1c94399922208e5d3efe, type: 2}
-  initialPosTarget: {x: 0, y: 0, z: 0}
   radius: 0
 --- !u!212 &21285040
 SpriteRenderer:
@@ -82,8 +81,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9f04317d51b72d64190e8980bacda166, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: e0d6ea5eb981a44b3aafe8d33a430edb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

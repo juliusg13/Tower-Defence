@@ -45,7 +45,7 @@ public class StartButton : MonoBehaviour {
 
 	IEnumerator Level1()
 	{	float z = -1f;
-		for (int i = 0; i < GroupieCount; i++) {
+		for (int i = 0; i < 10; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
