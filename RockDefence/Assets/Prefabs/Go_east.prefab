@@ -54,9 +54,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d36d2caa9abc6b41b5d71ce836171c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orange: {fileID: 102042, guid: 492e2ff3fe43b1b4ba3d8602777d1980, type: 2}
-  blue: {fileID: 130724, guid: af00af5fa4492b1438544a6eb44a26f9, type: 2}
-  TowerRange: {fileID: 176244, guid: 2a89b21f527253d48bef3838ed192f16, type: 2}
+  orange: {fileID: 175356, guid: 492e2ff3fe43b1b4ba3d8602777d1980, type: 2}
+  blue: {fileID: 114666, guid: af00af5fa4492b1438544a6eb44a26f9, type: 2}
+  TowerRange: {fileID: 124422, guid: 2a89b21f527253d48bef3838ed192f16, type: 2}
   built: 0
   highlight: {fileID: 21300000, guid: 9f05fe2bc75b27e46b2767bd37146c76, type: 3}
   normal: {fileID: 21300000, guid: 425e695e3751433428659cd0db44dd5a, type: 3}
