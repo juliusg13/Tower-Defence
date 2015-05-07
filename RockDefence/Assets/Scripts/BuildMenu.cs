@@ -29,8 +29,8 @@ public class BuildMenu : MonoBehaviour {
 		float y = this.transform.position.y;
 		
 		if (c.isMenu == true) {
-			if((this.gameObject.name == "Orange box(Clone)") && isBuilt == false){
-				GameObject BM = GameObject.Find ("Blue box(Clone)");
+			if((this.gameObject.tag == "MenuSpeakerRange") && isBuilt == false){
+				GameObject BM = GameObject.FindGameObjectWithTag ("MenuBarRange");
 				Instantiate(speaker, new Vector3(x+0.3f, y, 1), transform.rotation);
 				Destroy(this.gameObject);
 				Destroy (BM);
@@ -45,8 +45,8 @@ public class BuildMenu : MonoBehaviour {
 				
 				//built = true;
 			}
-			else if(this.gameObject.name == "Blue box(Clone)" && isBuilt == false){
-				GameObject OM = GameObject.Find ("Orange box(Clone)");
+			else if(this.gameObject.tag == "MenuBarRange" && isBuilt == false){
+				GameObject OM = GameObject.FindGameObjectWithTag ("MenuSpeakerRange");
 				Instantiate (bar, new Vector3(x-0.3f,y,1), transform.rotation);
 				Destroy(this.gameObject);
 				Destroy (OM);
