@@ -6,15 +6,15 @@ using UnityEngine.UI;
 public class StageScript : MonoBehaviour {
 
 	public int StageHealth;
-	public Text GameOverText;
-	public Button RestartButton;
 	public GameObject explosion;
+
+	Controller controller;
 
 	// Use this for initialization
 	void Start () {
 		StageHealth = 10;
-		GameOverText.text = "";
-
+		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent<Controller>();
+		Debug.Log (controller);
 	}
 	
 	// Update is called once per frame
@@ -29,10 +29,14 @@ public class StageScript : MonoBehaviour {
 			if(StageHealth == 0){
 				Destroy(this.gameObject);
 				Instantiate(explosion, transform.position, transform.rotation);
-				GameOverText.text = "ROCK OVER";
+				controller.GameOver();
 			}
 			Destroy(other.gameObject);
-			StageHealth = StageHealth - 1;
+			if(StageHealth > 0){
+				StageHealth = StageHealth - 1;
+			}
+			controller.DisplayStageHealth(StageHealth);
+
 		}
 	}
 }

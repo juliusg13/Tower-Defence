@@ -8,12 +8,15 @@ public class Groupie_Behaviour : MonoBehaviour {
 	public bool drunk = false;
 	public Quaternion rotation = Quaternion.identity;
 
+	private Controller controller;
+
 	int stopSpeed = 0;
 	//int direction = 1; // 0 = West, 1 = South, 2 = East.
 	string direction = "south"; 
 	
 	// Use this for initialization
 	void Start () {
+		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent<Controller>();
 		if (this.gameObject.name == "Groupie") {
 			moveSpeed = 0.4f;
 			health = 2;
@@ -104,10 +107,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 
 			if (health <= 0) {
 				Destroy (this.gameObject);
-				GameObject Controller = GameObject.Find ("Controller");
-				Controller gameController = Controller.GetComponent<Controller> ();
-				gameController.RockDollars = gameController.RockDollars + 2;
-				gameController.RockDollarText.text = "Rock Dollars: " + gameController.RockDollars.ToString ();
+				controller.IncreaseRockDollars();
 			}
 		} else if (other.gameObject.tag == "Beer") {
 

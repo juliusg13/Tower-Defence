@@ -6,12 +6,10 @@ public class BuildMenu : MonoBehaviour {
 	public GameObject speaker;
 	public GameObject bar;
 	public GameObject SourceTile;
-	public int SpeakerPrice;
-	public int BarPrice;
+
 	// Use this for initialization
 	void Start () {
-		SpeakerPrice = 10;
-		BarPrice = 20;
+	
 	}
 	
 	// Update is called once per frame
@@ -35,12 +33,7 @@ public class BuildMenu : MonoBehaviour {
 				Destroy (BM);
 				c.isMenu = false;
 				SourceTile.GetComponent<Tile> ().built = true;
-
-				if(c.RockDollars > 0){
-					c.RockDollars = c.RockDollars - SpeakerPrice;
-					c.RockDollarText.text = "Rock Dollars: " + c.RockDollars.ToString ();
-				}
-					
+				c.BuySpeaker();
 				//built = true;
 			}
 			else if(this.gameObject.name == "Blue box(Clone)" && isBuilt == false){
@@ -50,11 +43,7 @@ public class BuildMenu : MonoBehaviour {
 				Destroy (OM);
 				c.isMenu = false;
 				SourceTile.GetComponent<Tile> ().built = true;
-
-				if(c.RockDollars > 0){
-					c.RockDollars = c.RockDollars - BarPrice;
-					c.RockDollarText.text = "Rock Dollars: " + c.RockDollars.ToString ();
-				}
+				c.BuyBar();
 				//built = true;
 			}
 
