@@ -6,6 +6,7 @@ public class StartButton : MonoBehaviour {
 	public GameObject groupie;
 	public GameObject YoungGroupie;
 	public GameObject OldGroupie;
+	public CanvasGroup canvas;
 	//public int GroupieCount;
 	//public float length_between_groupies;
 	//public int Level 0;
@@ -28,6 +29,7 @@ public class StartButton : MonoBehaviour {
 	Controller c;
 	// Use this for initialization
 	void Start () {
+		canvas.alpha = 0;
 		GameObject cont = GameObject.Find ("Controller");
 		c = cont.GetComponent<Controller> ();
 	}
@@ -93,6 +95,7 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (1.4f);
 		}
 		StartCoroutine (WaitBetweenLevel());
+		canvas.alpha = 1;
 		level2 = true;
 	}
 
@@ -300,6 +303,7 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
+		canvas.alpha = 1;
 	}
 
 	void OnMouseEnter() {
