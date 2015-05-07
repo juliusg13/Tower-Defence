@@ -55,9 +55,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Note: {fileID: 191366, guid: 885582b5128b04d7c9bd79557147a705, type: 2}
-  BeerSpillSmall: {fileID: 0}
-  BeerSpillMedium: {fileID: 0}
-  BeerSpillBig: {fileID: 0}
+  BeerSpillSmall: {fileID: 163220, guid: 7ffae8bbe5298aa49b1f23875f030f28, type: 2}
+  BeerSpillMedium: {fileID: 163220, guid: 2d5e9fbbfc120054a8a90201c224e8ae, type: 2}
+  BeerSpillBig: {fileID: 163220, guid: 89fc6c357de6c3141baee198193de563, type: 2}
   fireRate: 2
   nextShot: 0
   allowFire: 1

@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speaker: {fileID: 0}
-  bar: {fileID: 182836, guid: 3ef7acf9ccc46d34488efb2bdf35fcd2, type: 2}
+  bar: {fileID: 182836, guid: c472e43c263fcb546a8092f1f31ae22e, type: 2}
   SourceTile: {fileID: 0}
   Circle: {fileID: 124422, guid: 2a89b21f527253d48bef3838ed192f16, type: 2}
   SpeakerPrice: 0
