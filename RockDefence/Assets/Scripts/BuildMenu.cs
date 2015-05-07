@@ -65,19 +65,20 @@ public class BuildMenu : MonoBehaviour {
 	}
 
 	void OnMouseEnter() {
-		float x = this.transform.position.x;
-		float y = this.transform.position.y;
+
+		float x = SourceTile.GetComponent<Tile> ().transform.position.x;
+		float y = SourceTile.GetComponent<Tile> ().transform.position.y;
 		
-		if (this.gameObject.tag == "MenuBarRange") {
+		if (this.gameObject.tag == "MenuBarRange" || this.gameObject.tag == "MenuSpeakerRange") {
 			//this.GetComponentInChildren<SpriteRenderer>().color = new Color(255f, 255f, 0, 1);
 			GameObject Circle1 = (GameObject)Instantiate(Circle, new Vector3(x, y, -1), transform.rotation);
 			Circle1.GetComponent<SpriteRenderer>().enabled = true;
 		}
-		if (this.gameObject.name == "MenuSpeakerRange") {
+		/*if (this.gameObject.name == "MenuSpeakerRange") {
 			//this.GetComponentInChildren<SpriteRenderer>().color = new Color(255f, 255f, 0, 1);
 			GameObject Circle1 = (GameObject)Instantiate(Circle, new Vector3(x, y, -1), transform.rotation);
 			Circle1.GetComponent<SpriteRenderer>().enabled = true;
-		}
+		}*/
 		
 	}
 	void OnMouseExit() {
