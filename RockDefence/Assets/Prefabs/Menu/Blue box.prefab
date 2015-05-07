@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &114666
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +29,7 @@ GameObject:
   - 61: {fileID: 6177016}
   m_Layer: 8
   m_Name: Blue box
-  m_TagString: Untagged
+  m_TagString: MenuBarRange
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,8 +84,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speaker: {fileID: 0}
-  bar: {fileID: 182836, guid: c472e43c263fcb546a8092f1f31ae22e, type: 2}
+  bar: {fileID: 182836, guid: 3ef7acf9ccc46d34488efb2bdf35fcd2, type: 2}
   SourceTile: {fileID: 0}
+  Circle: {fileID: 124422, guid: 2a89b21f527253d48bef3838ed192f16, type: 2}
   SpeakerPrice: 0
   BarPrice: 0
 --- !u!212 &21221336
@@ -111,7 +112,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 1d67b3ed8950b994e8a9ad14ee138deb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21231434
@@ -120,7 +121,7 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114612}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
