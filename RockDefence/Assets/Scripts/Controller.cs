@@ -11,6 +11,7 @@ public class Controller : MonoBehaviour {
 	public Text RockDollarText;
 	public Text StageHealthText;
 	public Text GameOverText;
+	public int Level;
 
 	public CanvasGroup canvas;
 	private StageScript stage;
@@ -28,11 +29,17 @@ public class Controller : MonoBehaviour {
 		GameOverText.text = "";
 		RockDollarText.text = "Rock Dollars: " + RockDollars.ToString ();
 		StageHealthText.text = "Band Moral: " + stage.StageHealth.ToString();
+		Level = 1;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void Levelspawner(){
+
+
 	}
 
 	public void DisplayStageHealth(int StageHealth){

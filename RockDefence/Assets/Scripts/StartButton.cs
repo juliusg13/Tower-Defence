@@ -88,9 +88,9 @@ public class StartButton : MonoBehaviour {
 	}
 	IEnumerator Level1()
 	{	float z = -1f;
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 3; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-			yield return new WaitForSeconds (0.9f);
+			yield return new WaitForSeconds (1.4f);
 		}
 		StartCoroutine (WaitBetweenLevel());
 		level2 = true;
@@ -98,9 +98,9 @@ public class StartButton : MonoBehaviour {
 
 	IEnumerator Level2()
 	{	float z = -1f;
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 5; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-			yield return new WaitForSeconds (0.5f);
+			yield return new WaitForSeconds (0.8f);
 		}
 		StartCoroutine (WaitBetweenLevel());
 		level3 = true;
@@ -112,12 +112,7 @@ public class StartButton : MonoBehaviour {
 
 		for (int i = 0; i < 8; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-			yield return new WaitForSeconds (0.5f);
-		}
-		yield return new WaitForSeconds (1.6f);
-		for (int i = 0; i < 5; i++) {
-			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-			yield return new WaitForSeconds (0.5f);
+			yield return new WaitForSeconds (0.6f);
 		}
 		StartCoroutine (WaitBetweenLevel());
 		level4 = true;
@@ -126,23 +121,15 @@ public class StartButton : MonoBehaviour {
 	IEnumerator Level4()
 	{
 		float z = -1f;
-
-		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-		yield return new WaitForSeconds (1f);
-
-		for (int i = 0; i < 4; i++) {
-			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-			yield return new WaitForSeconds (0.5f);
-		}
-		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-		for (int i = 0; i < 4; i++) {
+		
+		for (int i = 0; i < 8; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
 		yield return new WaitForSeconds (1.6f);
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 3; i++) {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-			yield return new WaitForSeconds (0.5f);
+			yield return new WaitForSeconds (0.6f);
 		}
 		StartCoroutine (WaitBetweenLevel());
 		level5 = true;
@@ -152,20 +139,12 @@ public class StartButton : MonoBehaviour {
 	{
 		float z = -1f;
 		
-		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-		yield return new WaitForSeconds (1f);
-		
-		for (int i = 0; i < 4; i++) {
-			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-			yield return new WaitForSeconds (0.5f);
-		}
-		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 8; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
 		yield return new WaitForSeconds (1.6f);
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 7; i++) {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
@@ -176,20 +155,19 @@ public class StartButton : MonoBehaviour {
 	IEnumerator Level6()
 	{
 		float z = -1f;
-		
 		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+		yield return new WaitForSeconds (2f);
+		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+		for (int i = 0; i < 4; i++) {
+			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
+		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+		for (int i = 0; i < 4; i++) {
+			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
 		yield return new WaitForSeconds (1f);
-		
-		for (int i = 0; i < 4; i++) {
-			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-			yield return new WaitForSeconds (0.5f);
-		}
-		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-		for (int i = 0; i < 4; i++) {
-			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-			yield return new WaitForSeconds (0.5f);
-		}
-		yield return new WaitForSeconds (1.6f);
 		for (int i = 0; i < 5; i++) {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
@@ -202,7 +180,10 @@ public class StartButton : MonoBehaviour {
 	{
 		float z = -1f;
 		
-		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+		for (int i = 0; i < 3; i++) {
+			Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
 		yield return new WaitForSeconds (1f);
 		
 		for (int i = 0; i < 4; i++) {
@@ -226,8 +207,10 @@ public class StartButton : MonoBehaviour {
 	IEnumerator Level8()
 	{
 		float z = -1f;
-		
-		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+		for (int i = 0; i < 3; i++) {
+			Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
 		yield return new WaitForSeconds (1f);
 		
 		for (int i = 0; i < 4; i++) {
@@ -244,6 +227,11 @@ public class StartButton : MonoBehaviour {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
+		yield return new WaitForSeconds (1f);
+		for (int i = 0; i < 4; i++) {
+			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
 		StartCoroutine (WaitBetweenLevel());
 		level9 = true;
 	}
@@ -252,20 +240,28 @@ public class StartButton : MonoBehaviour {
 	{
 		float z = -1f;
 		
-		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+		for (int i = 0; i < 5; i++) {
+			Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
 		yield return new WaitForSeconds (1f);
 		
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 5; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-			yield return new WaitForSeconds (0.5f);
+			yield return new WaitForSeconds (0.3f);
 		}
 		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 		for (int i = 0; i < 4; i++) {
-			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
 		yield return new WaitForSeconds (1.6f);
 		for (int i = 0; i < 5; i++) {
+			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
+		yield return new WaitForSeconds (1f);
+		for (int i = 0; i < 4; i++) {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
@@ -277,36 +273,33 @@ public class StartButton : MonoBehaviour {
 	{
 		float z = -1f;
 		
-		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+		for (int i = 0; i < 6; i++) {
+			Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.5f);
+		}
 		yield return new WaitForSeconds (1f);
 		
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 7; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+			yield return new WaitForSeconds (0.3f);
+		}
+		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+		for (int i = 0; i < 6; i++) {
+			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
 		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-		for (int i = 0; i < 4; i++) {
+		yield return new WaitForSeconds (1.6f);
+		for (int i = 0; i < 7; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
-		yield return new WaitForSeconds (1.6f);
-		for (int i = 0; i < 5; i++) {
+		yield return new WaitForSeconds (1f);
+		for (int i = 0; i < 6; i++) {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-	}
-
-
-
-	IEnumerator WaitOneSecond()
-	{
-		yield return new WaitForSeconds (1f);
-	}
-
-	IEnumerator WaitTwoSecond()
-	{
-		yield return new WaitForSeconds (2f);
 	}
 
 	void OnMouseEnter() {
@@ -321,15 +314,6 @@ public class StartButton : MonoBehaviour {
 }
 
 
-
-//public void AddEnemiesToList()
-//{
-//	GameObject[] ItemsInList = GameObject.FindGameObjectsWithTag("Destroy");
-//	foreach(GameObject _Enemy in ItemsInList)
-//	{
-//		AddTarget(_Enemy.transform);
-//	}
-//}
 
 
 

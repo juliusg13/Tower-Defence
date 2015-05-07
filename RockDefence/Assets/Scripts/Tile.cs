@@ -5,7 +5,7 @@ public class Tile : MonoBehaviour {
 
 	public GameObject orange;
 	public GameObject blue;
-
+	public GameObject Circle;
 	public bool built;
 
 	public Sprite highlight;
@@ -25,6 +25,12 @@ public class Tile : MonoBehaviour {
 
 	}*/
 
+	void DestroyCircleIfExists(){
+		if(GameObject.FindGameObjectWithTag("MenuChild")){
+			Destroy (GameObject.FindGameObjectWithTag("MenuChild"));
+		}
+	}
+
 	void OnMouseDown() {
 
 		float x = this.transform.position.x;
@@ -34,13 +40,16 @@ public class Tile : MonoBehaviour {
 		Controller c = cont.GetComponent<Controller> ();
 
 		if (c.GameLost == false) {
-
-			if (c.isMenu == false) {
+			if(this.built == true || this.tag == "MenuSpeakerRange" || this.tag == "MenuBarRange") {
+				DestroyCircleIfExists();
+				Instantiate(Circle, new Vector3(x, y, -1), transform.rotation);
+			}
+			else if (c.isMenu == false) {
 
 				GameObject OBM = (GameObject)Instantiate (orange, new Vector3 (x - 0.3f, y, -1), transform.rotation);
 				GameObject BBM = (GameObject)Instantiate (blue, new Vector3 (x + 0.35f, y, -1), transform.rotation);
 				c.isMenu = true;
-
+				DestroyCircleIfExists();
 				OBM.GetComponent<BuildMenu> ().SourceTile = this.gameObject;
 				BBM.GetComponent<BuildMenu> ().SourceTile = this.gameObject;
 				//Instantiate (speaker, new Vector3 (x, y, 1), transform.rotation);
@@ -50,6 +59,7 @@ public class Tile : MonoBehaviour {
 				GameObject BM = GameObject.Find ("Blue box(Clone)");
 				Destroy (OM);
 				Destroy (BM);
+				DestroyCircleIfExists();
 				c.isMenu = false;
 			}
 		}
