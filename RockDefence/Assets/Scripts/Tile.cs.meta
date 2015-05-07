@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: 5d36d2caa9abc6b41b5d71ce836171c4
-timeCreated: 1430830124
+timeCreated: 1431006681
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - orange: {fileID: 175356, guid: 492e2ff3fe43b1b4ba3d8602777d1980, type: 2}
+  - blue: {fileID: 114666, guid: af00af5fa4492b1438544a6eb44a26f9, type: 2}
+  - TowerRange: {fileID: 124422, guid: 2a89b21f527253d48bef3838ed192f16, type: 2}
+  - highlight: {instanceID: 0}
+  - normal: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
