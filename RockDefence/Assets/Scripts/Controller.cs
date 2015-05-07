@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour {
 	public bool isMenu;
+	public bool GameLost;
 	public int RockDollars;
 	public int SpeakerPrice;
 	public int BarPrice;
@@ -36,9 +37,12 @@ public class Controller : MonoBehaviour {
 
 	public void GameOver(){
 		GameOverText.text = "ROCK OVER";
+		//Time.timeScale = 0;
+		GameLost = true;
 	}
 
 	public void BuySpeaker(){
+		if (RockDollars >= SpeakerPrice) {
 			RockDollars = RockDollars - SpeakerPrice;
 			RockDollarText.text = "Rock Dollars: " + RockDollars.ToString ();
 		}
