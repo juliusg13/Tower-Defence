@@ -37,6 +37,10 @@ public class BuildMenu : MonoBehaviour {
 				c.isMenu = false;
 				SourceTile.GetComponent<Tile> ().built = true;
 
+				if(GameObject.FindGameObjectWithTag("MenuChild")){
+					Destroy (GameObject.FindGameObjectWithTag("MenuChild"));
+				}
+
 				if(c.RockDollars > 0){
 					c.RockDollars = c.RockDollars - SpeakerPrice;
 					c.RockDollarText.text = "Rock Dollars: " + c.RockDollars.ToString ();
@@ -51,6 +55,9 @@ public class BuildMenu : MonoBehaviour {
 				Destroy (OM);
 				c.isMenu = false;
 				SourceTile.GetComponent<Tile> ().built = true;
+				if(GameObject.FindGameObjectWithTag("MenuChild")){
+					Destroy (GameObject.FindGameObjectWithTag("MenuChild"));
+				}
 
 				if(c.RockDollars > 0){
 					c.RockDollars = c.RockDollars - BarPrice;
