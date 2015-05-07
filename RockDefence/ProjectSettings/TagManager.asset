@@ -17,6 +17,8 @@ TagManager:
   - Speaker
   - MenuSpeakerRange
   - MenuBarRange
+  - MenuChild
+  - NumberOfLevel
   layers:
   - Default
   - TransparentFX

@@ -8,10 +8,10 @@ public class StartButton : MonoBehaviour {
 	public GameObject OldGroupie;
 	//public int GroupieCount;
 	//public float length_between_groupies;
-	
+	//public int Level 0;
 	public float x_coord_start;
 	public float y_coord_start;
-	bool gameOn = false;
+	bool GameOn = false;
 	bool level2 = false;
 	bool level3 = false; 
 	bool level4 = false;
@@ -36,8 +36,8 @@ public class StartButton : MonoBehaviour {
 	
 	void OnMouseDown() {
 
-		if (gameOn == false) {
-			gameOn = true;
+		if (GameOn == false) {
+			GameOn = true;
 
 			StartCoroutine (Level1());
 		}
