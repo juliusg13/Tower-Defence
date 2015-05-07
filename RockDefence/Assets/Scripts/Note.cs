@@ -13,7 +13,7 @@ public class Note : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "Groupie" ) {
+		if (other.gameObject.tag == "Destroy" ) {
 			Destroy (this.gameObject);
 		}
 
