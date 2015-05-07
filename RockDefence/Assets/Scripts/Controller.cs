@@ -12,10 +12,14 @@ public class Controller : MonoBehaviour {
 	public Text StageHealthText;
 	public Text GameOverText;
 
+	public CanvasGroup canvas;
 	private StageScript stage;
-
-	// Use this for initialization
+	
+		
+		// Use this for initialization
 	void Start () {
+		canvas.alpha = 0;
+		canvas.interactable = false;
 		SpeakerPrice = 10;
 		BarPrice = 20;
 		stage = GameObject.FindGameObjectWithTag ("Stage").GetComponent<StageScript>();
@@ -37,8 +41,14 @@ public class Controller : MonoBehaviour {
 
 	public void GameOver(){
 		GameOverText.text = "ROCK OVER";
+		canvas.alpha = 1;
+		canvas.interactable = true;
 		//Time.timeScale = 0;
 		GameLost = true;
+	}
+
+	public void RestartLevel(){
+		Application.LoadLevel(Application.loadedLevel);
 	}
 
 	public void BuySpeaker(){

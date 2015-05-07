@@ -19,6 +19,8 @@ TagManager:
   - MenuBarRange
   - MenuChild
   - NumberOfLevel
+  - Stage
+  - RestartButton
   layers:
   - Default
   - TransparentFX

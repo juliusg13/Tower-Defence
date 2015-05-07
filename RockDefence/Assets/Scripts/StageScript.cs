@@ -14,7 +14,6 @@ public class StageScript : MonoBehaviour {
 	void Start () {
 		StageHealth = 10;
 		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent<Controller>();
-		Debug.Log (controller);
 	}
 	
 	// Update is called once per frame

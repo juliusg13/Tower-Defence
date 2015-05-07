@@ -40,12 +40,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMenu: 0
+  GameLost: 0
   RockDollars: 0
   SpeakerPrice: 0
   BarPrice: 0
-  RockDollarText: {fileID: 0}
-  StageHealthText: {fileID: 0}
-  GameOverText: {fileID: 0}
+  RockDollarText: {fileID: 11425508, guid: b185618c35c5e224db1b957def2ad8e9, type: 2}
+  StageHealthText: {fileID: 11422012, guid: b185618c35c5e224db1b957def2ad8e9, type: 2}
+  GameOverText: {fileID: 11416210, guid: b185618c35c5e224db1b957def2ad8e9, type: 2}
+  canvas: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

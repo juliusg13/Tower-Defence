@@ -19,7 +19,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent<Controller>();
 		if (this.gameObject.name == "Groupie") {
 			moveSpeed = 0.4f;
-			health = 2;
+			health = 10;
 		} else if (this.gameObject.name == "YoungGroupie") {
 			moveSpeed = 0.6f;
 			health = 5;
