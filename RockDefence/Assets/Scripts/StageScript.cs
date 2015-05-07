@@ -25,16 +25,16 @@ public class StageScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 
 		if (other.gameObject.tag == "Destroy") {
-
+			if(StageHealth > 0){
+				StageHealth = StageHealth - 1;
+			}
 			if(StageHealth == 0){
 				Destroy(this.gameObject);
 				Instantiate(explosion, transform.position, transform.rotation);
 				controller.GameOver();
 			}
 			Destroy(other.gameObject);
-			if(StageHealth > 0){
-				StageHealth = StageHealth - 1;
-			}
+
 			controller.DisplayStageHealth(StageHealth);
 
 		}
