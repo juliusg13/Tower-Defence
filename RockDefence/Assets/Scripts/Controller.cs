@@ -21,8 +21,8 @@ public class Controller : MonoBehaviour {
 	void Start () {
 		canvas.alpha = 0;
 		canvas.interactable = false;
-		SpeakerPrice = 10;
-		BarPrice = 20;
+		SpeakerPrice = 40;
+		BarPrice = 60;
 		stage = GameObject.FindGameObjectWithTag ("Stage").GetComponent<StageScript>();
 		isMenu = false;
 		RockDollars = 100;
