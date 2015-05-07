@@ -25,6 +25,7 @@ public class StartButton : MonoBehaviour {
 	public Sprite Rockon;
 	public float TimeBetweenLevel = 5;
 	public GameObject Nolvl;
+
 	Controller c;
 	// Use this for initialization
 	void Start () {
@@ -85,21 +86,23 @@ public class StartButton : MonoBehaviour {
 		
 	}
 	IEnumerator Level1()
-	{	float z = -1f;
-
-
+	{	Level++;
+		float z = -1f;
+		this.GetComponent<AudioSource> ().Play ();
 		for (int i = 0; i < 3; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (1.4f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		Level++;
+
 
 		//level2 = true;
 	}
 	
 	IEnumerator Level2()
-	{	Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
+	{			Level++;
+		this.GetComponent<AudioSource> ().Play ();
+		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
 		Nolvl.GetComponent<SpriteRenderer> ().sprite = Two;
 		float z = -1f;
 		//if (this.gameObject.tag == "NumberOfLvl") {
@@ -111,14 +114,15 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.8f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		Level++;
+	
 
 		//level3 = true;
 	}
 	
 	IEnumerator Level3()
-	{	
+	{	Level++;
 		float z = -1f;
+		this.GetComponent<AudioSource> ().Play ();
 		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
 		Nolvl.GetComponent<SpriteRenderer> ().sprite = Three;
 		for (int i = 0; i < 8; i++) {
@@ -126,14 +130,15 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.6f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		Level++;
+
 
 		//level4 = true;
 	}
 	
 	IEnumerator Level4()
-	{
+	{	Level++;
 		float z = -1f;
+		this.GetComponent<AudioSource> ().Play ();
 		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
 		Nolvl.GetComponent<SpriteRenderer> ().sprite = Four;
 		for (int i = 0; i < 8; i++) {
@@ -146,14 +151,15 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.6f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		Level++;
+
 
 		//level5 = true;
 	}
 	
 	IEnumerator Level5()
-	{
+	{	Level++;
 		float z = -1f;
+		this.GetComponent<AudioSource> ().Play ();
 		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
 		Nolvl.GetComponent<SpriteRenderer> ().sprite = Five;
 		for (int i = 0; i < 8; i++) {
@@ -166,14 +172,15 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		Level++;
+
 
 		//level6 = true;
 	}
 	
 	IEnumerator Level6()
-	{
+	{	Level++;
 		float z = -1f;
+		this.GetComponent<AudioSource> ().Play ();
 		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
 		Nolvl.GetComponent<SpriteRenderer> ().sprite = Six;
 		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
@@ -194,13 +201,14 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		Level++;
+
 		//level7 = true;
 	}
 	
 	IEnumerator Level7()
-	{
+	{	Level++;
 		float z = -1f;
+		this.GetComponent<AudioSource> ().Play ();
 		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
 		Nolvl.GetComponent<SpriteRenderer> ().sprite = Seven;
 
@@ -225,13 +233,14 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		Level++;
+
 		//level8 = true;
 	}
 	
 	IEnumerator Level8()
-	{
+	{	Level++;
 		float z = -1f;
+		this.GetComponent<AudioSource> ().Play ();
 		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
 		Nolvl.GetComponent<SpriteRenderer> ().sprite = Eight;
 		for (int i = 0; i < 3; i++) {
@@ -260,13 +269,14 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		Level++;
+
 		//level9 = true;
 	}
 	
 	IEnumerator Level9()
-	{
+	{	Level++;
 		float z = -1f;
+		this.GetComponent<AudioSource> ().Play ();
 		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
 		Nolvl.GetComponent<SpriteRenderer> ().sprite = Nine;
 
@@ -296,13 +306,14 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		Level++;
+
 		//level10 = true;
 	}
 	
 	IEnumerator Level10()
-	{
+	{Level++;
 		float z = -1f;
+		this.GetComponent<AudioSource> ().Play ();
 		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
 		Nolvl.GetComponent<SpriteRenderer> ().sprite = Ten;
 		for (int i = 0; i < 15; i++) {
