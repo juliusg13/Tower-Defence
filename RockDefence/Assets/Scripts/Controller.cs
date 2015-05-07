@@ -39,14 +39,13 @@ public class Controller : MonoBehaviour {
 	}
 
 	public void BuySpeaker(){
-		if(RockDollars > 0){
 			RockDollars = RockDollars - SpeakerPrice;
 			RockDollarText.text = "Rock Dollars: " + RockDollars.ToString ();
 		}
 	}
 
 	public void BuyBar(){
-		if(RockDollars > 0){
+		if(RockDollars >= BarPrice){
 			RockDollars = RockDollars - BarPrice;
 			RockDollarText.text = "Rock Dollars: " + RockDollars.ToString ();
 		}

@@ -29,7 +29,7 @@ public class BuildMenu : MonoBehaviour {
 		float y = this.transform.position.y;
 		
 		if (c.isMenu == true) {
-			if((this.gameObject.tag == "MenuSpeakerRange") && isBuilt == false){
+			if((this.gameObject.tag == "MenuSpeakerRange") && (isBuilt == false) && (c.RockDollars >= c.SpeakerPrice)){
 				GameObject BM = GameObject.FindGameObjectWithTag ("MenuBarRange");
 				Instantiate(speaker, new Vector3(x+0.3f, y, 1), transform.rotation);
 				Destroy(this.gameObject);
@@ -45,7 +45,7 @@ public class BuildMenu : MonoBehaviour {
 				
 				//built = true;
 			}
-			else if(this.gameObject.tag == "MenuBarRange" && isBuilt == false){
+			else if(this.gameObject.tag == "MenuBarRange" && (isBuilt == false) && (c.RockDollars >= c.BarPrice)){
 				GameObject OM = GameObject.FindGameObjectWithTag ("MenuSpeakerRange");
 				Instantiate (bar, new Vector3(x-0.3f,y,1), transform.rotation);
 				Destroy(this.gameObject);
