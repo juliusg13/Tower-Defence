@@ -40,16 +40,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702e6c7f3330f4309b462861ea3e312a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  One: {fileID: 0}
-  Two: {fileID: 0}
-  Three: {fileID: 0}
-  Four: {fileID: 0}
-  Five: {fileID: 0}
-  Six: {fileID: 0}
-  Seven: {fileID: 0}
-  Eight: {fileID: 0}
-  Nine: {fileID: 0}
-  Ten: {fileID: 0}
+  NumberOfLvl:
+  - {fileID: 21300000, guid: faf0b902ceaa14faea664f3c055e456d, type: 3}
+  - {fileID: 21300000, guid: bc90ef5bc6a4c49e6a168fce44c4ff49, type: 3}
+  - {fileID: 21300000, guid: 5886333c963aa48cd920caa1ae98e406, type: 3}
+  - {fileID: 21300000, guid: 01dba047b0857482cb327c9ed4a98913, type: 3}
+  - {fileID: 21300000, guid: 88c878245c192403b98319c47ec40541, type: 3}
+  - {fileID: 21300000, guid: 43339d0534d16440c9a409826fb37793, type: 3}
+  - {fileID: 21300000, guid: 938a4df99d0e347869ad144111a25169, type: 3}
+  - {fileID: 21300000, guid: 69fbd74e38d0d4b0e98d77d28e09b117, type: 3}
+  - {fileID: 21300000, guid: 9b048b4d852c54fa3907054af7a66283, type: 3}
+  - {fileID: 21300000, guid: f88533ee6e88343069503e09bbf7ad7c, type: 3}
 --- !u!212 &21258830
 SpriteRenderer:
   m_ObjectHideFlags: 1
