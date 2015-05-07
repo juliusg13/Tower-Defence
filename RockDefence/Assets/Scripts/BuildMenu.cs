@@ -6,6 +6,7 @@ public class BuildMenu : MonoBehaviour {
 	public GameObject speaker;
 	public GameObject bar;
 	public GameObject SourceTile;
+	public GameObject Circle;
 	public int SpeakerPrice;
 	public int BarPrice;
 	// Use this for initialization
@@ -61,5 +62,32 @@ public class BuildMenu : MonoBehaviour {
 			
 		}
 
+	}
+
+	void OnMouseEnter() {
+		float x = this.transform.position.x;
+		float y = this.transform.position.y;
+		
+		if (this.gameObject.tag == "MenuBarRange") {
+			//this.GetComponentInChildren<SpriteRenderer>().color = new Color(255f, 255f, 0, 1);
+			GameObject Circle1 = (GameObject)Instantiate(Circle, new Vector3(x, y, -1), transform.rotation);
+			Circle1.GetComponent<SpriteRenderer>().enabled = true;
+		}
+		if (this.gameObject.name == "MenuSpeakerRange") {
+			//this.GetComponentInChildren<SpriteRenderer>().color = new Color(255f, 255f, 0, 1);
+			GameObject Circle1 = (GameObject)Instantiate(Circle, new Vector3(x, y, -1), transform.rotation);
+			Circle1.GetComponent<SpriteRenderer>().enabled = true;
+		}
+		
+	}
+	void OnMouseExit() {
+		if (this.gameObject.tag == "MenuBarRange" || this.gameObject.tag == "MenuSpeakerRange") {
+			//while(GameObject.FindGameObjectWithTag("MenuChild") != null){
+			GameObject Circle1 = GameObject.FindGameObjectWithTag("MenuChild");
+			
+			Destroy(Circle1);
+			//}
+		}
+		
 	}
 }
