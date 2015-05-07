@@ -38,3 +38,5 @@ RockDefence/Assets/Scenes/Ofurscene-idhansBrynjar.unity.meta
 RockDefence/Assets/Sprites/Groupie.meta
 RockDefence/Assets/Sprites/Groupie.meta
 RockDefence/Assets/Sprites/Towers.meta
+
+RockDefence/Assets/Scripts/StartButton.cs
