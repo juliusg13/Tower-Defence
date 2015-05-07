@@ -2,29 +2,29 @@
 using System.Collections;
 
 public class StartButton : MonoBehaviour {
-
+	
 	public GameObject groupie;
 	public GameObject YoungGroupie;
 	public GameObject OldGroupie;
-	//public int GroupieCount;
-	//public float length_between_groupies;
-	//public int Level 0;
+	public Sprite One;
+	public Sprite Two;
+	public Sprite Three;
+	public Sprite Four;
+	public Sprite Five;
+	public Sprite Six;
+	public Sprite Seven;
+	public Sprite Eight;
+	public Sprite Nine;
+	public Sprite Ten;
 	public float x_coord_start;
 	public float y_coord_start;
 	bool GameOn = false;
-	bool level2 = false;
-	bool level3 = false; 
-	bool level4 = false;
-	bool level5 = false;
-	bool level6 = false;
-	bool level7 = false;
-	bool level8 = false;
-	bool level9 = false;
-	bool level10 = false;
-
+	public int Level = 1;
+	public Sprite[] NumberOfLvl;
 	public Sprite RockHighlight;
 	public Sprite Rockon;
 	public float TimeBetweenLevel = 5;
+	public GameObject Nolvl;
 	Controller c;
 	// Use this for initialization
 	void Start () {
@@ -40,88 +40,102 @@ public class StartButton : MonoBehaviour {
 		if (c.GameLost == false) {
 			if (GameOn == false) {
 				GameOn = true;
-
-				StartCoroutine (Level1 ());
-			} else if (level2 == true) {
-				level2 = false;
+				if (Level == 1) {
+					StartCoroutine (Level1 ());
+				}
+			} else if (Level == 2) {
 				StartCoroutine (Level2 ());
-			} else if (level3 == true) {
-				level3 = false;
-				StartCoroutine (Level3 ());
+			} else if (Level == 3) {
 				
-			} else if (level4 == true) {
-				level4 = false;
+				StartCoroutine (Level3 ());	
+			} else if (Level == 4) {
+				
 				StartCoroutine (Level4 ());
 				
-			} else if (level5 == true) {
-				level5 = false;
+			} else if (Level == 5) {
+				
 				StartCoroutine (Level5 ());
 				
-			} else if (level6 == true) {
-				level6 = false;
+			} else if (Level == 6) {
+				
 				StartCoroutine (Level6 ());
 				
-			} else if (level7 == true) {
-				level7 = false;
+			} else if (Level == 7) {
+				
 				StartCoroutine (Level7 ());
 				
-			} else if (level8 == true) {
-				level8 = false;
+			} else if (Level == 8) {
 				StartCoroutine (Level8 ());
 				
-			} else if (level9 == true) {
-				level9 = false;
+			} else if (Level == 9) {
 				StartCoroutine (Level9 ());
 				
-			} else if (level10 == true) {
-				level10 = false;
+			} else if (Level == 10) {
 				StartCoroutine (Level10 ());
 				
 			}
+			
 		}
 	}
+	
 
 	IEnumerator WaitBetweenLevel()
 	{
 		yield return new WaitForSeconds (TimeBetweenLevel);
-
+		
 	}
 	IEnumerator Level1()
 	{	float z = -1f;
+
+
 		for (int i = 0; i < 3; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (1.4f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		level2 = true;
-	}
+		Level++;
 
+		//level2 = true;
+	}
+	
 	IEnumerator Level2()
-	{	float z = -1f;
+	{	Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
+		Nolvl.GetComponent<SpriteRenderer> ().sprite = Two;
+		float z = -1f;
+		//if (this.gameObject.tag == "NumberOfLvl") {
+		//	GetComponent<SpriteRenderer> ().sprite = Two;
+		//}
+
 		for (int i = 0; i < 5; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.8f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		level3 = true;
+		Level++;
+
+		//level3 = true;
 	}
-
+	
 	IEnumerator Level3()
-	{
+	{	
 		float z = -1f;
-
+		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
+		Nolvl.GetComponent<SpriteRenderer> ().sprite = Three;
 		for (int i = 0; i < 8; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.6f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		level4 = true;
-	}
+		Level++;
 
+		//level4 = true;
+	}
+	
 	IEnumerator Level4()
 	{
 		float z = -1f;
-		
+		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
+		Nolvl.GetComponent<SpriteRenderer> ().sprite = Four;
 		for (int i = 0; i < 8; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
@@ -132,13 +146,16 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.6f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		level5 = true;
-	}
+		Level++;
 
+		//level5 = true;
+	}
+	
 	IEnumerator Level5()
 	{
 		float z = -1f;
-		
+		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
+		Nolvl.GetComponent<SpriteRenderer> ().sprite = Five;
 		for (int i = 0; i < 8; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
@@ -149,12 +166,16 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		level6 = true;
-	}
+		Level++;
 
+		//level6 = true;
+	}
+	
 	IEnumerator Level6()
 	{
 		float z = -1f;
+		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
+		Nolvl.GetComponent<SpriteRenderer> ().sprite = Six;
 		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 		yield return new WaitForSeconds (2f);
 		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
@@ -173,13 +194,16 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		level7 = true;
+		Level++;
+		//level7 = true;
 	}
-
+	
 	IEnumerator Level7()
 	{
 		float z = -1f;
-		
+		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
+		Nolvl.GetComponent<SpriteRenderer> ().sprite = Seven;
+
 		for (int i = 0; i < 3; i++) {
 			Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
@@ -201,12 +225,15 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		level8 = true;
+		Level++;
+		//level8 = true;
 	}
-
+	
 	IEnumerator Level8()
 	{
 		float z = -1f;
+		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
+		Nolvl.GetComponent<SpriteRenderer> ().sprite = Eight;
 		for (int i = 0; i < 3; i++) {
 			Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
@@ -233,30 +260,33 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		level9 = true;
+		Level++;
+		//level9 = true;
 	}
-
+	
 	IEnumerator Level9()
 	{
 		float z = -1f;
-		
-		for (int i = 0; i < 5; i++) {
+		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
+		Nolvl.GetComponent<SpriteRenderer> ().sprite = Nine;
+
+		for (int i = 0; i < 8; i++) {
 			Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
 		yield return new WaitForSeconds (1f);
 		
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 10; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.3f);
 		}
 		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 8; i++) {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
 		yield return new WaitForSeconds (1.6f);
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 7; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
@@ -266,14 +296,16 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
-		level10 = true;
+		Level++;
+		//level10 = true;
 	}
-
+	
 	IEnumerator Level10()
 	{
 		float z = -1f;
-		
-		for (int i = 0; i < 6; i++) {
+		Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
+		Nolvl.GetComponent<SpriteRenderer> ().sprite = Ten;
+		for (int i = 0; i < 15; i++) {
 			Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
@@ -284,24 +316,24 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (0.3f);
 		}
 		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 10; i++) {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
 		Instantiate (OldGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 		yield return new WaitForSeconds (1.6f);
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 16; i++) {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
 		yield return new WaitForSeconds (1f);
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 20; i++) {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
 		StartCoroutine (WaitBetweenLevel());
 	}
-
+	
 	void OnMouseEnter() {
 		
 		GetComponent<SpriteRenderer>().sprite = RockHighlight;
