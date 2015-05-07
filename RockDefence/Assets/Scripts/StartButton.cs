@@ -25,9 +25,11 @@ public class StartButton : MonoBehaviour {
 	public Sprite RockHighlight;
 	public Sprite Rockon;
 	public float TimeBetweenLevel = 5;
+	Controller c;
 	// Use this for initialization
 	void Start () {
-		
+		GameObject cont = GameObject.Find ("Controller");
+		c = cont.GetComponent<Controller> ();
 	}
 	
 	// Update is called once per frame
@@ -35,55 +37,47 @@ public class StartButton : MonoBehaviour {
 	}
 	
 	void OnMouseDown() {
+		if (c.GameLost == false) {
+			if (GameOn == false) {
+				GameOn = true;
 
-		if (GameOn == false) {
-			GameOn = true;
-
-			StartCoroutine (Level1());
-		}
-		else if (level2 == true) {
-			level2 = false;
-			StartCoroutine (Level2());
-		}
-		else if (level3 == true)
-		{	level3 = false;
-			StartCoroutine (Level3());
-			
-		}
-		else if (level4 == true)
-		{	level4 = false;
-			StartCoroutine (Level4());
-			
-		}
-		else if (level5 == true)
-		{	level5 = false;
-			StartCoroutine (Level5());
-			
-		}
-		else if (level6 == true)
-		{	level6 = false;
-			StartCoroutine (Level6());
-			
-		}
-		else if (level7 == true)
-		{	level7 = false;
-			StartCoroutine (Level7());
-			
-		}
-		else if (level8 == true)
-		{	level8 = false;
-			StartCoroutine (Level8());
-			
-		}
-		else if (level9 == true)
-		{	level9 = false;
-			StartCoroutine (Level9());
-			
-		}
-		else if (level10 == true)
-		{	level10 = false;
-			StartCoroutine (Level10());
-			
+				StartCoroutine (Level1 ());
+			} else if (level2 == true) {
+				level2 = false;
+				StartCoroutine (Level2 ());
+			} else if (level3 == true) {
+				level3 = false;
+				StartCoroutine (Level3 ());
+				
+			} else if (level4 == true) {
+				level4 = false;
+				StartCoroutine (Level4 ());
+				
+			} else if (level5 == true) {
+				level5 = false;
+				StartCoroutine (Level5 ());
+				
+			} else if (level6 == true) {
+				level6 = false;
+				StartCoroutine (Level6 ());
+				
+			} else if (level7 == true) {
+				level7 = false;
+				StartCoroutine (Level7 ());
+				
+			} else if (level8 == true) {
+				level8 = false;
+				StartCoroutine (Level8 ());
+				
+			} else if (level9 == true) {
+				level9 = false;
+				StartCoroutine (Level9 ());
+				
+			} else if (level10 == true) {
+				level10 = false;
+				StartCoroutine (Level10 ());
+				
+			}
 		}
 	}
 
