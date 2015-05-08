@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 163220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e9417bb47d6f4157a7f7c66b869226f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dad06caa666f53429fba4ec9466fc90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   groupie: {fileID: 186474, guid: fc966b3caaad1c94399922208e5d3efe, type: 2}
@@ -137,14 +137,14 @@ MonoBehaviour:
   Eight: {fileID: 21300000, guid: 69fbd74e38d0d4b0e98d77d28e09b117, type: 3}
   Nine: {fileID: 21300000, guid: 9b048b4d852c54fa3907054af7a66283, type: 3}
   Ten: {fileID: 21300000, guid: f88533ee6e88343069503e09bbf7ad7c, type: 3}
-  x_coord_start: 1
-  y_coord_start: 6
+  x_coord_start: 0
+  y_coord_start: 0
   Level: 1
   NumberOfLvl: []
-  RockHighlight: {fileID: 21300000, guid: 2256673cbb1d04ad194b88a984047255, type: 3}
-  Rockon: {fileID: 21300000, guid: c8a6ac401ee40485bb5afca1773f3459, type: 3}
+  RockHighlight: {fileID: 0}
+  Rockon: {fileID: 0}
   TimeBetweenLevel: 5
-  Nolvl: {fileID: 134822, guid: bdf0ebc24e8fe430caa32e399103fca2, type: 2}
+  Nolvl: {fileID: 0}
 --- !u!212 &21248632
 SpriteRenderer:
   m_ObjectHideFlags: 1
