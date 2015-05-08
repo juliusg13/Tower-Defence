@@ -94,6 +94,7 @@ public class StartButton : MonoBehaviour {
 			yield return new WaitForSeconds (1.4f);
 		}
 		StartCoroutine (WaitBetweenLevel());
+		c.RockDollars += 4;
 		
 		
 		//level2 = true;
@@ -113,6 +114,7 @@ public class StartButton : MonoBehaviour {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.8f);
 		}
+		c.RockDollars += 4;
 		StartCoroutine (WaitBetweenLevel());
 		
 		
@@ -129,6 +131,7 @@ public class StartButton : MonoBehaviour {
 			Instantiate (groupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.6f);
 		}
+		c.RockDollars += 4;
 		StartCoroutine (WaitBetweenLevel());
 		
 		
@@ -150,6 +153,7 @@ public class StartButton : MonoBehaviour {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.6f);
 		}
+		c.RockDollars += 4;
 		StartCoroutine (WaitBetweenLevel());
 		
 		
@@ -171,6 +175,7 @@ public class StartButton : MonoBehaviour {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
+		c.RockDollars += 4;
 		StartCoroutine (WaitBetweenLevel());
 		
 		
@@ -200,6 +205,7 @@ public class StartButton : MonoBehaviour {
 			Instantiate (YoungGroupie, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 			yield return new WaitForSeconds (0.5f);
 		}
+		//c.RockDollars += 4;
 		StartCoroutine (WaitBetweenLevel());
 		
 		//level7 = true;
