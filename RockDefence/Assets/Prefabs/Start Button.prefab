@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: -.75999999, z: 0}
+  m_LocalPosition: {x: 24.2099991, y: 2.4000001, z: -1}
   m_LocalScale: {x: 3.11999989, y: 3.11999989, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -137,12 +137,12 @@ MonoBehaviour:
   Eight: {fileID: 21300000, guid: 69fbd74e38d0d4b0e98d77d28e09b117, type: 3}
   Nine: {fileID: 21300000, guid: 9b048b4d852c54fa3907054af7a66283, type: 3}
   Ten: {fileID: 21300000, guid: f88533ee6e88343069503e09bbf7ad7c, type: 3}
-  x_coord_start: 0
-  y_coord_start: 0
+  x_coord_start: 18.1800003
+  y_coord_start: 8.89999962
   Level: 1
   NumberOfLvl: []
-  RockHighlight: {fileID: 0}
-  Rockon: {fileID: 0}
+  RockHighlight: {fileID: 21300000, guid: 2256673cbb1d04ad194b88a984047255, type: 3}
+  Rockon: {fileID: 21300000, guid: c8a6ac401ee40485bb5afca1773f3459, type: 3}
   TimeBetweenLevel: 5
   Nolvl: {fileID: 0}
 --- !u!212 &21248632
@@ -168,7 +168,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: c8a6ac401ee40485bb5afca1773f3459, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
