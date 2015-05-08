@@ -72,8 +72,8 @@ public class Controller : MonoBehaviour {
 		}
 	}
 
-	public void IncreaseRockDollars(){
-		RockDollars = RockDollars + 2;
+	public void IncreaseRockDollars(int Dollar){
+		RockDollars = RockDollars + Dollar;
 		RockDollarText.text = "Rock Dollars: " + RockDollars.ToString ();
 	}
 }
