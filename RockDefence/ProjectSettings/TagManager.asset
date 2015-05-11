@@ -21,6 +21,8 @@ TagManager:
   - NumberOfLevel
   - Stage
   - RestartButton
+  - Upgrade
+  - BeerAoE
   layers:
   - Default
   - TransparentFX
