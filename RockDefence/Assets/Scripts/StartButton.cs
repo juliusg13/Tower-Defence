@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class StartButton : MonoBehaviour {
 	
-	public GameObject groupie;
-	public GameObject YoungGroupie;
-	public GameObject OldGroupie;
+
 	public Sprite One;
 	public Sprite Two;
 	public Sprite Three;
@@ -16,15 +15,15 @@ public class StartButton : MonoBehaviour {
 	public Sprite Eight;
 	public Sprite Nine;
 	public Sprite Ten;
-	public float x_coord_start;
-	public float y_coord_start;
-	bool GameOn = false;
-	public int Level = 1;
+	//public float x_coord_start;
+	//public float y_coord_start;
+
+
 	public Sprite[] NumberOfLvl;
 	public Sprite RockHighlight;
 	public Sprite Rockon;
-	public float TimeBetweenLevel = 5;
-	public GameObject Nolvl;
+	//public float TimeBetweenLevel = 5;
+	//public GameObject Nolvl;
 	
 	Controller c;
 	// Use this for initialization
@@ -32,12 +31,21 @@ public class StartButton : MonoBehaviour {
 		GameObject cont = GameObject.Find ("Controller");
 		c = cont.GetComponent<Controller> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 	}
 	
 	void OnMouseDown() {
+
+		if (c.GameOn == false) {
+			c.GameOn = true;
+
+			Controller.Level currentLevel = c.LevelSequence [c.level];
+			
+			StartCoroutine (c.RunLevel (currentLevel));
+		}
+		/*
 		if (c.GameLost == false) {
 			if (GameOn == false) {
 				GameOn = true;
@@ -75,10 +83,11 @@ public class StartButton : MonoBehaviour {
 				StartCoroutine (Level10 ());
 				
 			}
-			
+
 		}
+		*/
 	}
-	
+	/*
 	
 	IEnumerator WaitBetweenLevel()
 	{
@@ -350,7 +359,7 @@ public class StartButton : MonoBehaviour {
 		}
 		StartCoroutine (WaitBetweenLevel());
 	}
-	
+*/
 	void OnMouseEnter() {
 		
 		GetComponent<SpriteRenderer>().sprite = RockHighlight;

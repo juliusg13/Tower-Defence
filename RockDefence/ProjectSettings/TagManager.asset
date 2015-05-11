@@ -21,6 +21,7 @@ TagManager:
   - NumberOfLevel
   - Stage
   - RestartButton
+  - StartButton
   layers:
   - Default
   - TransparentFX
