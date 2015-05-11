@@ -30,6 +30,11 @@ public class Tile : MonoBehaviour {
 			Destroy (GameObject.FindGameObjectWithTag("MenuChild"));
 		}
 	}
+	void FindMenuAndDestroy(){
+		if(GameObject.FindGameObjectWithTag ("MenuBarRange")) Destroy(GameObject.FindGameObjectWithTag ("MenuBarRange"));
+		if(GameObject.FindGameObjectWithTag ("MenuSpeakerRange")) Destroy(GameObject.FindGameObjectWithTag ("MenuSpeakerRange"));
+		c.isMenu = false;
+	}
 
 	void OnMouseDown() {
 
@@ -40,8 +45,9 @@ public class Tile : MonoBehaviour {
 		Controller c = cont.GetComponent<Controller> ();
 
 		if (c.GameLost == false) {
-			if(this.built == true || this.tag == "MenuSpeakerRange" || this.tag == "MenuBarRange") {
+			if(this.built == true || (this.tag == "MenuSpeakerRange" || this.tag == "MenuBarRange")) {
 				DestroyCircleIfExists();
+				FindMenuAndDestroy();
 				Instantiate(Circle, new Vector3(x, y, -1), transform.rotation);
 			}
 			else if (c.isMenu == false) {
