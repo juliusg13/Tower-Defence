@@ -4,7 +4,9 @@ using System.Collections;
 public class Tile : MonoBehaviour {
 
 	public GameObject orange;
+	public GameObject orangeUpgrade;
 	public GameObject blue;
+	public GameObject blueUpgrade;
 	public GameObject Circle;
 	public bool built;
 
@@ -35,22 +37,30 @@ public class Tile : MonoBehaviour {
 		if(GameObject.FindGameObjectWithTag ("MenuSpeakerRange")) Destroy(GameObject.FindGameObjectWithTag ("MenuSpeakerRange"));
 		c.isMenu = false;
 	}
+	void UpgradeTower(float x, float y, GameObject tower){
+		/*if (tower.gameObject.tag == "BarAoE") {
+			GameObject BBM = (GameObject)Instantiate(blueUpgrade, new Vector3(x + 0.35f, y, -1), transform.rotation);
+			c.isMenu = true;
+			BBM.GetComponent<BuildMenu> ().SourceTile = tower.GetComponent<BuildMenu>().SourceTile;
+		}*/
+
+	}
 
 	void OnMouseDown() {
 
 		float x = this.transform.position.x;
 		float y = this.transform.position.y;
 
-		GameObject cont = GameObject.Find ("Controller");
-		Controller c = cont.GetComponent<Controller> ();
-
 		if (c.GameLost == false) {
 			if(this.built == true || (this.tag == "MenuSpeakerRange" || this.tag == "MenuBarRange")) {
 				DestroyCircleIfExists();
-				FindMenuAndDestroy();
 				Instantiate(Circle, new Vector3(x, y, -1), transform.rotation);
-			}
-			else if (c.isMenu == false) {
+				if(c.isMenu == true) {
+					FindMenuAndDestroy();
+				} else {
+					UpgradeTower(x, y, this.gameObject);
+				}
+			} else if (c.isMenu == false) {
 
 				GameObject OBM = (GameObject)Instantiate (orange, new Vector3 (x - 0.3f, y, -1), transform.rotation);
 				GameObject BBM = (GameObject)Instantiate (blue, new Vector3 (x + 0.35f, y, -1), transform.rotation);

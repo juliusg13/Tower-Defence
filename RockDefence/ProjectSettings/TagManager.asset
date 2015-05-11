@@ -21,6 +21,8 @@ TagManager:
   - NumberOfLevel
   - Stage
   - RestartButton
+  - UpgradeBlueMenu
+  - UpgradeOrangeMenu
   layers:
   - Default
   - TransparentFX

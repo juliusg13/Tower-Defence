@@ -5,6 +5,8 @@ public class BuildMenu : MonoBehaviour {
 	
 	public GameObject speaker;
 	public GameObject bar;
+	public GameObject speakerUpgrade;
+	public GameObject barUpgrade;
 	public GameObject SourceTile;
 	public GameObject Circle;
 	public int SpeakerPrice;
@@ -65,14 +67,21 @@ public class BuildMenu : MonoBehaviour {
 
 				c.BuyBar ();
 				//built = true;
-			} else {
+			} else if(this.gameObject.tag == "UpgradeBlueMenu"){
+
+			}
+
+
+
+
+			/*else {
 				FindCircleAndDestroy ();
 				FindMenuAndDestroy ();
-			}
-		} else {
+			}*/
+		} /*else {
 			FindCircleAndDestroy ();
 			FindMenuAndDestroy ();
-		}
+		}*/
 		
 	}
 	
