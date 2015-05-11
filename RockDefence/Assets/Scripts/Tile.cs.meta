@@ -1,12 +1,14 @@
 fileFormatVersion: 2
 guid: 5d36d2caa9abc6b41b5d71ce836171c4
-timeCreated: 1431021914
+timeCreated: 1431362027
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - orange: {fileID: 175356, guid: 492e2ff3fe43b1b4ba3d8602777d1980, type: 2}
+  - orangeUpgrade: {instanceID: 0}
   - blue: {fileID: 114666, guid: af00af5fa4492b1438544a6eb44a26f9, type: 2}
+  - blueUpgrade: {fileID: 179868, guid: 2636f84c906d8ff48bd9931ddc18ae2c, type: 2}
   - Circle: {fileID: 124422, guid: 2a89b21f527253d48bef3838ed192f16, type: 2}
   - highlight: {instanceID: 0}
   - normal: {instanceID: 0}
