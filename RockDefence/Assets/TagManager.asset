@@ -10,24 +10,21 @@ TagManager:
   - goWest
   - Note
   - Destroy
-  - Bar
   - BarAoE
-  - BarShootStraight
   - Beer
-  - BeerAoE
+  - Bar
+  - BarShootStraight
   - Speaker
   - MenuSpeakerRange
   - MenuBarRange
   - MenuChild
   - NumberLvl
-  - NumberOfLevel
-  - NumberOfLvl
   - Stage
   - RestartButton
   - StartButton
   - Upgrade
-  - BlueUpgradeMenu
-  - OrangeUpgradeMenu
+  - BeerAoE
+  - NumberOfLevel
   layers:
   - Default
   - TransparentFX
@@ -37,8 +34,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Floor
+  - Stage
   - 
   - 
   - 
@@ -64,4 +61,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tiles
+    uniqueID: 2039958209
+    locked: 0
+  - name: Speakers
+    uniqueID: 1439385611
     locked: 0
