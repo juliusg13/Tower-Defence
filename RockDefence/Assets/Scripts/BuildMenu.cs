@@ -38,7 +38,6 @@ public class BuildMenu : MonoBehaviour {
 		GameObject OM;
 		if(BM = GameObject.FindGameObjectWithTag ("MenuBarRange")) Destroy (BM);
 		if(OM = GameObject.FindGameObjectWithTag ("MenuSpeakerRange")) Destroy (OM);
-
 		c.isMenu = false;
 	}
 
@@ -54,7 +53,6 @@ public class BuildMenu : MonoBehaviour {
 			if ((this.gameObject.tag == "MenuSpeakerRange") && (isBuilt == false) && (c.RockDollars >= c.SpeakerPrice)) {
 				Instantiate (speaker, new Vector3 (x + 0.3f, y, 1), transform.rotation);
 				SourceTile.GetComponent<Tile> ().built = true;
-				SourceTile.GetComponent<Tile>().tag = "Speaker";
 				
 				FindCircleAndDestroy ();
 				FindMenuAndDestroy ();
@@ -63,16 +61,14 @@ public class BuildMenu : MonoBehaviour {
 			} else if (this.gameObject.tag == "MenuBarRange" && (isBuilt == false) && (c.RockDollars >= c.BarPrice)) {
 				Instantiate (bar, new Vector3 (x - 0.3f, y, 1), transform.rotation);
 				SourceTile.GetComponent<Tile> ().built = true;
-				SourceTile.GetComponent<Tile>().tag = "BarShootStraight";
 
 				FindCircleAndDestroy ();
 				FindMenuAndDestroy ();
-				Destroy (SourceTile.GetComponent<Tile>());
 
 				c.BuyBar ();
 				//built = true;
 			} else if(this.gameObject.tag == "UpgradeBlueMenu"){
-				//Destroy (this.gameObject);
+
 			}
 
 
