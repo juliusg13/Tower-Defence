@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NumberLvl : MonoBehaviour {
+public class NumberOfLvl : MonoBehaviour {
 
 
 
@@ -10,7 +10,7 @@ public class NumberLvl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame

@@ -18,10 +18,13 @@ TagManager:
   - MenuSpeakerRange
   - MenuBarRange
   - MenuChild
-  - NumberOfLevel
+  - NumberLvl
   - Stage
   - RestartButton
   - StartButton
+  - Upgrade
+  - BeerAoE
+  - NumberOfLevel
   layers:
   - Default
   - TransparentFX

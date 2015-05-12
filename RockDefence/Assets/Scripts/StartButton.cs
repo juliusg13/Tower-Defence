@@ -5,20 +5,18 @@ using System.Collections.Generic;
 public class StartButton : MonoBehaviour {
 	
 
-	public Sprite One;
-	public Sprite Two;
-	public Sprite Three;
-	public Sprite Four;
-	public Sprite Five;
-	public Sprite Six;
-	public Sprite Seven;
-	public Sprite Eight;
-	public Sprite Nine;
-	public Sprite Ten;
+	//public Sprite One;
+	//public Sprite Two;
+	//public Sprite Three;
+	//public Sprite Four;
+	//public Sprite Five;
+	//public Sprite Six;
+	//public Sprite Seven;
+	//public Sprite Eight;
+	//public Sprite Nine;
+	//public Sprite Ten;
 	//public float x_coord_start;
 	//public float y_coord_start;
-
-
 	public Sprite[] NumberOfLvl;
 	public Sprite RockHighlight;
 	public Sprite Rockon;
@@ -26,10 +24,18 @@ public class StartButton : MonoBehaviour {
 	//public GameObject Nolvl;
 	
 	Controller c;
+	NumberLvl levelDisplay;
+
 	// Use this for initialization
 	void Start () {
 		GameObject cont = GameObject.Find ("Controller");
 		c = cont.GetComponent<Controller> ();
+
+		GameObject content = GameObject.Find ("NumberLvl");
+	 	levelDisplay = content.GetComponent<NumberLvl> ();
+
+
+
 	}
 
 	// Update is called once per frame
@@ -40,10 +46,14 @@ public class StartButton : MonoBehaviour {
 
 		if (c.GameOn == false) {
 			c.GameOn = true;
-
 			Controller.Level currentLevel = c.LevelSequence [c.level];
-			
+
+
 			StartCoroutine (c.RunLevel (currentLevel));
+			Sprite levelPicture = levelDisplay.levelPicture[c.level];
+			//picture.levelPicture[] = picture.levelPicture[c.level];
+
+			levelDisplay.GetComponent<SpriteRenderer> ().sprite = levelPicture;
 		}
 		/*
 		if (c.GameLost == false) {

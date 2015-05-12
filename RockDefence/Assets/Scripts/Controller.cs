@@ -35,10 +35,13 @@ public class Controller : MonoBehaviour {
 
 		// Use this for initialization
 	void Start () {
+
+
+
 		canvas.alpha = 0;
 		canvas.interactable = false;
-		SpeakerPrice = 20;
-		BarPrice = 30;
+		SpeakerPrice = 50;
+		BarPrice = 60;
 		stage = GameObject.FindGameObjectWithTag ("Stage").GetComponent<StageScript>();
 		isMenu = false;
 		RockDollars = 100;
@@ -49,21 +52,23 @@ public class Controller : MonoBehaviour {
 		Level One = new Level();
 		One.groupSequence = new List<GroupOfGroupies> ();
 		One.levelNumber = 1;
-		One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 0.7f));
+		One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 5, 0, 0.7f));
+		One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 2, 3f, 0.3f));
 		LevelSequence.Add (One);
-		Debug.Log ("Start");
-	
+		Level Two = new Level ();
+		Two.groupSequence = new List<GroupOfGroupies> ();
+		Two.levelNumber = 2;
+		Two.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0, 0.7f));
+		Two.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 10, 2, 0.7f));
+		LevelSequence.Add (Two);
+
 	}
-	
 	// Update is called once per frame
 	void Update () {
 	}
-
-
-
+	
 	public IEnumerator RunLevel(Level currentLevel)
 	{
-		Debug.Log ("RunLevel");
 
 		float z = -1f;
 //		this.GetComponent<AudioSource> ().Play ();
@@ -71,7 +76,6 @@ public class Controller : MonoBehaviour {
 		//Nolvl.GetComponent<SpriteRenderer> ().sprite = Four; // fix with array
 
 		List<GroupOfGroupies> currentGroupSequence = currentLevel.groupSequence;
-
 
 		foreach (GroupOfGroupies group in currentGroupSequence) {
 
@@ -101,6 +105,7 @@ public class Controller : MonoBehaviour {
 
 		level++;
 
+		Debug.Log (level);
 		GameOn = (false);
 
 	}

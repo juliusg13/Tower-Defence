@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21258830}
   - 114: {fileID: 11417904}
   m_Layer: 0
-  m_Name: NumberOfLevel
+  m_Name: NumberLvl
   m_TagString: NumberOfLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702e6c7f3330f4309b462861ea3e312a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLvl:
+  levelPicture:
   - {fileID: 21300000, guid: faf0b902ceaa14faea664f3c055e456d, type: 3}
   - {fileID: 21300000, guid: bc90ef5bc6a4c49e6a168fce44c4ff49, type: 3}
   - {fileID: 21300000, guid: 5886333c963aa48cd920caa1ae98e406, type: 3}
