@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6148762}
   m_Layer: 0
   m_Name: Blue Upgrade
-  m_TagString: UpgradeMenu
+  m_TagString: BlueUpgradeMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
   speaker: {fileID: 0}
   bar: {fileID: 0}
   speakerUpgrade: {fileID: 0}
-  barUpgrade: {fileID: 182836, guid: c472e43c263fcb546a8092f1f31ae22e, type: 2}
+  barUpgrade: {fileID: 182836, guid: 87cfe77ab5e773e408a41fdb4e7782ff, type: 2}
   SourceTile: {fileID: 0}
   Circle: {fileID: 124422, guid: 2a89b21f527253d48bef3838ed192f16, type: 2}
   SpeakerPrice: 0

@@ -17,13 +17,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent<Controller>();
-		if (this.gameObject.name == "Groupie") {
-			moveSpeed = 0.4f;
-			health = 10;
-		} else if (this.gameObject.name == "YoungGroupie") {
-			moveSpeed = 0.6f;
-			health = 5;
-		}
+
 		
 	}
 	
@@ -107,7 +101,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 
 			if (health <= 0) {
 				if(this.gameObject.name == "YoungGroupie(Clone)") controller.IncreaseRockDollars(1);
-				if(this.gameObject.name == "Groupie(Clone)") controller.IncreaseRockDollars(2);
+				if(this.gameObject.name == "MediumGroupie(Clone)") controller.IncreaseRockDollars(2);
 				if(this.gameObject.name == "OldGroupie(Clone)") controller.IncreaseRockDollars(3);
 				Destroy (this.gameObject);
 				//controller.IncreaseRockDollars();
