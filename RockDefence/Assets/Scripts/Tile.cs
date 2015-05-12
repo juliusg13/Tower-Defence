@@ -8,6 +8,7 @@ public class Tile : MonoBehaviour {
 	public GameObject blue;
 	public GameObject blueUpgrade;
 	public GameObject Circle;
+	public GameObject towerOnTile;
 	public bool built;
 
 	public Sprite highlight;
@@ -37,12 +38,12 @@ public class Tile : MonoBehaviour {
 		if(GameObject.FindGameObjectWithTag ("MenuSpeakerRange")) Destroy(GameObject.FindGameObjectWithTag ("MenuSpeakerRange"));
 		c.isMenu = false;
 	}
-	void UpgradeTower(float x, float y, GameObject tower){
-		/*if (tower.gameObject.tag == "BarAoE") {
+	void UpgradeTower(float x, float y){
+		if (gameObject.tag == "BarShootStraight") {
 			GameObject BBM = (GameObject)Instantiate(blueUpgrade, new Vector3(x + 0.35f, y, -1), transform.rotation);
 			c.isMenu = true;
-			BBM.GetComponent<BuildMenu> ().SourceTile = tower.GetComponent<BuildMenu>().SourceTile;
-		}*/
+			BBM.GetComponent<BuildMenu> ().SourceTile = gameObject;//GetComponent<BuildMenu>().SourceTile;
+		}
 
 	}
 
@@ -52,14 +53,14 @@ public class Tile : MonoBehaviour {
 		float y = this.transform.position.y;
 
 		if (c.GameLost == false) {
-			if(this.built == true || (this.tag == "MenuSpeakerRange" || this.tag == "MenuBarRange")) {
+			if(this.built == true) {
 				DestroyCircleIfExists();
 				Instantiate(Circle, new Vector3(x, y, -1), transform.rotation);
 				if(c.isMenu == true) {
 					FindMenuAndDestroy();
-				} /*else {
-					UpgradeTower(x, y, this.gameObject);
-				}*/
+				} else {
+					UpgradeTower(x, y);
+				}
 			} else if (c.isMenu == false) {
 
 				GameObject OBM = (GameObject)Instantiate (orange, new Vector3 (x - 0.3f, y, -1), transform.rotation);

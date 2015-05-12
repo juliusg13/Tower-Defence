@@ -14,6 +14,7 @@ public class BuildMenu : MonoBehaviour {
 	
 	GameObject cont;
 	Controller c;
+
 	// Use this for initialization
 	void Start () {
 		SpeakerPrice = 10;
@@ -36,15 +37,26 @@ public class BuildMenu : MonoBehaviour {
 	void FindMenuAndDestroy(){
 		GameObject BM;
 		GameObject OM;
+		GameObject BUM;
 		if(BM = GameObject.FindGameObjectWithTag ("MenuBarRange")) Destroy (BM);
 		if(OM = GameObject.FindGameObjectWithTag ("MenuSpeakerRange")) Destroy (OM);
+		if (BUM = GameObject.FindGameObjectWithTag ("BlueUpgradeMenu")) Destroy (BUM);
 		c.isMenu = false;
+	}
+
+	void DestroyTower(GameObject tower){
+		Destroy (tower);
 	}
 	
 	void OnMouseDown() {
 		
 		
-		bool isBuilt = SourceTile.GetComponent<Tile> ().built;
+		bool isBuilt;
+		if (this.SourceTile.GetComponent<Tile> ().built) {
+			isBuilt = true; 
+		} else {
+			isBuilt = false;
+		}
 		
 		float x = this.transform.position.x;
 		float y = this.transform.position.y;
@@ -53,22 +65,32 @@ public class BuildMenu : MonoBehaviour {
 			if ((this.gameObject.tag == "MenuSpeakerRange") && (isBuilt == false) && (c.RockDollars >= c.SpeakerPrice)) {
 				Instantiate (speaker, new Vector3 (x + 0.3f, y, 1), transform.rotation);
 				SourceTile.GetComponent<Tile> ().built = true;
-				
 				FindCircleAndDestroy ();
 				FindMenuAndDestroy ();
+				
+				SourceTile.GetComponent<Tile> ().tag = "Speaker";
 				
 				c.BuySpeaker ();
 			} else if (this.gameObject.tag == "MenuBarRange" && (isBuilt == false) && (c.RockDollars >= c.BarPrice)) {
-				Instantiate (bar, new Vector3 (x - 0.3f, y, 1), transform.rotation);
+				GameObject ThisBar = (GameObject)Instantiate (bar, new Vector3 (x - 0.3f, y, 1), transform.rotation);
 				SourceTile.GetComponent<Tile> ().built = true;
-				
 				FindCircleAndDestroy ();
 				FindMenuAndDestroy ();
 				
+				SourceTile.GetComponent<Tile> ().tag = "BarShootStraight";
+				SourceTile.GetComponent<Tile> ().towerOnTile = ThisBar;
+				
 				c.BuyBar ();
 				//built = true;
-			} else if(this.gameObject.tag == "UpgradeBlueMenu"){
-				
+			} else if(this.gameObject.tag == "BlueUpgradeMenu"){
+				DestroyTower(SourceTile.GetComponent<Tile>().towerOnTile);
+
+				FindMenuAndDestroy();
+				FindCircleAndDestroy();
+
+				GameObject ThisBar = (GameObject)Instantiate(barUpgrade, new Vector3(x-0.3f,y, 1), transform.rotation);
+				SourceTile.GetComponent<Tile>().tag = "Upgrade";
+				SourceTile.GetComponent<Tile>().towerOnTile = ThisBar;
 			}
 			
 			
