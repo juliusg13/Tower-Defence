@@ -24,7 +24,7 @@ public class StartButton : MonoBehaviour {
 	//public GameObject Nolvl;
 	
 	Controller c;
-	NumberLvl levelDisplay;
+	NumberOfLvl levelDisplay;
 
 	// Use this for initialization
 	void Start () {
@@ -32,7 +32,7 @@ public class StartButton : MonoBehaviour {
 		c = cont.GetComponent<Controller> ();
 
 		GameObject content = GameObject.Find ("NumberLvl");
-	 	levelDisplay = content.GetComponent<NumberLvl> ();
+	 	levelDisplay = content.GetComponent<NumberOfLvl> ();
 
 
 
