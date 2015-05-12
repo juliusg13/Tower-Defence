@@ -61,6 +61,7 @@ MonoBehaviour:
   fireRate: .5
   nextShot: 0
   allowFire: 1
+  FireOK: 1
   slowing: 0
   ObjectsInRange: []
 --- !u!212 &21256144
