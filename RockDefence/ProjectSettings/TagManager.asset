@@ -21,13 +21,7 @@ TagManager:
   - NumberOfLevel
   - Stage
   - RestartButton
-<<<<<<< HEAD
-  - UpgradeBlueMenu
-  - UpgradeOrangeMenu
-=======
-  - Upgrade
-  - BeerAoE
->>>>>>> 7911153a633243731ef14f966cedac9c4edabad7
+  - StartButton
   layers:
   - Default
   - TransparentFX

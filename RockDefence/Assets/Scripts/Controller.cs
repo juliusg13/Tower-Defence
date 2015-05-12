@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
+
+
 
 public class Controller : MonoBehaviour {
 	public bool isMenu;
@@ -11,12 +14,25 @@ public class Controller : MonoBehaviour {
 	public Text RockDollarText;
 	public Text StageHealthText;
 	public Text GameOverText;
-	public int Level;
-
+	public float x_coord_start;
+	public float y_coord_start;
+	public int level = 0;
+	public bool GameOn = false;
 	public CanvasGroup canvas;
 	private StageScript stage;
-	
-		
+
+	public GameObject mediumGroupie;
+	public GameObject youngGroupie;
+	public GameObject oldGroupie;
+
+	public class Level{
+		public int levelNumber;
+		public List<GroupOfGroupies> groupSequence;
+
+	}
+
+	public List<Level> LevelSequence;
+
 		// Use this for initialization
 	void Start () {
 		canvas.alpha = 0;
@@ -29,18 +45,70 @@ public class Controller : MonoBehaviour {
 		GameOverText.text = "";
 		RockDollarText.text = "Rock Dollars: " + RockDollars.ToString ();
 		StageHealthText.text = "Band Moral: " + stage.StageHealth.ToString();
-		Level = 1;
+		LevelSequence = new List<Level> ();
+		Level One = new Level();
+		One.groupSequence = new List<GroupOfGroupies> ();
+		One.levelNumber = 1;
+		One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 0.7f));
+		LevelSequence.Add (One);
+		Debug.Log ("Start");
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+	}
+
+
+
+	public IEnumerator RunLevel(Level currentLevel)
+	{
+		Debug.Log ("RunLevel");
+
+		float z = -1f;
+//		this.GetComponent<AudioSource> ().Play ();
+		//Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
+		//Nolvl.GetComponent<SpriteRenderer> ().sprite = Four; // fix with array
+
+		List<GroupOfGroupies> currentGroupSequence = currentLevel.groupSequence;
+
+
+		foreach (GroupOfGroupies group in currentGroupSequence) {
+
+			yield return new WaitForSeconds(group.DelayTime);
+			
+			for (int i = 0; i < group.howMany; i++) {
+				GameObject enemy;
+				if(group.typeOfGroupie == "YoungGroupie"){
+					enemy =  youngGroupie;
+				}
+
+				else if(group.typeOfGroupie == "MediumGroupie"){
+					enemy =  mediumGroupie;
+				}
+				else //(group.typeOfGroupie == "OldGroupie")
+				{
+					enemy =  oldGroupie;
+				}
+
+				Instantiate (enemy, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+				yield return new WaitForSeconds (group.separationTime);
+			}
+
+
+
+		}
+
+		level++;
+
+		GameOn = (false);
+
 	}
 
 	void Levelspawner(){
-
-
 	}
+
+		
 
 	public void DisplayStageHealth(int StageHealth){
 		StageHealthText.text = "Band Moral: " + StageHealth.ToString ();

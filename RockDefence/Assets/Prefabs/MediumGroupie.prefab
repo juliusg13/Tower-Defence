@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6164732}
   - 114: {fileID: 11401300}
   m_Layer: 0
-  m_Name: Groupie
+  m_Name: MediumGroupie
   m_TagString: Destroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

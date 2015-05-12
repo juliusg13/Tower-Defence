@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd2c5e294217854ea587d0c01c05923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 10
   initialPos: {x: 0, y: 0, z: 0}
   target: {fileID: 186474, guid: fc966b3caaad1c94399922208e5d3efe, type: 2}
   First: {fileID: 0}
