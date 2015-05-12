@@ -38,9 +38,11 @@ public class BuildMenu : MonoBehaviour {
 		GameObject BM;
 		GameObject OM;
 		GameObject BUM;
+		GameObject OUM;
 		if(BM = GameObject.FindGameObjectWithTag ("MenuBarRange")) Destroy (BM);
 		if(OM = GameObject.FindGameObjectWithTag ("MenuSpeakerRange")) Destroy (OM);
 		if (BUM = GameObject.FindGameObjectWithTag ("BlueUpgradeMenu")) Destroy (BUM);
+		if (OUM = GameObject.FindGameObjectWithTag ("OrangeUpgradeMenu")) Destroy (OUM);
 		c.isMenu = false;
 	}
 
@@ -63,12 +65,13 @@ public class BuildMenu : MonoBehaviour {
 		
 		if (c.isMenu == true) {
 			if ((this.gameObject.tag == "MenuSpeakerRange") && (isBuilt == false) && (c.RockDollars >= c.SpeakerPrice)) {
-				Instantiate (speaker, new Vector3 (x + 0.3f, y, 1), transform.rotation);
+				GameObject ThisBar = (GameObject)Instantiate (speaker, new Vector3 (x + 0.3f, y, 1), transform.rotation);
 				SourceTile.GetComponent<Tile> ().built = true;
 				FindCircleAndDestroy ();
 				FindMenuAndDestroy ();
 				
 				SourceTile.GetComponent<Tile> ().tag = "Speaker";
+				SourceTile.GetComponent<Tile> ().towerOnTile = ThisBar;
 				
 				c.BuySpeaker ();
 			} else if (this.gameObject.tag == "MenuBarRange" && (isBuilt == false) && (c.RockDollars >= c.BarPrice)) {
@@ -88,9 +91,19 @@ public class BuildMenu : MonoBehaviour {
 				FindMenuAndDestroy();
 				FindCircleAndDestroy();
 
-				GameObject ThisBar = (GameObject)Instantiate(barUpgrade, new Vector3(x-0.3f,y, 1), transform.rotation);
+				GameObject ThisBar = (GameObject)Instantiate(barUpgrade, new Vector3(x-0.35f,y-0.15f, 1), transform.rotation);
 				SourceTile.GetComponent<Tile>().tag = "Upgrade";
 				SourceTile.GetComponent<Tile>().towerOnTile = ThisBar;
+			} else if (tag == "OrangeUpgradeMenu"){
+				DestroyTower (SourceTile.GetComponent<Tile>().towerOnTile);
+
+				FindMenuAndDestroy();
+				FindCircleAndDestroy();
+
+				GameObject ThisBar = (GameObject)Instantiate(speakerUpgrade, new Vector3(x+0.35f, y-0.15f, 1), transform.rotation);
+				SourceTile.GetComponent<Tile>().tag = "Upgrade";
+				SourceTile.GetComponent<Tile>().towerOnTile = ThisBar;
+
 			}
 			
 			

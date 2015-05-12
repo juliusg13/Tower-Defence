@@ -22,6 +22,10 @@ TagManager:
   - Stage
   - RestartButton
   - StartButton
+  - BlueUpgradeMenu
+  - OrangeUpgradeMenu
+  - Upgrade
+  - BeerAoE
   layers:
   - Default
   - TransparentFX
