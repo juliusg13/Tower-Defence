@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Numberlvl : MonoBehaviour {
+public class NumberLvl : MonoBehaviour {
 
 
-	public int levelCounter;
-	Texture2D[] NumberOfLvl;
+
+	public Sprite[] levelPicture;
 
 
 	// Use this for initialization
 	void Start () {
-
+	
 	}
 	
 	// Update is called once per frame
