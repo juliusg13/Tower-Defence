@@ -17,13 +17,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent<Controller>();
-		if (this.gameObject.name == "Groupie") {
-			moveSpeed = 0.4f;
-			health = 10;
-		} else if (this.gameObject.name == "YoungGroupie") {
-			moveSpeed = 0.6f;
-			health = 5;
-		}
+
 		
 	}
 	

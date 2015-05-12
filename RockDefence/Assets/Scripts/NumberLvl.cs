@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NumberOfLvl : MonoBehaviour {
+public class NumberLvl : MonoBehaviour {
 
 
 
