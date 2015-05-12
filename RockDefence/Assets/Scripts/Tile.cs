@@ -34,8 +34,14 @@ public class Tile : MonoBehaviour {
 		}
 	}
 	void FindMenuAndDestroy(){
-		if(GameObject.FindGameObjectWithTag ("MenuBarRange")) Destroy(GameObject.FindGameObjectWithTag ("MenuBarRange"));
-		if(GameObject.FindGameObjectWithTag ("MenuSpeakerRange")) Destroy(GameObject.FindGameObjectWithTag ("MenuSpeakerRange"));
+		GameObject BM;
+		GameObject OM;
+		GameObject BUM;
+		GameObject OUM;
+		if(BM = GameObject.FindGameObjectWithTag ("MenuBarRange")) Destroy (BM);
+		if(OM = GameObject.FindGameObjectWithTag ("MenuSpeakerRange")) Destroy (OM);
+		if (BUM = GameObject.FindGameObjectWithTag ("BlueUpgradeMenu")) Destroy (BUM);
+		if (OUM = GameObject.FindGameObjectWithTag ("OrangeUpgradeMenu")) Destroy (OUM);
 		c.isMenu = false;
 	}
 	void UpgradeTower(float x, float y){
@@ -76,10 +82,7 @@ public class Tile : MonoBehaviour {
 				//Instantiate (speaker, new Vector3 (x, y, 1), transform.rotation);
 				//built = true;
 			} else {
-				GameObject OM = GameObject.Find ("Orange box(Clone)");
-				GameObject BM = GameObject.Find ("Blue box(Clone)");
-				Destroy (OM);
-				Destroy (BM);
+				FindMenuAndDestroy();
 				DestroyCircleIfExists();
 				c.isMenu = false;
 			}
