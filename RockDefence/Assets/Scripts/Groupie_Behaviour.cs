@@ -107,10 +107,10 @@ public class Groupie_Behaviour : MonoBehaviour {
 
 			if (health <= 0) {
 				if(this.gameObject.name == "YoungGroupie(Clone)") controller.IncreaseRockDollars(1);
-				if(this.gameObject.name == "Groupie(Clone)") controller.IncreaseRockDollars(2);
+				if(this.gameObject.name == "MediumGroupie(Clone)") controller.IncreaseRockDollars(2);
 				if(this.gameObject.name == "OldGroupie(Clone)") controller.IncreaseRockDollars(3);
 				Destroy (this.gameObject);
-//				controller.IncreaseRockDollars();
+				//controller.IncreaseRockDollars();
 			}
 		} else if (other.gameObject.tag == "Beer") {
 
