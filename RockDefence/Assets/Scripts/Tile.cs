@@ -38,11 +38,11 @@ public class Tile : MonoBehaviour {
 		c.isMenu = false;
 	}
 	void UpgradeTower(float x, float y, GameObject tower){
-		/*if (tower.gameObject.tag == "BarAoE") {
+		if (tower.gameObject.tag == "BarShootStraight") {
 			GameObject BBM = (GameObject)Instantiate(blueUpgrade, new Vector3(x + 0.35f, y, -1), transform.rotation);
 			c.isMenu = true;
 			BBM.GetComponent<BuildMenu> ().SourceTile = tower.GetComponent<BuildMenu>().SourceTile;
-		}*/
+		}
 
 	}
 
@@ -57,9 +57,9 @@ public class Tile : MonoBehaviour {
 				Instantiate(Circle, new Vector3(x, y, -1), transform.rotation);
 				if(c.isMenu == true) {
 					FindMenuAndDestroy();
-				} /*else {
+				} else {
 					UpgradeTower(x, y, this.gameObject);
-				}*/
+				}
 			} else if (c.isMenu == false) {
 
 				GameObject OBM = (GameObject)Instantiate (orange, new Vector3 (x - 0.3f, y, -1), transform.rotation);
