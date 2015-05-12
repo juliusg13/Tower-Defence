@@ -11,14 +11,14 @@ public class BuildMenu : MonoBehaviour {
 	public GameObject Circle;
 	public int SpeakerPrice;
 	public int BarPrice;
-
+	
 	GameObject cont;
 	Controller c;
 	// Use this for initialization
 	void Start () {
 		SpeakerPrice = 10;
 		BarPrice = 20;
-
+		
 		cont = GameObject.Find ("Controller");
 		c = cont.GetComponent<Controller> ();
 	}
@@ -27,7 +27,7 @@ public class BuildMenu : MonoBehaviour {
 	void Update () {
 		
 	}
-
+	
 	void FindCircleAndDestroy(){
 		if(GameObject.FindGameObjectWithTag("MenuChild")){
 			Destroy (GameObject.FindGameObjectWithTag("MenuChild"));
@@ -40,9 +40,9 @@ public class BuildMenu : MonoBehaviour {
 		if(OM = GameObject.FindGameObjectWithTag ("MenuSpeakerRange")) Destroy (OM);
 		c.isMenu = false;
 	}
-
+	
 	void OnMouseDown() {
-
+		
 		
 		bool isBuilt = SourceTile.GetComponent<Tile> ().built;
 		
@@ -61,19 +61,19 @@ public class BuildMenu : MonoBehaviour {
 			} else if (this.gameObject.tag == "MenuBarRange" && (isBuilt == false) && (c.RockDollars >= c.BarPrice)) {
 				Instantiate (bar, new Vector3 (x - 0.3f, y, 1), transform.rotation);
 				SourceTile.GetComponent<Tile> ().built = true;
-
+				
 				FindCircleAndDestroy ();
 				FindMenuAndDestroy ();
-
+				
 				c.BuyBar ();
 				//built = true;
 			} else if(this.gameObject.tag == "UpgradeBlueMenu"){
-
+				
 			}
-
-
-
-
+			
+			
+			
+			
 			/*else {
 				FindCircleAndDestroy ();
 				FindMenuAndDestroy ();
