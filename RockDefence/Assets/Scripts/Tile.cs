@@ -40,13 +40,9 @@ public class Tile : MonoBehaviour {
 	}
 	void UpgradeTower(float x, float y){
 		if (gameObject.tag == "BarShootStraight") {
-			GameObject BBM = (GameObject)Instantiate (blueUpgrade, new Vector3 (x + 0.35f, y, -1), transform.rotation);
+			GameObject BBM = (GameObject)Instantiate(blueUpgrade, new Vector3(x + 0.35f, y, -1), transform.rotation);
 			c.isMenu = true;
-			BBM.GetComponent<BuildMenu> ().SourceTile = gameObject;
-		} else if (tag == "Speaker") {
-			GameObject BBM = (GameObject)Instantiate (orangeUpgrade, new Vector3 (x - 0.35f, y, -1), transform.rotation);
-			c.isMenu = true;
-			BBM.GetComponent<BuildMenu> ().SourceTile = gameObject;
+			BBM.GetComponent<BuildMenu> ().SourceTile = gameObject;//GetComponent<BuildMenu>().SourceTile;
 		}
 
 	}
