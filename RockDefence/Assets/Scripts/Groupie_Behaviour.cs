@@ -54,6 +54,11 @@ public class Groupie_Behaviour : MonoBehaviour {
 				transform.Rotate (0, 0, +90);
 			} else if ((zrotation > 85) && (zrotation < 95)) {
 				transform.Rotate (0, 0, -90);
+			} else if ((zrotation > -5) && (zrotation < 5)){
+				transform.Rotate (0,0, 90);
+			}
+			else if ((zrotation > 175) && (zrotation < 185)){
+				transform.Rotate (0,0, -90);
 			}
 			direction = "south";
 
@@ -65,6 +70,8 @@ public class Groupie_Behaviour : MonoBehaviour {
 			float zrotation = transform.localRotation.eulerAngles.z;
 			if (zrotation == 0) {
 				transform.Rotate (0, 0, -90);
+			} else if ((zrotation > 85) && (zrotation < 95)){
+				transform.Rotate(0,0, -90);
 			}
 			direction = "west";
 
@@ -75,8 +82,10 @@ public class Groupie_Behaviour : MonoBehaviour {
 			float zrotation = transform.localRotation.eulerAngles.z;
 			if (zrotation == 0) {
 				transform.Rotate (0, 0, 90);
-			} else if ((zrotation > 178) && (zrotation < 182)) {
+			} else if (((zrotation > 175) && (zrotation < 185)) || ((zrotation > 265) && (zrotation < 275))) {
 				transform.Rotate (0, 0, -90);
+			} else if (((zrotation > 85) && (zrotation < 95))) {
+				transform.Rotate (0, 0, +90);
 			}
 			direction = "east";
 
@@ -88,6 +97,8 @@ public class Groupie_Behaviour : MonoBehaviour {
 				transform.Rotate (0, 0, -90);
 			} else if ((zrotation > 85) && (zrotation < 95)) {
 				transform.Rotate (0, 0, 90);
+			} else if ((zrotation > 175) && (zrotation < 185)) {
+				transform.Rotate (0, 0, +90);
 			}
 			direction = "north";
 		
