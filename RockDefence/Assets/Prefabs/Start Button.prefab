@@ -53,8 +53,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 28a7c7c4ee23241e2aa7209e521052b0, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: ea2a2c8f0086f4df2b12f5bee934c3a1, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -124,23 +124,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dad06caa666f53429fba4ec9466fc90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  One: {fileID: 21300000, guid: faf0b902ceaa14faea664f3c055e456d, type: 3}
-  Two: {fileID: 21300000, guid: bc90ef5bc6a4c49e6a168fce44c4ff49, type: 3}
-  Three: {fileID: 21300000, guid: 5886333c963aa48cd920caa1ae98e406, type: 3}
-  Four: {fileID: 21300000, guid: 01dba047b0857482cb327c9ed4a98913, type: 3}
-  Five: {fileID: 21300000, guid: 88c878245c192403b98319c47ec40541, type: 3}
-  Six: {fileID: 21300000, guid: 43339d0534d16440c9a409826fb37793, type: 3}
-  Seven: {fileID: 21300000, guid: 938a4df99d0e347869ad144111a25169, type: 3}
-  Eight: {fileID: 21300000, guid: 69fbd74e38d0d4b0e98d77d28e09b117, type: 3}
-  Nine: {fileID: 21300000, guid: 9b048b4d852c54fa3907054af7a66283, type: 3}
-  Ten: {fileID: 21300000, guid: f88533ee6e88343069503e09bbf7ad7c, type: 3}
-  x_coord_start: 1
-  y_coord_start: 6
+  clips:
+  - {fileID: 8300000, guid: ea2a2c8f0086f4df2b12f5bee934c3a1, type: 3}
+  - {fileID: 8300000, guid: 432fd1e29d705493a9bbe65d51946ec8, type: 3}
+  - {fileID: 8300000, guid: d2b7a0cab04f542b0b6eb73dbe5e9670, type: 3}
+  - {fileID: 8300000, guid: 78f0ba9af3309428cb4f7f5903cb0657, type: 3}
+  - {fileID: 8300000, guid: 93882e49f21324a1ca07f8f22fc83e48, type: 3}
+  - {fileID: 8300000, guid: 433fcc6c6143c4826ab22e6002e2b662, type: 3}
+  - {fileID: 8300000, guid: cd8c01977b9c547d9b66a558f7937865, type: 3}
+  - {fileID: 8300000, guid: 1f6576faafb2d48358eefcd004e50353, type: 3}
+  - {fileID: 8300000, guid: bfcfce8cca1b4416cb28e554dcf89760, type: 3}
+  - {fileID: 8300000, guid: e639ab02e431a4b0fb00274d9a45e6b4, type: 3}
   NumberOfLvl: []
   RockHighlight: {fileID: 21300000, guid: 2256673cbb1d04ad194b88a984047255, type: 3}
   Rockon: {fileID: 21300000, guid: c8a6ac401ee40485bb5afca1773f3459, type: 3}
-  TimeBetweenLevel: 5
-  Nolvl: {fileID: 0}
 --- !u!212 &21248632
 SpriteRenderer:
   m_ObjectHideFlags: 1
