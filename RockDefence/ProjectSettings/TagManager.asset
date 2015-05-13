@@ -28,6 +28,7 @@ TagManager:
   - Upgrade
   - BlueUpgradeMenu
   - OrangeUpgradeMenu
+  - SpeakerUpgrade
   layers:
   - Default
   - TransparentFX

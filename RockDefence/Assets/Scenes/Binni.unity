@@ -2958,7 +2958,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 441424, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
       propertyPath: RockDollarText
@@ -2995,6 +2995,26 @@ Prefab:
     - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
       propertyPath: y_coord_start
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
+      propertyPath: RockDollars
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
+      propertyPath: SpeakerPrice
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
+      propertyPath: SpeakerUpgradePrice
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
+      propertyPath: BarPrice
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
+      propertyPath: BarUpgradePrice
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
@@ -3264,7 +3284,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 434582, guid: 42d8b32d7fdac4a3e958b5c8f2ba93c1, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 163220, guid: 42d8b32d7fdac4a3e958b5c8f2ba93c1, type: 2}
       propertyPath: m_Name
