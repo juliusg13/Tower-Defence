@@ -1332,7 +1332,6 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
 --- !u!114 &706795458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,12 +1343,6 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_AllowActivationOnMobileDevice: 0
 --- !u!114 &706795459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1361,9 +1354,6 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 5
 --- !u!4 &706795460
 Transform:
   m_ObjectHideFlags: 0
@@ -2929,6 +2919,26 @@ Prefab:
     - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
       propertyPath: y_coord_start
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
+      propertyPath: RockDollars
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
+      propertyPath: SpeakerPrice
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
+      propertyPath: SpeakerUpgradePrice
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
+      propertyPath: BarPrice
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
+      propertyPath: BarUpgradePrice
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}

@@ -9,17 +9,13 @@ public class BuildMenu : MonoBehaviour {
 	public GameObject barUpgrade;
 	public GameObject SourceTile;
 	public GameObject Circle;
-	public int SpeakerPrice;
-	public int BarPrice;
+
 	
 	GameObject cont;
 	Controller c;
 	
 	// Use this for initialization
 	void Start () {
-		SpeakerPrice = 10;
-		BarPrice = 20;
-		
 		cont = GameObject.Find ("Controller");
 		c = cont.GetComponent<Controller> ();
 	}
@@ -85,7 +81,7 @@ public class BuildMenu : MonoBehaviour {
 				
 				c.BuyBar ();
 				//built = true;
-			} else if(this.gameObject.tag == "BlueUpgradeMenu"){
+			} else if(this.gameObject.tag == "BlueUpgradeMenu" && (c.RockDollars >= c.BarUpgradePrice)){
 				DestroyTower(SourceTile.GetComponent<Tile>().towerOnTile);
 				
 				FindMenuAndDestroy();
@@ -94,7 +90,9 @@ public class BuildMenu : MonoBehaviour {
 				GameObject ThisBar = (GameObject)Instantiate(barUpgrade, new Vector3(x-0.35f,y-0.15f, 1), transform.rotation);
 				SourceTile.GetComponent<Tile>().tag = "Upgrade";
 				SourceTile.GetComponent<Tile>().towerOnTile = ThisBar;
-			} else if (tag == "OrangeUpgradeMenu"){
+
+				c.BuyBarUpgrade();
+			} else if (tag == "OrangeUpgradeMenu" && (c.RockDollars >= c.SpeakerUpgradePrice)){
 				DestroyTower (SourceTile.GetComponent<Tile>().towerOnTile);
 				
 				FindMenuAndDestroy();
@@ -103,7 +101,7 @@ public class BuildMenu : MonoBehaviour {
 				GameObject ThisBar = (GameObject)Instantiate(speakerUpgrade, new Vector3(x+0.35f, y-0.15f, 1), transform.rotation);
 				SourceTile.GetComponent<Tile>().tag = "Upgrade";
 				SourceTile.GetComponent<Tile>().towerOnTile = ThisBar;
-				
+				c.BuySpeakerUpgrade();
 			}
 			
 			

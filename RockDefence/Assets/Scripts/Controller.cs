@@ -10,7 +10,9 @@ public class Controller : MonoBehaviour {
 	public bool GameLost;
 	public int RockDollars;
 	public int SpeakerPrice;
+	public int SpeakerUpgradePrice;
 	public int BarPrice;
+	public int BarUpgradePrice;
 	public Text RockDollarText;
 	public Text StageHealthText;
 	public Text GameOverText;
@@ -176,11 +178,23 @@ public class Controller : MonoBehaviour {
 			RockDollarText.text = "Rock Dollars: " + RockDollars.ToString ();
 		}
 	}
+	public void BuySpeakerUpgrade() {
+		if (RockDollars >= SpeakerUpgradePrice) {
+			RockDollars -= SpeakerUpgradePrice;
+			RockDollarText.text = "Rock Dollars: " + RockDollars.ToString();
+		}
+	}
 
 	public void BuyBar(){
 		if(RockDollars >= BarPrice){
 			RockDollars = RockDollars - BarPrice;
 			RockDollarText.text = "Rock Dollars: " + RockDollars.ToString ();
+		}
+	}
+	public void BuyBarUpgrade() {
+		if (RockDollars >= BarUpgradePrice) {
+			RockDollars -= BarUpgradePrice;
+			RockDollarText.text = "Rock Dollars: " + RockDollars.ToString();
 		}
 	}
 
