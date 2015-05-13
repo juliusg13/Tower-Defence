@@ -157,7 +157,7 @@ public class Controller : MonoBehaviour {
 		
 
 	public void DisplayStageHealth(int StageHealth){
-		StageHealthText.text = "Band Moral: " + StageHealth.ToString ();
+		StageHealthText.text = "Band Morale: " + StageHealth.ToString ();
 	}
 
 	public void GameOver(){
