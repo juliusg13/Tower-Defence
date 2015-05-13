@@ -22,10 +22,14 @@ public class Controller : MonoBehaviour {
 	public bool GameOn = false;
 	public CanvasGroup canvas;
 	private StageScript stage;
+	public AudioClip boo;
 
 	public GameObject mediumGroupie;
 	public GameObject youngGroupie;
 	public GameObject oldGroupie;
+
+
+	AudioSource boosound;
 
 	public class Level{
 		public int levelNumber;
@@ -161,11 +165,17 @@ public class Controller : MonoBehaviour {
 	}
 
 	public void GameOver(){
+		//setja boo í fall seinna
+		boosound = GetComponent<AudioSource> ();
+		boosound.clip = boo;
+		boosound.Play ();
 		GameOverText.text = "ROCK OVER";
 		canvas.alpha = 1;
 		canvas.interactable = true;
 		//Time.timeScale = 0;
 		GameLost = true;
+
+
 	}
 
 	public void RestartLevel(){
