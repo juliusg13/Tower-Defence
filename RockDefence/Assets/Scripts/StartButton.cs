@@ -5,13 +5,9 @@ using System.Collections.Generic;
 public class StartButton : MonoBehaviour {
 	
 
-
 	public Sprite[] NumberOfLvl;
 	public Sprite RockHighlight;
 	public Sprite Rockon;
-	//public float TimeBetweenLevel = 5;
-	//public GameObject Nolvl;
-	
 	Controller c;
 	NumberLvl levelDisplay;
 
@@ -55,7 +51,6 @@ public class StartButton : MonoBehaviour {
 		GetComponent<SpriteRenderer> ().sprite = Rockon;
 	}
 }
-
 
 
 
