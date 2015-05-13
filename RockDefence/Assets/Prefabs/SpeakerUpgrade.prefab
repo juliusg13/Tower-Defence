@@ -13,7 +13,7 @@ GameObject:
   - 58: {fileID: 5868388}
   m_Layer: 8
   m_Name: SpeakerUpgrade
-  m_TagString: Speaker
+  m_TagString: SpeakerUpgrade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5
 --- !u!114 &11440322
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -40,7 +40,7 @@ public class Shooting : MonoBehaviour {
 		if ( allowFire && (ObjectsInRange.Count > 0) && this.gameObject.tag == "BarShootStraight") { //Locks out for a time corresponding to fireRate
 			StartCoroutine(Fire ());					//For IEnumerator.. not a function
 		}
-		if ( allowFire && (ObjectsInRange.Count > 0) && this.gameObject.tag == "Speaker") { //Locks out for a time corresponding to fireRate
+		if ( allowFire && (ObjectsInRange.Count > 0) && (this.gameObject.tag == "Speaker" || this.gameObject.tag == "SpeakerUpgrade")) { //Locks out for a time corresponding to fireRate
 			StartCoroutine(Fire ());					//For IEnumerator.. not a function
 		}
 		if ( FireOK && this.gameObject.tag == "Upgrade") { //Locks out for a time corresponding to fireRate
