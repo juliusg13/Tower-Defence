@@ -15,7 +15,6 @@ public class Controller : MonoBehaviour {
 	public int SpeakerUpgradePrice;
 	public int BarPrice;
 	public int BarUpgradePrice;
-	public int LastLevel;
 	public Text RockDollarText;
 	public Text WinText;
 	public Text StageHealthText;
@@ -23,6 +22,7 @@ public class Controller : MonoBehaviour {
 	public float x_coord_start;
 	public float y_coord_start;
 	public int level = 0;
+	public int LastLevel = 10;
 	public bool GameOn = false;
 	public CanvasGroup canvas;
 	public CanvasGroup canvas2;
@@ -68,7 +68,7 @@ public class Controller : MonoBehaviour {
 		One.groupSequence = new List<GroupOfGroupies> ();
 		One.levelNumber = 1;
 		One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 5, 0, 1.6f));
-		One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 5, 0, 0.7f));
+		One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 4, 0, 0.7f));
 		LevelSequence.Add (One);
 
 		Level Two = new Level ();
@@ -207,7 +207,7 @@ public class Controller : MonoBehaviour {
 	}
 
 	public void LoadNextLevel(){
-		Application.LoadLevel (1);
+		Application.LoadLevel (0);
 	}
 
 	public void RestartLevel(){

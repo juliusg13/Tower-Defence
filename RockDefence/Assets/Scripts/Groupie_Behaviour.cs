@@ -52,9 +52,11 @@ public class Groupie_Behaviour : MonoBehaviour {
 			float zrotation = transform.localRotation.eulerAngles.z;
 			if (zrotation == 270) {
 				transform.Rotate (0, 0, +90);
-			} else if ((zrotation > 85) && (zrotation < 95)) {
+			} 
+			else if ((zrotation > 85) && (zrotation < 95)) {
 				transform.Rotate (0, 0, -90);
-			} else if ((zrotation > -5) && (zrotation < 5)){
+			} 
+			else if ((zrotation > -5) && (zrotation < 5)){
 				transform.Rotate (0,0, 90);
 			}
 			else if ((zrotation > 175) && (zrotation < 185)){
@@ -70,12 +72,12 @@ public class Groupie_Behaviour : MonoBehaviour {
 			float zrotation = transform.localRotation.eulerAngles.z;
 			if (zrotation == 0) {
 				transform.Rotate (0, 0, -90);
-			} else if ((zrotation > 85) && (zrotation < 95)){
+			} 
+			else if ((zrotation > 85) && (zrotation < 95)){
 				transform.Rotate(0,0, -90);
 			}
 			else if ((zrotation > 175) && (zrotation < 185))
 			{
-				Debug.Log("Kalli");
 				transform.Rotate (0, 0, 90);
 			}
 			direction = "west";
@@ -87,9 +89,11 @@ public class Groupie_Behaviour : MonoBehaviour {
 			float zrotation = transform.localRotation.eulerAngles.z;
 			if (zrotation == 0) {
 				transform.Rotate (0, 0, 90);
-			} else if (((zrotation > 175) && (zrotation < 185)) || ((zrotation > 265) && (zrotation < 275))) {
+			} 
+			else if (((zrotation > 175) && (zrotation < 185)) || ((zrotation > 265) && (zrotation < 275))) {
 				transform.Rotate (0, 0, -90);
-			} else if (((zrotation > 85) && (zrotation < 95))) {
+			} 
+			else if (((zrotation > 85) && (zrotation < 95))) {
 				transform.Rotate (0, 0, +90);
 			}
 			direction = "east";
@@ -97,21 +101,26 @@ public class Groupie_Behaviour : MonoBehaviour {
 		} 
 		//Groupies turn north depending on their current rotation
 		else if (other.gameObject.name == "Go_north") {
+
 			float zrotation = transform.localRotation.eulerAngles.z;
 			if (zrotation == 270) {
 				transform.Rotate (0, 0, -90);
-			} else if ((zrotation > 85) && (zrotation < 95)) {
+			} 
+			else if ((zrotation > 85) && (zrotation < 95)) {
 				transform.Rotate (0, 0, 90);
-			} else if ((zrotation > 175) && (zrotation < 185)) {
+			} 
+			else if ((zrotation > 175) && (zrotation < 185)) {
 				transform.Rotate (0, 0, +90);
 			}
 			direction = "north";
 		
-		} else if (other.gameObject.name == "Stage") {
+		} 
+		else if (other.gameObject.name == "Stage") {
 			Destroy (this.gameObject);
-		
+			controller.DecreaseEnemyCount();
+		}
 		//If the groupie faints you gain x amount of rock dollars
-		} else if (other.gameObject.tag == "Note") {
+		else if (other.gameObject.tag == "Note") {
 			health = health - 1;
 			Destroy (other.gameObject);
 
@@ -128,11 +137,12 @@ public class Groupie_Behaviour : MonoBehaviour {
 				if(this.gameObject.name == "Tank_boss(Clone)"){
 					controller.IncreaseRockDollars(20);
 				}
+	
 				Destroy (this.gameObject);
 				controller.DecreaseEnemyCount();
-				//controller.IncreaseRockDollars();
 			}
-		} else if (other.gameObject.tag == "Beer") {
+		} 
+		else if (other.gameObject.tag == "Beer") {
 
 			//if (moveSpeed > 0.3f)
 			//{
