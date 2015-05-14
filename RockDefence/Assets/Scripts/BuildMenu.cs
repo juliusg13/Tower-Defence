@@ -9,6 +9,7 @@ public class BuildMenu : MonoBehaviour {
 	public GameObject barUpgrade;
 	public GameObject SourceTile;
 	public GameObject Circle;
+	public GameObject BigCircle;
 
 	
 	GameObject cont;
@@ -26,19 +27,20 @@ public class BuildMenu : MonoBehaviour {
 	}
 	
 	void FindCircleAndDestroy(){
-		if(GameObject.FindGameObjectWithTag("MenuChild")){
-			Destroy (GameObject.FindGameObjectWithTag("MenuChild"));
+		GameObject[] Circles = GameObject.FindGameObjectsWithTag ("MenuChild");
+		for (int i = 0; i < Circles.Length; i++) {
+			Destroy(Circles[i]);
 		}
 	}
 	void FindMenuAndDestroy(){
-		GameObject BM;
-		GameObject OM;
-		GameObject BUM;
-		GameObject OUM;
+		GameObject BM, OM, BUM, OUM, SELL;
+		
 		if(BM = GameObject.FindGameObjectWithTag ("MenuBarRange")) Destroy (BM);
 		if(OM = GameObject.FindGameObjectWithTag ("MenuSpeakerRange")) Destroy (OM);
 		if (BUM = GameObject.FindGameObjectWithTag ("BlueUpgradeMenu")) Destroy (BUM);
 		if (OUM = GameObject.FindGameObjectWithTag ("OrangeUpgradeMenu")) Destroy (OUM);
+		if (SELL = GameObject.FindGameObjectWithTag ("Sell")) Destroy (SELL);
+
 		c.isMenu = false;
 	}
 	
@@ -58,9 +60,29 @@ public class BuildMenu : MonoBehaviour {
 		
 		float x = this.transform.position.x;
 		float y = this.transform.position.y;
+	//	float d = 0;
 		
 		if (c.isMenu == true) {
-			if ((this.gameObject.tag == "MenuSpeakerRange") && (isBuilt == false) && (c.RockDollars >= c.SpeakerPrice)) {
+			/*Debug.Log(this.tag);
+			if (this.gameObject.tag == "Sell"){
+				Destroy (this);
+				/*		string F = SourceTile.tag;
+				if(F == "Speaker") d = c.SpeakerPrice;
+				if(F == "BarShootStraight") d = c.BarPrice;
+				if(F == "Upgrade") d = c.BarUpgradePrice;
+				if(F == "SpeakerUpgrade") d = c.SpeakerUpgradePrice;
+				d *= 0.5f;
+				int dollars = (int)Mathf.Round(d);
+				c.IncreaseRockDollars(dollars);*/
+				/*DestroyTower (SourceTile.GetComponent<Tile>().towerOnTile);
+				
+				FindMenuAndDestroy();
+				FindCircleAndDestroy();
+				
+				SourceTile.GetComponent<Tile>().tag = "Buildable";
+				
+			}
+			else */if ((this.gameObject.tag == "MenuSpeakerRange") && (isBuilt == false) && (c.RockDollars >= c.SpeakerPrice)) {
 				GameObject ThisBar = (GameObject)Instantiate (speaker, new Vector3 (x + 0.3f, y, 1), transform.rotation);
 				SourceTile.GetComponent<Tile> ().built = true;
 				FindCircleAndDestroy ();
@@ -99,7 +121,7 @@ public class BuildMenu : MonoBehaviour {
 				FindCircleAndDestroy();
 				
 				GameObject ThisBar = (GameObject)Instantiate(speakerUpgrade, new Vector3(x+0.35f, y-0.15f, 1), transform.rotation);
-				SourceTile.GetComponent<Tile>().tag = "Upgrade";
+				SourceTile.GetComponent<Tile>().tag = "SpeakerUpgrade";
 				SourceTile.GetComponent<Tile>().towerOnTile = ThisBar;
 				c.BuySpeakerUpgrade();
 			}
@@ -125,12 +147,15 @@ public class BuildMenu : MonoBehaviour {
 		
 		if (this.gameObject.tag == "MenuBarRange" || this.gameObject.tag == "MenuSpeakerRange") {
 			//this.GetComponentInChildren<SpriteRenderer>().color = new Color(255f, 255f, 0, 1);
-			GameObject Circle1 = (GameObject)Instantiate(Circle, new Vector3(x, y, -1), transform.rotation);
-			Circle1.GetComponent<SpriteRenderer>().enabled = true;
+			GameObject Circle1 = (GameObject)Instantiate (Circle, new Vector3 (x, y, -1), transform.rotation);
+			Circle1.GetComponent<SpriteRenderer> ().enabled = true;
+		} else if (this.gameObject.tag == "OrangeUpgradeMenu") {
+			GameObject Circle1 = (GameObject)Instantiate (BigCircle, new Vector3 (x, y, -1), transform.rotation);
+			Circle1.GetComponent<SpriteRenderer> ().enabled = true;
 		}
 	}
 	void OnMouseExit() {
-		if (this.gameObject.tag == "MenuBarRange" || this.gameObject.tag == "MenuSpeakerRange") {
+		if (this.gameObject.tag == "MenuBarRange" || this.gameObject.tag == "MenuSpeakerRange" || this.tag == "OrangeUpgradeMenu") {
 			//while(GameObject.FindGameObjectWithTag("MenuChild") != null){
 			FindCircleAndDestroy();
 			//}
