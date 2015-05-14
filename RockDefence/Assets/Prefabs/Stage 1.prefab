@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageHealth: 10
   explosion: {fileID: 100008, guid: 39e5ccbda87ff0b46a4e7ea51de805f8, type: 2}
-  Grouppieclips:
+  grouppieClips:
   - {fileID: 8300000, guid: 2549862d1298e457b98cb6d0eb820d39, type: 3}
   - {fileID: 8300000, guid: 092e3e794ecf04440a9da8355c00a7e0, type: 3}
   - {fileID: 8300000, guid: 70449d2ae97944a5c95cb4733903be45, type: 3}
@@ -284,7 +284,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: aa65a97429d454066b18743804239d5f, type: 3}
   - {fileID: 8300000, guid: b89b9c20270c546ff9dd46ad22c7e823, type: 3}
   - {fileID: 8300000, guid: 196062a0ba69441a38562c900f1525c1, type: 3}
-  Grouppies: {fileID: 0}
+  grouppies: {fileID: 0}
 --- !u!212 &21208474
 SpriteRenderer:
   m_ObjectHideFlags: 1
