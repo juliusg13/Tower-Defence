@@ -30,12 +30,11 @@ public class StartButton : MonoBehaviour {
 	}
 	
 	void OnMouseDown() {
-
+	
 		if (c.GameOn == false) {
 			RandomPlayClip();
 			c.GameOn = true;
 			Controller.Level currentLevel = c.LevelSequence [c.level];
-
 
 			StartCoroutine (c.RunLevel (currentLevel));
 			Sprite levelPicture = levelDisplay.levelPicture[c.level];
