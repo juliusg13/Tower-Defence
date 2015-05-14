@@ -7,16 +7,17 @@ public class StageScript : MonoBehaviour {
 
 	public int StageHealth;
 	public GameObject explosion;
-	public AudioClip[] Grouppieclips;
-	public AudioClip Grouppies;
-	AudioSource Grouppiesound;
+	public AudioClip[] grouppieClips;
+	public AudioClip grouppies;
+	AudioSource grouppieSound;
 	Controller controller;
-
+	//GameObject[] gos;
 	// Use this for initialization
 	void Start () {
 		StageHealth = 10;
 		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent<Controller>();
-		Grouppiesound = GetComponent<AudioSource> ();
+		grouppieSound = GetComponent<AudioSource> ();
+		//gos = GameObject.FindGameObjectsWithTag("Stage");
 	}
 	
 	// Update is called once per frame
@@ -44,9 +45,17 @@ public class StageScript : MonoBehaviour {
 	}
 	public void RandomPlayClip()
 	{
-		Grouppiesound.clip = Grouppieclips[Random.Range(0,Grouppieclips.Length)];
-		Grouppiesound.Play ();
 
+		grouppieSound.clip = grouppieClips[Random.Range(0,grouppieClips.Length)];
+		foreach (AudioClip sound in grouppieClips) {
+
+			if (grouppieSound.isPlaying) {
+				      
+			}
+			else {
+				grouppieSound.Play ();
+			}
+		}
 		
 	}
 }
