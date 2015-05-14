@@ -1,14 +1,17 @@
 fileFormatVersion: 2
 guid: 8504117049dfb4c449d50927bfd5a9f1
-timeCreated: 1431007155
+timeCreated: 1431610245
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - speaker: {instanceID: 0}
   - bar: {instanceID: 0}
+  - speakerUpgrade: {instanceID: 0}
+  - barUpgrade: {instanceID: 0}
   - SourceTile: {instanceID: 0}
   - Circle: {fileID: 124422, guid: 2a89b21f527253d48bef3838ed192f16, type: 2}
+  - BigCircle: {fileID: 153730, guid: 952ad7da2e87d0148bf102d5aa41bef1, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
