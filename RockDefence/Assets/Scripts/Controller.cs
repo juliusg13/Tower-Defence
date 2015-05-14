@@ -32,6 +32,9 @@ public class Controller : MonoBehaviour {
 	public GameObject mediumGroupie;
 	public GameObject youngGroupie;
 	public GameObject oldGroupie;
+	public GameObject tankBoss;
+	public GameObject caveTroll;
+	public GameObject gummyBear;
 
 
 	AudioSource boosound;
@@ -97,12 +100,16 @@ public class Controller : MonoBehaviour {
 		Five.levelNumber = 5;
 		Five.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 5, 0, 1.6f));
 		Five.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.6f));
+		Five.groupSequence.Add (new GroupOfGroupies ("BossTank", 1, 0, 1.6f));
+		Five.groupSequence.Add (new GroupOfGroupies ("CaveTroll", 1, 0, 1.6f));
+		Five.groupSequence.Add (new GroupOfGroupies ("GummyBear", 1, 0, 1.6f));
 		LevelSequence.Add (Five);
 
 		Level Six = new Level ();
 		Six.groupSequence = new List<GroupOfGroupies> ();
 		Six.levelNumber = 6;
 		Six.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.6f));
+		Six.groupSequence.Add(new GroupOfGroupies ("YoungGroupie", 15, 0, 1.0f));
 		LevelSequence.Add (Six);
 
 		Level Seven = new Level ();
@@ -158,8 +165,17 @@ public class Controller : MonoBehaviour {
 				else if(group.typeOfGroupie == "MediumGroupie"){
 					enemy =  mediumGroupie;
 				}
-				else{ //if(group.typeOfGroupie == "OldGroupie"){
+				else if(group.typeOfGroupie == "OldGroupie"){
 					enemy =  oldGroupie;
+				}
+				else if(group.typeOfGroupie == "TankBoss"){
+					enemy = tankBoss;
+				}
+				else if(group.typeOfGroupie == "CaveTroll"){
+					enemy = caveTroll;
+				}
+				else{
+					enemy = gummyBear;
 				}
 
 				Instantiate (enemy, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);

@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  health: 10
+  health: 30
   drunk: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!212 &21225658
