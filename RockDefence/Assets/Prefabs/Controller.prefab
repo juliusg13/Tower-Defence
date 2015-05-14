@@ -113,7 +113,9 @@ MonoBehaviour:
   GameLost: 0
   RockDollars: 0
   SpeakerPrice: 0
+  SpeakerUpgradePrice: 0
   BarPrice: 0
+  BarUpgradePrice: 0
   RockDollarText: {fileID: 0}
   StageHealthText: {fileID: 0}
   GameOverText: {fileID: 0}
@@ -122,6 +124,7 @@ MonoBehaviour:
   level: 0
   GameOn: 0
   canvas: {fileID: 22536696, guid: 7527fe441b88048b09553e4eccb5ffdb, type: 2}
+  boo: {fileID: 8300000, guid: 83ac3b5ae6c3b444b83371b2ed8b00d2, type: 3}
   mediumGroupie: {fileID: 186474, guid: fc966b3caaad1c94399922208e5d3efe, type: 2}
   youngGroupie: {fileID: 186474, guid: ce8023ce6eae64ae28c48f5396a56c6d, type: 2}
   oldGroupie: {fileID: 186474, guid: f059f50bc1cdc407497401d44d875b28, type: 2}
