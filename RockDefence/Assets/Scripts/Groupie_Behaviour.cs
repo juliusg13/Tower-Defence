@@ -96,8 +96,9 @@ public class Groupie_Behaviour : MonoBehaviour {
 			if (zrotation == 0) {
 				transform.Rotate (0, 0, 90);
 			} 
-			else if (((zrotation > 175) && (zrotation < 185)) || ((zrotation > 265) && (zrotation < 275))) {
+			else if (((zrotation > 175) && (zrotation < 185)) /*|| ((zrotation > 265) && (zrotation < 275))*/) {
 				transform.Rotate (0, 0, -90);
+				Debug.Log ("East somm");
 			} 
 			else if (((zrotation > 85) && (zrotation < 95))) {
 				transform.Rotate (0, 0, +90);
