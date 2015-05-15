@@ -39,7 +39,7 @@ public class BuildMenu : MonoBehaviour {
 		if(OM = GameObject.FindGameObjectWithTag ("MenuSpeakerRange")) Destroy (OM);
 		if (BUM = GameObject.FindGameObjectWithTag ("BlueUpgradeMenu")) Destroy (BUM);
 		if (OUM = GameObject.FindGameObjectWithTag ("OrangeUpgradeMenu")) Destroy (OUM);
-		if (SELL = GameObject.FindGameObjectWithTag ("Sell")) Destroy (SELL);
+		if (SELL = GameObject.FindGameObjectWithTag ("SellTower")) Destroy (SELL);
 
 		c.isMenu = false;
 	}
@@ -60,21 +60,23 @@ public class BuildMenu : MonoBehaviour {
 		
 		float x = this.transform.position.x;
 		float y = this.transform.position.y;
-	//	float d = 0;
+		float d = 0;
 		
 		if (c.isMenu == true) {
-			/*Debug.Log(this.tag);
-			if (this.gameObject.tag == "Sell"){
-				Destroy (this);
-				/*		string F = SourceTile.tag;
+			Debug.Log(this.tag);
+			if (this.gameObject.tag == "SellTower"){
+				//Destroy (this);
+						string F = SourceTile.tag;
 				if(F == "Speaker") d = c.SpeakerPrice;
 				if(F == "BarShootStraight") d = c.BarPrice;
 				if(F == "Upgrade") d = c.BarUpgradePrice;
 				if(F == "SpeakerUpgrade") d = c.SpeakerUpgradePrice;
 				d *= 0.5f;
 				int dollars = (int)Mathf.Round(d);
-				c.IncreaseRockDollars(dollars);*/
-				/*DestroyTower (SourceTile.GetComponent<Tile>().towerOnTile);
+				c.IncreaseRockDollars(dollars);
+
+				SourceTile.GetComponent<Tile>().built = false;
+				DestroyTower (SourceTile.GetComponent<Tile>().towerOnTile);
 				
 				FindMenuAndDestroy();
 				FindCircleAndDestroy();
@@ -82,7 +84,7 @@ public class BuildMenu : MonoBehaviour {
 				SourceTile.GetComponent<Tile>().tag = "Buildable";
 				
 			}
-			else */if ((this.gameObject.tag == "MenuSpeakerRange") && (isBuilt == false) && (c.RockDollars >= c.SpeakerPrice)) {
+			else if ((this.gameObject.tag == "MenuSpeakerRange") && (isBuilt == false) && (c.RockDollars >= c.SpeakerPrice)) {
 				GameObject ThisBar = (GameObject)Instantiate (speaker, new Vector3 (x + 0.3f, y, 1), transform.rotation);
 				SourceTile.GetComponent<Tile> ().built = true;
 				FindCircleAndDestroy ();
