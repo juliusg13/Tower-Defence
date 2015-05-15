@@ -109,7 +109,7 @@ public class BuildMenu : MonoBehaviour {
 				FindMenuAndDestroy();
 				FindCircleAndDestroy();
 				
-				GameObject ThisBar = (GameObject)Instantiate(barUpgrade, new Vector3(x-0.35f,y-0.15f, 1), transform.rotation);
+				GameObject ThisBar = (GameObject)Instantiate(barUpgrade, new Vector3(x+0.35f,y-0.15f, 1), transform.rotation);
 				SourceTile.GetComponent<Tile>().tag = "Upgrade";
 				SourceTile.GetComponent<Tile>().towerOnTile = ThisBar;
 
