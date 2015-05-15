@@ -30,6 +30,7 @@ public class Controller : MonoBehaviour {
 	public CanvasGroup canvas3;
 	private StageScript stage;
 	public AudioClip boo;
+	public AudioClip solo;
 
 	public GameObject mediumGroupie;
 	public GameObject youngGroupie;
@@ -75,8 +76,8 @@ public class Controller : MonoBehaviour {
 		Level One = new Level();
 		One.groupSequence = new List<GroupOfGroupies> ();
 		One.levelNumber = 1;
-		One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 5, 0, 0));
-		One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 5, 0, 0));
+		One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 5, 0, 0.5f));
+		One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 5, 0, 0.3f));
 		LevelSequence.Add (One);
 
 		Level Two = new Level ();
@@ -228,6 +229,7 @@ public class Controller : MonoBehaviour {
 		EnemyStop = true;
 		canvas3.alpha = 0.5f;
 		canvas3.interactable = false;
+		GetComponent<AudioSource> ().PlayOneShot (solo);
 		yield return new WaitForSeconds (3);
 		EnemyStop = false;
 	}

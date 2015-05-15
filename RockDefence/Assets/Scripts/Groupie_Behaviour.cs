@@ -25,7 +25,6 @@ public class Groupie_Behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (controller.EnemyStop == true) {
-			Debug.Log ("Enemy freeze");
 			currentSpeed = 0;
 		} 
 		else {
