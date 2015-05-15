@@ -25,10 +25,31 @@ public class Note : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag == "Destroy" && this.gameObject.tag == "Beer") {
+			Groupie_Behaviour gScript = other.GetComponent<Groupie_Behaviour>();
+			if(!gScript.drunk)
+			{
+				StartCoroutine(Slow (other));
+			}
+
+		}
 		if (other.gameObject.tag == "Destroy" ) {
 			Destroy (this.gameObject);
 		}
 
+
+	}
+	IEnumerator Slow(Collider2D obj)
+	{
+
+		Groupie_Behaviour gScript = obj.GetComponent<Groupie_Behaviour>();
+		gScript.drunk = true;
+		gScript.moveSpeed = gScript.moveSpeed / 2;
+		yield return new WaitForSeconds (0.1f);
+		gScript.moveSpeed = gScript.moveSpeed * 2;
+		gScript.drunk = false;
+
+		
 	}
 
 	
