@@ -8,7 +8,9 @@ public class Groupie_Behaviour : MonoBehaviour {
 	public bool drunk = false;
 	public Quaternion rotation = Quaternion.identity;
 
+	private float currentSpeed;
 	private Controller controller;
+
 
 	int stopSpeed = 0;
 	//int direction = 1; // 0 = West, 1 = South, 2 = East.
@@ -17,30 +19,35 @@ public class Groupie_Behaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent<Controller>();
-
-		
+		currentSpeed = moveSpeed;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (controller.EnemyStop == true) {
+			Debug.Log ("Enemy freeze");
+			currentSpeed = 0;
+		} 
+		else {
+			currentSpeed = moveSpeed;
+		}
 	}
 	
 	void FixedUpdate (){
 		
 		if (direction == "east") {
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * moveSpeed, transform.localScale.y * stopSpeed);	
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * currentSpeed, transform.localScale.y * stopSpeed);	
 		} 
 		else if (direction == "south") {
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * stopSpeed, -transform.localScale.y * moveSpeed);
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.localScale.x * stopSpeed, -transform.localScale.y * currentSpeed);
 
 		} 
 		else if (direction == "west") {
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-transform.localScale.x * moveSpeed, transform.localScale.y * stopSpeed);
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-transform.localScale.x * currentSpeed, transform.localScale.y * stopSpeed);
 		
 		} 
 		else if (direction == "north") {
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-transform.localScale.x * stopSpeed, transform.localScale.y *moveSpeed);
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-transform.localScale.x * stopSpeed, transform.localScale.y *currentSpeed);
 		}
 		
 	}
@@ -144,7 +151,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 		} 
 		else if (other.gameObject.tag == "Beer") {
 
-			//if (moveSpeed > 0.3f)
+			//if (currentSpeed > 0.3f)
 			//{
 				//Shooting gScript = other.GetComponent<Shooting>();
 				//if(gScript != null)
@@ -152,7 +159,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 				
 					StartCoroutine(Slow ());
 					//Debug.Log("Dec");
-					//moveSpeed -= gScript.slowing;
+					//currentSpeed -= gScript.slowing;
 				//}
 			//}
 
@@ -162,9 +169,9 @@ public class Groupie_Behaviour : MonoBehaviour {
 	IEnumerator Slow()
 	{
 
-		moveSpeed = moveSpeed / 2;
+		currentSpeed = currentSpeed / 2;
 		yield return new WaitForSeconds (2);
-		moveSpeed = moveSpeed * 2;
+		currentSpeed = currentSpeed * 2;
 
 	}
 	
@@ -177,7 +184,7 @@ public class Groupie_Behaviour : MonoBehaviour {
 		//if (colis.gameObject.name == "Grass") {
 		//	Debug.Log("hit");
 		//	Destroy(colis.gameObject);
-		//GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x,transform.localScale.y * moveSpeed);
+		//GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x,transform.localScale.y * currentSpeed);
 		//GetComponent<Rigidbody2D> ().AddForce(transform.forward * 2);
 		//}
 	}

@@ -10,6 +10,7 @@ public class Controller : MonoBehaviour {
 	public bool isMenu;
 	public bool GameLost;
 	public bool nextLevel;
+	public bool EnemyStop;
 	public int RockDollars;
 	public int SpeakerPrice;
 	public int SpeakerUpgradePrice;
@@ -26,6 +27,7 @@ public class Controller : MonoBehaviour {
 	public bool GameOn = false;
 	public CanvasGroup canvas;
 	public CanvasGroup canvas2;
+	public CanvasGroup canvas3;
 	private StageScript stage;
 	public AudioClip boo;
 
@@ -54,7 +56,10 @@ public class Controller : MonoBehaviour {
 		canvas.interactable = false;
 		canvas2.alpha = 0;
 		canvas2.interactable = false;
+		canvas3.alpha = 0.5f;
+		canvas3.interactable = false;
 		enemyCount = 0;
+		EnemyStop = false;
 		SpeakerPrice = 50;
 		BarPrice = 60;
 		stage = GameObject.FindGameObjectWithTag ("Stage").GetComponent<StageScript>();
@@ -145,7 +150,8 @@ public class Controller : MonoBehaviour {
 	
 	public IEnumerator RunLevel(Level currentLevel)
 	{
-
+		canvas3.alpha = 1;
+		canvas3.interactable = true;
 		float z = -1f;
 //		this.GetComponent<AudioSource> ().Play ();
 		//Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
@@ -187,10 +193,7 @@ public class Controller : MonoBehaviour {
 		level++;
 		GameOn = false;
 	}
-
-	void Levelspawner(){
-	}
-
+	
 		
 	public void DisplayStageHealth(int StageHealth){
 		StageHealthText.text = "Band Morale: " + StageHealth.ToString ();
@@ -206,8 +209,6 @@ public class Controller : MonoBehaviour {
 		canvas.interactable = true;
 		//Time.timeScale = 0;
 		GameLost = true;
-
-
 	}
 
 	public void WinLevel(){
@@ -217,6 +218,18 @@ public class Controller : MonoBehaviour {
 			canvas2.interactable = true;
 			GameLost = true;
 		}
+	}
+
+	public void FreezeEnemies(){
+		StartCoroutine (StopEnemy());
+	}
+
+	public IEnumerator StopEnemy(){
+		EnemyStop = true;
+		canvas3.alpha = 0.5f;
+		canvas3.interactable = false;
+		yield return new WaitForSeconds (3);
+		EnemyStop = false;
 	}
 
 	public void DecreaseEnemyCount(){
