@@ -61,11 +61,11 @@ public class Controller : MonoBehaviour {
 		canvas3.interactable = false;
 		enemyCount = 0;
 		EnemyStop = false;
-		SpeakerPrice = 50;
-		BarPrice = 60;
+		//SpeakerPrice = 50;
+		//BarPrice = 60;
 		stage = GameObject.FindGameObjectWithTag ("Stage").GetComponent<StageScript>();
 		isMenu = false;
-		RockDollars = 100;
+		//RockDollars = 100;
 		GameOverText.text = "";
 		WinText.text = "";
 		RockDollarText.text = "Rock Dollars: " + RockDollars.ToString ();
