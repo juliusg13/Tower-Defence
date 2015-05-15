@@ -58,9 +58,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -.0199999996, y: .0299999993}
+  m_Offset: {x: 0, y: .0299999993}
   serializedVersion: 2
-  m_Size: {x: .899999976, y: .649999976}
+  m_Size: {x: .84375, y: .649999976}
 --- !u!82 &8250160
 AudioSource:
   m_ObjectHideFlags: 1
@@ -139,7 +139,7 @@ Animator:
   m_GameObject: {fileID: 150078}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e4aa76143161aa14e8464be3127c8de1, type: 2}
+  m_Controller: {fileID: 9100000, guid: d9da1736a1f87674cb2afb2cfabcedea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -158,8 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76acc31472be123468799364cdf0c06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  health: 10
+  moveSpeed: .5
+  health: 30
   drunk: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!212 &21263132

@@ -88,8 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76acc31472be123468799364cdf0c06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: .800000012
-  health: 4
+  moveSpeed: 1.5
+  health: 3
   drunk: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!212 &21242156

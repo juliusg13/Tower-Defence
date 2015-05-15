@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void ExitPress(){
+		GetComponent<AudioSource>().Play ();
 		quitMenu.enabled = true;
 		startText.enabled = false;
 		exitText.enabled = false;

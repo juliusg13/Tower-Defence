@@ -30,20 +30,19 @@ public class StartButton : MonoBehaviour {
 	}
 	
 	void OnMouseDown() {
-		if (c.GameLost == false) {
-			if (c.GameOn == false) {
-				RandomPlayClip ();
-				c.GameOn = true;
-				Controller.Level currentLevel = c.LevelSequence [c.level];
+	
+		if (c.GameOn == false) {
+			RandomPlayClip();
+			c.GameOn = true;
+			Controller.Level currentLevel = c.LevelSequence [c.level];
 
+			StartCoroutine (c.RunLevel (currentLevel));
+			Sprite levelPicture = levelDisplay.levelPicture[c.level];
+			//picture.levelPicture[] = picture.levelPicture[c.level];
 
-				StartCoroutine (c.RunLevel (currentLevel));
-				Sprite levelPicture = levelDisplay.levelPicture [c.level];
-				//picture.levelPicture[] = picture.levelPicture[c.level];
-
-				levelDisplay.GetComponent<SpriteRenderer> ().sprite = levelPicture;
-			}
+			levelDisplay.GetComponent<SpriteRenderer> ().sprite = levelPicture;
 		}
+
 	}
 
 	void OnMouseEnter() {
