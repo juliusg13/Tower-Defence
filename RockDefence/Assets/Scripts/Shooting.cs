@@ -152,7 +152,7 @@ public class Shooting : MonoBehaviour {
 
 			//other.gameObject.moveSpeed -= 0.5;
 		}
-		if (other.gameObject.tag == "BeerAoE") {
+		if (other.gameObject.tag == "BeerAoE" && this.gameObject.tag == "Upgrade") {
 			Destroy(other.gameObject);
 		}
 
