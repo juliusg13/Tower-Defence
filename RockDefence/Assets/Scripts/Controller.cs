@@ -70,8 +70,8 @@ public class Controller : MonoBehaviour {
 		Level One = new Level();
 		One.groupSequence = new List<GroupOfGroupies> ();
 		One.levelNumber = 1;
-		One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 5, 0, 1.6f));
-		One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 4, 0, 0.7f));
+		One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 5, 0, 0));
+		One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 5, 0, 0));
 		LevelSequence.Add (One);
 
 		Level Two = new Level ();
@@ -180,6 +180,7 @@ public class Controller : MonoBehaviour {
 
 				Instantiate (enemy, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
 				enemyCount++;
+				Debug.Log ("increase" + enemyCount);
 				yield return new WaitForSeconds (group.separationTime);
 			}
 		}
@@ -220,6 +221,7 @@ public class Controller : MonoBehaviour {
 
 	public void DecreaseEnemyCount(){
 		enemyCount--;
+		Debug.Log ("Decrease" + enemyCount);
 	}
 
 	public void LoadNextLevel(){

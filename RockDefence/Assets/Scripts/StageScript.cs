@@ -38,8 +38,6 @@ public class StageScript : MonoBehaviour {
 				controller.GameOver();
 			}
 			Destroy(other.gameObject);
-			controller.DecreaseEnemyCount();
-
 			controller.DisplayStageHealth(StageHealth);
 
 		}
