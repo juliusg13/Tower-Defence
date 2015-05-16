@@ -188,7 +188,7 @@ public class Controller : MonoBehaviour {
 				}
 				else if(group.typeOfGroupie == "CaveTroll"){
 					enemy = caveTroll;
-					RandomCaveClip();
+					//RandomCaveClip();
 				}
 				else{
 					enemy = gummyBear;
