@@ -63,8 +63,8 @@ MonoBehaviour:
   BigCircle: {fileID: 153730, guid: 952ad7da2e87d0148bf102d5aa41bef1, type: 2}
   towerOnTile: {fileID: 0}
   built: 0
-  highlight: {fileID: 21300000, guid: 9f05fe2bc75b27e46b2767bd37146c76, type: 3}
-  normal: {fileID: 21300000, guid: 425e695e3751433428659cd0db44dd5a, type: 3}
+  highlight: {fileID: 21300000, guid: 71cca9bc3021e5749aa0f46bcedffc49, type: 3}
+  normal: {fileID: 21300000, guid: a0beb87bd3f9cbe409fcdcc17555f3b1, type: 3}
 --- !u!212 &21279404
 SpriteRenderer:
   m_ObjectHideFlags: 1
