@@ -128,7 +128,7 @@ MonoBehaviour:
   BeerSpillSmall: {fileID: 0}
   BeerSpillMedium: {fileID: 0}
   BeerSpillBig: {fileID: 0}
-  fireRate: 2
+  fireRate: 1
   nextShot: 0
   allowFire: 1
   FireOK: 1
