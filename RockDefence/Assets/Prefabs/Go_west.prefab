@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 179688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .319999993, y: .959999979, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.125, y: 3.125, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -38,7 +38,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 179688}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orange: {fileID: 175356, guid: 492e2ff3fe43b1b4ba3d8602777d1980, type: 2}
-  orangeUpgrade: {fileID: 109686, guid: c49962775387b994d9069c424d8bf0f8, type: 2}
+  orangeUpgrade: {fileID: 159170, guid: 1a892e0631430304584b19fc7ff9c208, type: 2}
   blue: {fileID: 114666, guid: af00af5fa4492b1438544a6eb44a26f9, type: 2}
   blueUpgrade: {fileID: 179868, guid: 2636f84c906d8ff48bd9931ddc18ae2c, type: 2}
   Sell: {fileID: 147684, guid: bf0ef658ccf6be5429fbadfcbc2dd0cd, type: 2}
