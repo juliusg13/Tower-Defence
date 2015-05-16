@@ -109,25 +109,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730b30000baa4dd4ba7762eea4396c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCount: 0
   isMenu: 0
   GameLost: 0
+  nextLevel: 0
+  EnemyStop: 0
   RockDollars: 0
   SpeakerPrice: 0
   SpeakerUpgradePrice: 0
   BarPrice: 0
   BarUpgradePrice: 0
   RockDollarText: {fileID: 0}
+  WinText: {fileID: 0}
   StageHealthText: {fileID: 0}
   GameOverText: {fileID: 0}
   x_coord_start: 1
   y_coord_start: 6
   level: 0
+  LastLevel: 10
   GameOn: 0
-  canvas: {fileID: 22536696, guid: 7527fe441b88048b09553e4eccb5ffdb, type: 2}
+  canvas: {fileID: 0}
+  canvas2: {fileID: 0}
+  canvas3: {fileID: 0}
   boo: {fileID: 8300000, guid: 83ac3b5ae6c3b444b83371b2ed8b00d2, type: 3}
+  solo: {fileID: 0}
   mediumGroupie: {fileID: 186474, guid: fc966b3caaad1c94399922208e5d3efe, type: 2}
   youngGroupie: {fileID: 186474, guid: ce8023ce6eae64ae28c48f5396a56c6d, type: 2}
   oldGroupie: {fileID: 186474, guid: f059f50bc1cdc407497401d44d875b28, type: 2}
+  tankBoss: {fileID: 150078, guid: 656499bae42284d4fb69fe584a6632b6, type: 2}
+  caveTroll: {fileID: 186474, guid: f7b1c6ae0d1e949019b212abd4ceed54, type: 2}
+  gummyBear: {fileID: 138060, guid: 304f0514a72935142977e892f6dd2ca0, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

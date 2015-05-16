@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 408784}
   - 212: {fileID: 21271560}
   - 61: {fileID: 6131564}
+  - 114: {fileID: 11439380}
   m_Layer: 8
   m_Name: Grass
   m_TagString: Buildable
@@ -24,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 6, z: 4}
   m_LocalScale: {x: 3.125, y: 3.125, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,6 +43,24 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .319999993, y: .319999993}
+--- !u!114 &11439380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cb841d574ae84cc4a64aa136ffdaa61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groupie: {fileID: 186474, guid: fc966b3caaad1c94399922208e5d3efe, type: 2}
+  YoungGroupie: {fileID: 186474, guid: ce8023ce6eae64ae28c48f5396a56c6d, type: 2}
+  OldGroupie: {fileID: 186474, guid: f059f50bc1cdc407497401d44d875b28, type: 2}
+  Groupie_count: 0
+  length_between_groupies: 1
+  x_coord_start: 1
+  y_coord_start: 6
 --- !u!212 &21271560
 SpriteRenderer:
   m_ObjectHideFlags: 1
