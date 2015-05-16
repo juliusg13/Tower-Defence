@@ -4,12 +4,12 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 
-
 public class Controller : MonoBehaviour {
-	public int enemyCount;
+
 	public bool isMenu;
 	public bool GameLost;
 	public bool nextLevel;
+	public int enemyCount;
 	public bool EnemyStop;
 	public int RockDollars;
 	public int SpeakerPrice;
@@ -39,7 +39,7 @@ public class Controller : MonoBehaviour {
 	public GameObject tankBoss;
 	public GameObject caveTroll;
 	public GameObject gummyBear;
-
+	public static int SceneNumber = 1;
 
 	AudioSource boosound;
 
@@ -52,19 +52,16 @@ public class Controller : MonoBehaviour {
 	public List<Level> LevelSequence;
 
 
-
-
 	CaveTrollSound caveTrollSound;		
 	GummyBearSound gummyBearSound;
 		
 
-	
 	// Use this for initialization
 	void Start () {
 
 		caveTrollSound = GameObject.FindGameObjectWithTag ("TrollTag").GetComponent<CaveTrollSound>();
 		gummyBearSound = GameObject.FindGameObjectWithTag ("GummyTag").GetComponent<GummyBearSound>();
-
+		
 		canvas.alpha = 0;
 		canvas.interactable = false;
 		canvas2.alpha = 0;
@@ -75,7 +72,6 @@ public class Controller : MonoBehaviour {
 		EnemyStop = false;
 		//SpeakerPrice = 50;
 		//BarPrice = 60;
-		//stage = GameObject.FindGameObjectWithTag ("CaveTrollSound").GetComponent<StageScript>();
 		stage = GameObject.FindGameObjectWithTag ("Stage").GetComponent<StageScript>();
 		isMenu = false;
 		//RockDollars = 100;
@@ -150,12 +146,6 @@ public class Controller : MonoBehaviour {
 		Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.6f));
 		LevelSequence.Add (Nine);
 
-		Level Ten = new Level ();
-		Ten.groupSequence = new List<GroupOfGroupies> ();
-		Ten.levelNumber = 10;
-		Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.6f));
-		Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 20, 1, 1.6f));
-		LevelSequence.Add (Ten);
 
 	}
 	// Update is called once per frame
@@ -168,9 +158,6 @@ public class Controller : MonoBehaviour {
 		canvas3.alpha = 1;
 		canvas3.interactable = true;
 		float z = -1f;
-//		this.GetComponent<AudioSource> ().Play ();
-		//Nolvl = GameObject.FindGameObjectWithTag ("NumberOfLevel");
-		//Nolvl.GetComponent<SpriteRenderer> ().sprite = Four; // fix with array
 
 		List<GroupOfGroupies> currentGroupSequence = currentLevel.groupSequence;
 
@@ -257,7 +244,9 @@ public class Controller : MonoBehaviour {
 	}
 
 	public void LoadNextLevel(){
-		Application.LoadLevel (2);
+		SceneNumber++;
+		Debug.Log ("SceneNumber" + SceneNumber);
+		Application.LoadLevel (SceneNumber);
 	}
 
 	public void RestartLevel(){
