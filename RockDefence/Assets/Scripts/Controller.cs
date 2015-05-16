@@ -32,12 +32,7 @@ public class Controller : MonoBehaviour {
 	public AudioClip boo;
 	public AudioClip solo;
 
-	public AudioClip[] caveClips;
-	AudioSource caveSound;
-
-	public AudioClip[] gummyClips;
-	AudioSource gummySound;
-
+	
 	public GameObject mediumGroupie;
 	public GameObject youngGroupie;
 	public GameObject oldGroupie;
@@ -56,10 +51,20 @@ public class Controller : MonoBehaviour {
 
 	public List<Level> LevelSequence;
 
-		// Use this for initialization
+
+
+
+	CaveTrollSound caveTrollSound;		
+	GummyBearSound gummyBearSound;
+		
+
+	
+	// Use this for initialization
 	void Start () {
-		caveSound = GetComponent<AudioSource> ();
-		gummySound = GetComponent<AudioSource> ();
+
+		caveTrollSound = GameObject.FindGameObjectWithTag ("TrollTag").GetComponent<CaveTrollSound>();
+		gummyBearSound = GameObject.FindGameObjectWithTag ("GummyTag").GetComponent<GummyBearSound>();
+
 		canvas.alpha = 0;
 		canvas.interactable = false;
 		canvas2.alpha = 0;
@@ -70,6 +75,7 @@ public class Controller : MonoBehaviour {
 		EnemyStop = false;
 		//SpeakerPrice = 50;
 		//BarPrice = 60;
+		//stage = GameObject.FindGameObjectWithTag ("CaveTrollSound").GetComponent<StageScript>();
 		stage = GameObject.FindGameObjectWithTag ("Stage").GetComponent<StageScript>();
 		isMenu = false;
 		//RockDollars = 100;
@@ -85,7 +91,7 @@ public class Controller : MonoBehaviour {
 		One.levelNumber = 1;
 		One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 5, 0, 0.5f));
 		One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 5, 0, 0.3f));
-		One.groupSequence.Add (new GroupOfGroupies ("CaveTroll", 5, 0, 0.3f));
+		One.groupSequence.Add (new GroupOfGroupies ("GummyBear", 1, 0, 0.3f));
 		LevelSequence.Add (One);
 
 		Level Two = new Level ();
@@ -188,10 +194,12 @@ public class Controller : MonoBehaviour {
 				}
 				else if(group.typeOfGroupie == "CaveTroll"){
 					enemy = caveTroll;
-					//RandomCaveClip();
+					caveTrollSound.RandomCaveClip();
+
 				}
 				else{
 					enemy = gummyBear;
+					gummyBearSound.RandomGummyClip();
 				}
 
 				Instantiate (enemy, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
@@ -287,16 +295,8 @@ public class Controller : MonoBehaviour {
 		RockDollarText.text = "Rock Dollars: " + RockDollars.ToString ();
 	}
 
-	public void RandomCaveClip()
-	{
-		caveSound.clip = caveClips[Random.Range(0,caveClips.Length)];
-		caveSound.Play ();
-	}
 
-	public void RandomGummyClip()
-	{
-		gummySound.clip = gummyClips[Random.Range(0,gummyClips.Length)];
-		gummySound.Play ();
-	}
+
+
 	
 }
