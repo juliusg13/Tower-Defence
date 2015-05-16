@@ -89,7 +89,6 @@ public class Controller : MonoBehaviour {
 			Level One = new Level ();
 			One.groupSequence = new List<GroupOfGroupies> ();
 			One.levelNumber = 1;
-			One.groupSequence.Add (new GroupOfGroupies ("BossTank", 1, 0, 1.6f));
 			One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 8, 0.1f, 1f));
 			LevelSequence.Add (One);
 			
@@ -231,7 +230,7 @@ public class Controller : MonoBehaviour {
 					gummyBearSound.RandomGummyClip();
 				}
 
-				Instantiate (enemy, new Vector3 (x_coord_start, y_coord_start, z), transform.rotation);
+				Instantiate (enemy, new Vector3 (x_coord_start, y_coord_start, z), Quaternion.identity);
 				enemyCount++;
 				Debug.Log ("increase" + enemyCount);
 				yield return new WaitForSeconds (group.separationTime);

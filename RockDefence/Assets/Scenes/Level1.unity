@@ -832,7 +832,7 @@ Transform:
   - {fileID: 619659356}
   - {fileID: 708821501}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
 --- !u!1001 &292054456
 Prefab:
   m_ObjectHideFlags: 0
@@ -1941,7 +1941,7 @@ MonoBehaviour:
   x_coord_start: -4.71000004
   y_coord_start: 6.80999994
   level: 0
-  LastLevel: 5
+  LastLevel: 2
   GameOn: 0
   canvas: {fileID: 24004093}
   canvas2: {fileID: 379285837}

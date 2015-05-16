@@ -499,7 +499,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &623868811 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 123864, guid: 7eaa7b62ca73adc43b7ad46d4ce5d476, type: 2}
@@ -719,7 +719,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!95 &1113687430
 Animator:
   serializedVersion: 3
