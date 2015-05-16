@@ -89,7 +89,7 @@ public class Controller : MonoBehaviour {
 			Level One = new Level ();
 			One.groupSequence = new List<GroupOfGroupies> ();
 			One.levelNumber = 1;
-			One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 8, 0.1f, 1f));
+			One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.1f, 1f));
 			LevelSequence.Add (One);
 			
 			Level Two = new Level ();
@@ -155,8 +155,8 @@ public class Controller : MonoBehaviour {
 			Level One = new Level ();
 			One.groupSequence = new List<GroupOfGroupies> ();
 			One.levelNumber = 1;
-			One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 5, 0, 0.5f));
-			One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 5, 0, 0.3f));
+			One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0, 0.5f));
+			One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0, 0.3f));
 			LevelSequence.Add (One);
 			
 			Level Two = new Level ();

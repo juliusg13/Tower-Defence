@@ -1941,7 +1941,7 @@ MonoBehaviour:
   x_coord_start: -4.71000004
   y_coord_start: 6.80999994
   level: 0
-  LastLevel: 2
+  LastLevel: 1
   GameOn: 0
   canvas: {fileID: 24004093}
   canvas2: {fileID: 379285837}
