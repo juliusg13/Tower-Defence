@@ -58,17 +58,22 @@ public class Shooting : MonoBehaviour {
 
 
 		GameObject groupie = ObjectsInRange.FirstOrDefault ();
-		Groupie_Behaviour gScript = groupie.GetComponent<Groupie_Behaviour>();
-		if (gScript.drunk && this.gameObject.tag == "BarShootStraight") {
-			ObjectsInRange.Remove (groupie);
-			newNote.GetComponent<Note> ().target = ObjectsInRange.FirstOrDefault ();
+		if (groupie == null) {
+			allowFire = true;
+
 		} else {
-			newNote.GetComponent<Note>().target = ObjectsInRange.FirstOrDefault();
+			Groupie_Behaviour gScript = groupie.GetComponent<Groupie_Behaviour> ();
+			if (gScript.drunk && this.gameObject.tag == "BarShootStraight") {
+				ObjectsInRange.Remove (groupie);
+				newNote.GetComponent<Note> ().target = ObjectsInRange.FirstOrDefault ();
+			} else {
+				newNote.GetComponent<Note> ().target = ObjectsInRange.FirstOrDefault ();
+			}
+			newNote.GetComponent<Note> ().initialPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+			newNote.GetComponent<Note> ().radius = this.GetComponent<CircleCollider2D> ().radius;
+			yield return new WaitForSeconds (fireRate);
+			allowFire = true;
 		}
-		newNote.GetComponent<Note> ().initialPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
-		newNote.GetComponent<Note>().radius = this.GetComponent<CircleCollider2D>().radius;
-		yield return new WaitForSeconds (fireRate);
-		allowFire = true;
 	}
 
 	IEnumerator FireAll()

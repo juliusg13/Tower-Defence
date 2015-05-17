@@ -600,7 +600,7 @@ Transform:
   - {fileID: 611724100}
   - {fileID: 410592886}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!4 &100903634 stripped
 Transform:
   m_PrefabParentObject: {fileID: 457862, guid: 00630e1fdec74114a96c47d222b8d73e, type: 2}
@@ -2034,11 +2034,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22451470, guid: 0165d389ed4194287bb5a056dfd63fd2, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 6.55470848
+      value: 5.69000006
       objectReference: {fileID: 0}
     - target: {fileID: 22451470, guid: 0165d389ed4194287bb5a056dfd63fd2, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -4.26063919
+      value: -7.44000006
       objectReference: {fileID: 0}
     - target: {fileID: 22451470, guid: 0165d389ed4194287bb5a056dfd63fd2, type: 2}
       propertyPath: m_SizeDelta.x
@@ -3001,7 +3001,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 13
 --- !u!1001 &709226939
 Prefab:
   m_ObjectHideFlags: 0
