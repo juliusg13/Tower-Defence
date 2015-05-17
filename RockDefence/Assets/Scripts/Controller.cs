@@ -23,7 +23,7 @@ public class Controller : MonoBehaviour {
 	public float x_coord_start;
 	public float y_coord_start;
 	public int level = 0;
-	public int LastLevel = 10;
+	public int LastLevel;
 	public bool GameOn = false;
 	public CanvasGroup canvas;
 	public CanvasGroup canvas2;
@@ -110,6 +110,7 @@ public class Controller : MonoBehaviour {
 			Four.groupSequence = new List<GroupOfGroupies> ();
 			Four.levelNumber = 4;
 			Four.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 40, 0, 0.5f));
+			Four.groupSequence.Add (new GroupOfGroupies ("TankBoss", 1, 0, 0));
 			LevelSequence.Add (Four);
 			
 			Level Five = new Level ();
@@ -130,6 +131,7 @@ public class Controller : MonoBehaviour {
 			Level Seven = new Level ();
 			Seven.groupSequence = new List<GroupOfGroupies> ();
 			Seven.levelNumber = 7;
+			Seven.groupSequence.Add (new GroupOfGroupies ("GummyBear", 1, 0, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 4, 0, 1.6f));
 			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
@@ -206,11 +208,13 @@ public class Controller : MonoBehaviour {
 
 			Level Ten = new Level ();
 			Ten.groupSequence = new List<GroupOfGroupies> ();
-			Ten.levelNumber = 9;
+			Ten.levelNumber = 10;
 			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 15, 0, 0.1f));
 			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.6f));
 			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 15, 0, 1.6f));
 			Ten.groupSequence.Add (new GroupOfGroupies ("TankBoss", 1, 0, 0));
+			Ten.groupSequence.Add (new GroupOfGroupies ("CaveTroll", 1, 0, 0));
+			Ten.groupSequence.Add (new GroupOfGroupies ("GummyBear", 1, 0, 0));
 			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 2, 1, 1));
 			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0.4f, 0.2f));
 			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.5f, 0.4f));
@@ -231,7 +235,6 @@ public class Controller : MonoBehaviour {
 			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.5f, 0.4f));
 
 			LevelSequence.Add (Ten);
-
 		} 
 		// Second Scene
 		else if (SceneNumber == 2) {
@@ -239,16 +242,215 @@ public class Controller : MonoBehaviour {
 			Level One = new Level ();
 			One.groupSequence = new List<GroupOfGroupies> ();
 			One.levelNumber = 1;
-			One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0, 0.5f));
-			One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0, 0.3f));
+			One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 15, 0, 1f));
 			LevelSequence.Add (One);
 			
 			Level Two = new Level ();
 			Two.groupSequence = new List<GroupOfGroupies> ();
 			Two.levelNumber = 2;
-			Two.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.3f));
-			Two.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 5, 1f, 0.7f));
+			Two.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 0.8f));
+			Two.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 10, 0, 1f));
 			LevelSequence.Add (Two);
+			
+			Level Three = new Level ();
+			Three.groupSequence = new List<GroupOfGroupies> ();
+			Three.levelNumber = 3;
+			Three.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 15, 0, 0.4f));
+			Three.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 10, 0, 0.4f));
+			Three.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 10, 0, 0.4f));
+			
+			LevelSequence.Add (Three);
+			
+			Level Four = new Level ();
+			Four.groupSequence = new List<GroupOfGroupies> ();
+			Four.levelNumber = 4;
+			Four.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 40, 0, 0.5f));
+			Three.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 20, 0, 0.4f));
+			LevelSequence.Add (Four);
+			
+			Level Five = new Level ();
+			Five.groupSequence = new List<GroupOfGroupies> ();
+			Five.levelNumber = 5;
+			Five.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 6, 0, 1.6f));
+			Five.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 20, 0, 0.8f));
+			Five.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 20, 0, 0.4f));
+			LevelSequence.Add (Five);
+			
+			Level Six = new Level ();
+			Six.groupSequence = new List<GroupOfGroupies> ();
+			Six.levelNumber = 6;
+			Six.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 10, 0, 1.6f));
+			Six.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 5, 0, 0.8f));
+			Six.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 13, 0, 0.5f));
+			LevelSequence.Add (Six);
+			
+			Level Seven = new Level ();
+			Seven.groupSequence = new List<GroupOfGroupies> ();
+			Seven.levelNumber = 7;
+			Seven.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 4, 0, 1.6f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.4f, 0.6f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 2, 0.4f, 0.3f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.4f, 0.6f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 2, 0.4f, 0.3f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.4f, 0.6f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 2, 0.4f, 0.3f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.4f, 0.6f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 2, 0.4f, 0.3f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.4f, 0.6f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 2, 0.4f, 0.3f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.4f, 0.6f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 2, 0.4f, 0.3f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.4f, 0.6f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 2, 0.4f, 0.3f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 4, 0, 1.6f));
+			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			LevelSequence.Add (Seven);
+			
+			Level Eight = new Level ();
+			Eight.groupSequence = new List<GroupOfGroupies> ();
+			Eight.levelNumber = 8;
+			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 5, 1, 1));
+			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 10, 0.4f, 0.2f));
+			LevelSequence.Add (Eight);
+			
+			Level Nine = new Level ();
+			Nine.groupSequence = new List<GroupOfGroupies> ();
+			Nine.levelNumber = 9;
+			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 30, 0.4f, 0.3f));
+
+			LevelSequence.Add (Nine);
+			
+			Level Ten = new Level ();
+			Ten.groupSequence = new List<GroupOfGroupies> ();
+			Ten.levelNumber = 10;
+			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0.4f, 0.2f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 15, 0, 0.1f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.6f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 15, 0, 1.6f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("TankBoss", 1, 0, 0));
+			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 3, 1, 1));
+			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0.4f, 0.2f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 3, 0.5f, 0.4f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 3, 1, 1));
+			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0.4f, 0.2f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 3, 0.5f, 0.4f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 3, 1, 1));
+			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0.4f, 0.2f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.5f, 0.4f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 3, 1, 1));
+			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0.4f, 0.2f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.5f, 0.4f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 3, 1, 1));
+			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0.4f, 0.2f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 3, 0.5f, 0.4f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 3, 1, 1));
+			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0.4f, 0.2f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 3, 0.5f, 0.4f));
+			
+			LevelSequence.Add (Ten);
+
+			
+			Level Eleven = new Level ();
+			Eleven.groupSequence = new List<GroupOfGroupies> ();
+			Eleven.levelNumber = 11;
+			Eleven.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 30, 0, 0.9f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 30, 0, 0.1f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 0.9f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 15, 0, 0.3f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 23, 0, 0.4f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 8, 0, 0.1f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 0.4f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0, 0.1f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 6, 0, 0.8f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 15, 0, 0.1f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.6f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0, 0.1f));
+			Eleven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 8, 0, 1.6f));
+			
+			LevelSequence.Add (Eleven);
+
+
+			Level Twelve = new Level ();
+			Twelve.groupSequence = new List<GroupOfGroupies> ();
+			Twelve.levelNumber = 12;
+			Twelve.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 100, 0, 0.9f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 50, 0, 0.9f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 60, 0, 0.1f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 13, 0, 0.9f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 15, 0, 0.3f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 23, 0, 1.6f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 60, 0, 0.1f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 0.4f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0, 0.1f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 6, 0, 0.8f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 15, 0, 0.1f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.6f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0, 0.1f));
+			Twelve.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 8, 0, 1.6f));
+			
+			LevelSequence.Add (Twelve);
+
+
+			Level Thirteen = new Level ();
+			Thirteen.groupSequence = new List<GroupOfGroupies> ();
+			Thirteen.levelNumber = 13;
+			Thirteen.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 30, 0, 0.9f));
+			LevelSequence.Add (Thirteen);
+
+
+			Level Fourteen = new Level ();
+			Fourteen.groupSequence = new List<GroupOfGroupies> ();
+			Fourteen.levelNumber = 14;
+			LevelSequence.Add (Fourteen);
+
+
+			Level Fifteen = new Level ();
+			Fifteen.groupSequence = new List<GroupOfGroupies> ();
+			Fifteen.levelNumber = 15;
+			Fifteen.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 30, 0, 0.9f));
+			
+			LevelSequence.Add (Fifteen);
 
 		} 
 		// Final Scene
@@ -351,9 +553,7 @@ public class Controller : MonoBehaviour {
 	}
 
 	public void FreezeEnemies(){
-		if (GameLost == false) {
-			StartCoroutine (StopEnemy ());
-		}
+		StartCoroutine (StopEnemy());
 	}
 
 	public IEnumerator StopEnemy(){
