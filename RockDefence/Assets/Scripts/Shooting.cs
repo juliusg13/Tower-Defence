@@ -59,7 +59,7 @@ public class Shooting : MonoBehaviour {
 
 		GameObject groupie = ObjectsInRange.FirstOrDefault ();
 		Groupie_Behaviour gScript = groupie.GetComponent<Groupie_Behaviour>();
-		if (gScript.drunk) {
+		if (gScript.drunk && this.gameObject.tag == "BarShootStraight") {
 			ObjectsInRange.Remove (groupie);
 			newNote.GetComponent<Note> ().target = ObjectsInRange.FirstOrDefault ();
 		} else {

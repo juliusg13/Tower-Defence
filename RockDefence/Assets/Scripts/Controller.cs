@@ -238,7 +238,7 @@ public class Controller : MonoBehaviour {
 		} 
 		// Second Scene
 		else if (SceneNumber == 2) {
-
+			Debug.Log ("SCENE TWO!");
 			Level One = new Level ();
 			One.groupSequence = new List<GroupOfGroupies> ();
 			One.levelNumber = 1;
@@ -255,7 +255,7 @@ public class Controller : MonoBehaviour {
 			Level Three = new Level ();
 			Three.groupSequence = new List<GroupOfGroupies> ();
 			Three.levelNumber = 3;
-			Three.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 15, 0, 0.4f));
+			Three.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 0.4f));
 			Three.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 10, 0, 0.4f));
 			Three.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 10, 0, 0.4f));
 			
@@ -265,7 +265,7 @@ public class Controller : MonoBehaviour {
 			Four.groupSequence = new List<GroupOfGroupies> ();
 			Four.levelNumber = 4;
 			Four.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 40, 0, 0.5f));
-			Three.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 20, 0, 0.4f));
+			Four.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 20, 0, 0.4f));
 			LevelSequence.Add (Four);
 			
 			Level Five = new Level ();
