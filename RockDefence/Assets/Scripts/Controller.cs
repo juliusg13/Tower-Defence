@@ -351,7 +351,9 @@ public class Controller : MonoBehaviour {
 	}
 
 	public void FreezeEnemies(){
-		StartCoroutine (StopEnemy());
+		if (GameLost == false) {
+			StartCoroutine (StopEnemy ());
+		}
 	}
 
 	public IEnumerator StopEnemy(){
