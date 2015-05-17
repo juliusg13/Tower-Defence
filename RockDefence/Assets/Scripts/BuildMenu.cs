@@ -10,7 +10,7 @@ public class BuildMenu : MonoBehaviour {
 	public GameObject SourceTile;
 	public GameObject Circle;
 	public GameObject BigCircle;
-
+	SellSound sellSound;	
 	
 	GameObject cont;
 	Controller c;
@@ -19,8 +19,9 @@ public class BuildMenu : MonoBehaviour {
 	void Start () {
 		cont = GameObject.Find ("Controller");
 		c = cont.GetComponent<Controller> ();
+		sellSound = GameObject.FindGameObjectWithTag ("SellSoundTag").GetComponent<SellSound>();
+
 	}
-	
 	// Update is called once per frame
 	void Update () {
 		
@@ -66,6 +67,7 @@ public class BuildMenu : MonoBehaviour {
 			Debug.Log(this.tag);
 			if (this.gameObject.tag == "SellTower"){
 				//Destroy (this);
+				sellSound.RandomSellClip();
 						string F = SourceTile.tag;
 				if(F == "Speaker") d = c.SpeakerPrice;
 				if(F == "BarShootStraight") d = c.BarPrice;

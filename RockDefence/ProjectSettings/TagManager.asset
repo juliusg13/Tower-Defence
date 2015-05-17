@@ -33,6 +33,7 @@ TagManager:
   - SellTower
   - TrollTag
   - GummyTag
+  - SellSoundTag
   layers:
   - Default
   - TransparentFX
