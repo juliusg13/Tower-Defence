@@ -31,6 +31,7 @@ public class Shooting : MonoBehaviour {
 	
 	
 	void FixedUpdate (){
+
 		if(ObjectsInRange.Count() > 0){
 
 			if (ObjectsInRange.FirstOrDefault ().Equals (null)) { // If it is NULL then it has been destroyed
@@ -54,7 +55,16 @@ public class Shooting : MonoBehaviour {
 	{
 		allowFire = false;
 		GameObject newNote = (GameObject)Instantiate (Note, new Vector3 (transform.position.x , transform.position.y, transform.position.z), Quaternion.identity);
-		newNote.GetComponent<Note>().target = ObjectsInRange.FirstOrDefault();
+
+
+		GameObject groupie = ObjectsInRange.FirstOrDefault ();
+		Groupie_Behaviour gScript = groupie.GetComponent<Groupie_Behaviour>();
+		if (gScript.drunk) {
+			ObjectsInRange.Remove (groupie);
+			newNote.GetComponent<Note> ().target = ObjectsInRange.FirstOrDefault ();
+		} else {
+			newNote.GetComponent<Note>().target = ObjectsInRange.FirstOrDefault();
+		}
 		newNote.GetComponent<Note> ().initialPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 		newNote.GetComponent<Note>().radius = this.GetComponent<CircleCollider2D>().radius;
 		yield return new WaitForSeconds (fireRate);
