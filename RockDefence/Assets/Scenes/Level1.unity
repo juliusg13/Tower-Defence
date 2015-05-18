@@ -2221,6 +2221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMenu: 0
+  soloCount: 0
   GameLost: 0
   nextLevel: 0
   enemyCount: 0
@@ -2231,6 +2232,7 @@ MonoBehaviour:
   BarPrice: 30
   BarUpgradePrice: 40
   RockDollarText: {fileID: 1740285333}
+  soloCountText: {fileID: 1448759690}
   WinText: {fileID: 2093194159}
   StageHealthText: {fileID: 153025711}
   GameOverText: {fileID: 1705609633}
@@ -5198,6 +5200,12 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 457862, guid: be32dc24e5630494c9eae95ac897547d, type: 2}
   m_PrefabInternal: {fileID: 1719295430}
+--- !u!114 &1448759690 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11410068, guid: 9cabbb2eff3f8d54ab21cf43fe84cee7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1987259021}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1454373408
 Prefab:
   m_ObjectHideFlags: 0
@@ -7668,6 +7676,14 @@ Prefab:
     - target: {fileID: 22414258, guid: 9cabbb2eff3f8d54ab21cf43fe84cee7, type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -84.9000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 109848, guid: 9cabbb2eff3f8d54ab21cf43fe84cee7, type: 2}
+      propertyPath: m_Name
+      value: guitar solo text
+      objectReference: {fileID: 0}
+    - target: {fileID: 11410068, guid: 9cabbb2eff3f8d54ab21cf43fe84cee7, type: 2}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9cabbb2eff3f8d54ab21cf43fe84cee7, type: 2}
