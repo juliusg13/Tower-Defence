@@ -84,6 +84,7 @@ public class Controller : MonoBehaviour {
 		LevelSequence = new List<Level> ();
 
 		// First Scene
+		SceneNumber = 3;
 		if (SceneNumber == 1) {
 
 			Level One = new Level ();
@@ -477,16 +478,22 @@ public class Controller : MonoBehaviour {
 			Level One = new Level ();
 			One.groupSequence = new List<GroupOfGroupies> ();
 			One.levelNumber = 1;
-			One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 5, 0, 0.5f));
-			One.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 5, 0, 0.3f));
+			One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1f));
 			LevelSequence.Add (One);
 			
 			Level Two = new Level ();
 			Two.groupSequence = new List<GroupOfGroupies> ();
 			Two.levelNumber = 2;
-			Two.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.3f));
-			Two.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 5, 1f, 0.7f));
+			Two.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 0.8f));
+			Two.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 4, 0, 1f));
 			LevelSequence.Add (Two);
+			
+			Level Three = new Level ();
+			Three.groupSequence = new List<GroupOfGroupies> ();
+			Three.levelNumber = 3;
+			Three.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 5, 0, 0.4f));
+			Three.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 10, 0, 0.4f));
+			LevelSequence.Add (Three);
 
 		}
 
@@ -533,8 +540,16 @@ public class Controller : MonoBehaviour {
 					enemy = gummyBear;
 					gummyBearSound.RandomGummyClip();
 				}
+				if(SceneNumber == 3) {
+					if(i % 2 == 0){
+						Instantiate (enemy, new Vector3 (x_coord_start+1f, y_coord_start, z), Quaternion.identity);
+					} else {
+						Instantiate (enemy, new Vector3 (x_coord_start, y_coord_start, z), Quaternion.identity);
+					}
 
-				Instantiate (enemy, new Vector3 (x_coord_start, y_coord_start, z), Quaternion.identity);
+				} else {
+					Instantiate (enemy, new Vector3 (x_coord_start, y_coord_start, z), Quaternion.identity);
+				}
 				enemyCount++;
 				Debug.Log ("increase" + enemyCount);
 				yield return new WaitForSeconds (group.separationTime);
