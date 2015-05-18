@@ -650,6 +650,9 @@ public class Controller : MonoBehaviour {
 	public void RestartLevel(){
 		Application.LoadLevel(Application.loadedLevel);
 	}
+	public void BackToMainMenu(){
+		Application.LoadLevel(0);
+	}
 
 	public void BuySpeaker(){
 		if (RockDollars >= SpeakerPrice) {
