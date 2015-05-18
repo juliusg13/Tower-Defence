@@ -558,11 +558,11 @@ public class Controller : MonoBehaviour {
 			Ten.groupSequence = new List<GroupOfGroupies> ();
 			Ten.levelNumber = 10;
 			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 15, 0, 0.1f));
-			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.6f));
-			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 15, 0, 1.6f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 0.3f));
+			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 15, 0, 1f));
 			Ten.groupSequence.Add (new GroupOfGroupies ("TankBoss", 1, 0, 0));
-			Ten.groupSequence.Add (new GroupOfGroupies ("CaveTroll", 1, 0, 0));
-			Ten.groupSequence.Add (new GroupOfGroupies ("GummyBear", 1, 0, 0));
+			Ten.groupSequence.Add (new GroupOfGroupies ("CaveTroll", 1, 0, 1));
+			Ten.groupSequence.Add (new GroupOfGroupies ("GummyBear", 4, 2, 1));
 			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 2, 1, 1));
 			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0.4f, 0.2f));
 			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.5f, 0.4f));
