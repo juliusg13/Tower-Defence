@@ -128,16 +128,16 @@ public class Groupie_Behaviour : MonoBehaviour {
 					controller.IncreaseRockDollars (2);
 				}
 				if (this.gameObject.name == "OldGroupie(Clone)") {
-					controller.IncreaseRockDollars (3);
+					controller.IncreaseRockDollars (2);
 				}
 				if (this.gameObject.name == "Tank_boss(Clone)") {
-					controller.IncreaseRockDollars (20);
+					controller.IncreaseRockDollars (5);
 				}
 				if (this.gameObject.name == "CaveTroll(Clone)") {
-					controller.IncreaseRockDollars (20);
+					controller.IncreaseRockDollars (15);
 				}
 				if (this.gameObject.name == "GummyBear_boss(Clone)") {
-					controller.IncreaseRockDollars (20);
+					controller.IncreaseRockDollars (10);
 				}
 	
 				Destroy (this.gameObject);
