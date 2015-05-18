@@ -391,7 +391,7 @@ public class Controller : MonoBehaviour {
 			*/
 		} 
 		// Final Scene
-		else {
+		else if (SceneNumber == 3) {
 			soloCount = 3;
 			Level One = new Level ();
 			One.groupSequence = new List<GroupOfGroupies> ();
@@ -609,7 +609,7 @@ public class Controller : MonoBehaviour {
 					Instantiate (enemy, new Vector3 (x_coord_start, y_coord_start, z), Quaternion.identity);
 				}
 				enemyCount++;
-				Debug.Log ("increase" + enemyCount);
+//				Debug.Log ("increase" + enemyCount);
 				yield return new WaitForSeconds (group.separationTime);
 			}
 		}
@@ -664,12 +664,12 @@ public class Controller : MonoBehaviour {
 
 	public void DecreaseEnemyCount(){
 		enemyCount--;
-		Debug.Log ("Decrease" + enemyCount);
+		//Debug.Log ("Decrease" + enemyCount);
 	}
 
 	public void LoadNextLevel(){
 		SceneNumber++;
-		Debug.Log ("SceneNumber" + SceneNumber);
+		//Debug.Log ("SceneNumber" + SceneNumber);
 		Application.LoadLevel (SceneNumber);
 	}
 

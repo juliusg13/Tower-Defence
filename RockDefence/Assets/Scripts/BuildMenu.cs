@@ -64,7 +64,7 @@ public class BuildMenu : MonoBehaviour {
 		float d = 0;
 		
 		if (c.isMenu == true) {
-			Debug.Log(this.tag);
+			//Debug.Log(this.tag);
 			if (this.gameObject.tag == "SellTower"){
 				//Destroy (this);
 				sellSound.RandomSellClip();
