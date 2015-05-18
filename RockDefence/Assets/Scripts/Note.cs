@@ -82,7 +82,7 @@ public class Note : MonoBehaviour {
 			float step = speed * Time.deltaTime;
 			transform.position = Vector3.MoveTowards (transform.position, target.transform.position, step);
 		}
-		if ((transform.position.x > initialPos.x + 2*radius || transform.position.y > initialPos.y + 2*radius || transform.position.x < initialPos.x - 2*radius || transform.position.y < initialPos.y - 2*radius)&& this.gameObject.tag != "BeerAoE") {
+		if ((transform.position.x > initialPos.x + 3*radius || transform.position.y > initialPos.y + 3*radius || transform.position.x < initialPos.x - 3*radius || transform.position.y < initialPos.y - 3*radius)&& this.gameObject.tag != "BeerAoE") {
 			Destroy (this.gameObject);
 		}
 	}
