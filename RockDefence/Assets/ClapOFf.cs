@@ -13,6 +13,8 @@ public class ClapOFf : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+		if (!clapOn) {
+			clapSound.Stop ();
+		}
 	}
 }
