@@ -84,7 +84,7 @@ public class Controller : MonoBehaviour {
 		LevelSequence = new List<Level> ();
 
 		// First Scene
-		//SceneNumber = 1;
+		SceneNumber = 3;
 		if (SceneNumber == 1) {
 
 			Level One = new Level ();
