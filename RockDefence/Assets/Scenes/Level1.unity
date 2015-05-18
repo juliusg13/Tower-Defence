@@ -4237,6 +4237,10 @@ Prefab:
       propertyPath: LastLevel
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11478442, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
+      propertyPath: RockDollars
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1bae4427e008b1a4bb32234d807638d1, type: 2}
   m_IsPrefabParent: 0
@@ -7979,6 +7983,14 @@ Prefab:
     - target: {fileID: 11410068, guid: 9cabbb2eff3f8d54ab21cf43fe84cee7, type: 2}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412218, guid: 9cabbb2eff3f8d54ab21cf43fe84cee7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 22358506, guid: 9cabbb2eff3f8d54ab21cf43fe84cee7, type: 2}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9cabbb2eff3f8d54ab21cf43fe84cee7, type: 2}
