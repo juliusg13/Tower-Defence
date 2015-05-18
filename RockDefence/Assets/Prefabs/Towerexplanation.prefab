@@ -51,6 +51,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &112258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 22477204}
+  - 222: {fileID: 22261554}
+  - 114: {fileID: 11490560}
+  m_Layer: 5
+  m_Name: Text 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &115506
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +226,7 @@ GameObject:
   - 222: {fileID: 22237986}
   - 114: {fileID: 11486180}
   m_Layer: 5
-  m_Name: Text 6
+  m_Name: Text 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,7 +285,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -389.100006, y: 167.699997, z: 219}
+  m_LocalPosition: {x: -389, y: 167.699997, z: 219}
   m_LocalScale: {x: 100, y: 100, z: 24.3571415}
   m_Children: []
   m_Father: {fileID: 22451470}
@@ -304,7 +321,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -388.5, y: 211.100006, z: 219}
+  m_LocalPosition: {x: -389, y: 211.100006, z: 219}
   m_LocalScale: {x: 100, y: 100, z: 24.3571415}
   m_Children: []
   m_Father: {fileID: 22451470}
@@ -558,6 +575,33 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
+  m_Text: Use the guitar solo to freeze the groupies in awe for a moment, use them
+    wisely.
+--- !u!114 &11490560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 10
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
   m_Text: Place defences.
 --- !u!212 &21206108
 SpriteRenderer:
@@ -635,7 +679,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 71cca9bc3021e5749aa0f46bcedffc49, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ad666412a91f4f918f5d2c9b3ab34db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21274422
 SpriteRenderer:
@@ -765,6 +809,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105214}
+--- !u!222 &22261554
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112258}
 --- !u!222 &22274564
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -840,12 +890,13 @@ RectTransform:
   - {fileID: 459420}
   - {fileID: 22490900}
   - {fileID: 416046}
+  - {fileID: 22477204}
   - {fileID: 22467972}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 5.69000006, y: -7.44000006}
+  m_AnchoredPosition: {x: .289999992, y: -2.50999999}
   m_SizeDelta: {x: 1031, y: 341}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22460218
@@ -871,6 +922,23 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 22451470}
+  m_RootOrder: 14
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 271.700012, y: -95.1999969}
+  m_SizeDelta: {x: 180, y: 33}
+  m_Pivot: {x: .5, y: .5}
+--- !u!224 &22477204
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
