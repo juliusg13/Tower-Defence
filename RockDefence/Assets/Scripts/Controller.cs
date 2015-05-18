@@ -137,11 +137,11 @@ public class Controller : MonoBehaviour {
 			Seven.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 4, 0, 1.6f));
 			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.8f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.8f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.6f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
@@ -150,11 +150,11 @@ public class Controller : MonoBehaviour {
 			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 4, 0, 1.6f));
 			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.6f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Seven.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 4, 0.8f, 0));
 			Seven.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
 			LevelSequence.Add (Seven);
 			
@@ -165,7 +165,7 @@ public class Controller : MonoBehaviour {
 			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
 			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
 			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
+			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 2, 2, 1));
 			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
 			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
 			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
@@ -173,13 +173,14 @@ public class Controller : MonoBehaviour {
 			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
 			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
 			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Eight.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.8f, 0));
 			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Eight.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.8f, 0));
 			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Eight.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.4f, 0));
+			Eight.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.8f, 0));
 			Eight.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 5, 1, 1));
 			Eight.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 10, 0.4f, 0.2f));
+			Eight.groupSequence.Add (new GroupOfGroupies ("Tankboss", 1, 0, 0.2f));
 			LevelSequence.Add (Eight);
 			
 			Level Nine = new Level ();
@@ -187,23 +188,23 @@ public class Controller : MonoBehaviour {
 			Nine.levelNumber = 9;
 			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
 			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.7f, 0));
 			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
 			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
 			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
 			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
 			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.7f, 0));
 			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
 			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
 			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
 			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
 			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.7f, 0));
 			Nine.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 1, 1, 1));
 			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 1, 0.4f, 0));
-			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 1, 0.5f, 0));
-			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 20, 0.4f, 1));
+			Nine.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.5f, 0));
+			Nine.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 20, 0.2f, 0.4));
 
 
 			LevelSequence.Add (Nine);
@@ -214,9 +215,9 @@ public class Controller : MonoBehaviour {
 			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 15, 0, 0.1f));
 			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 10, 0, 1.6f));
 			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 15, 0, 1.6f));
-			Ten.groupSequence.Add (new GroupOfGroupies ("TankBoss", 1, 0, 0));
-			Ten.groupSequence.Add (new GroupOfGroupies ("CaveTroll", 1, 0, 0));
-			Ten.groupSequence.Add (new GroupOfGroupies ("GummyBear", 1, 0, 0));
+			Ten.groupSequence.Add (new GroupOfGroupies ("TankBoss", 1, 1, 0));
+			Ten.groupSequence.Add (new GroupOfGroupies ("CaveTroll", 1, 1, 0));
+			Ten.groupSequence.Add (new GroupOfGroupies ("GummyBear", 1, 0.4f, 0));
 			Ten.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 2, 1, 1));
 			Ten.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 3, 0.4f, 0.2f));
 			Ten.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 2, 0.5f, 0.4f));
