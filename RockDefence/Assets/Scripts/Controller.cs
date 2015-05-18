@@ -89,7 +89,7 @@ public class Controller : MonoBehaviour {
 
 		//SceneNumber = 3;
 
-		//SceneNumber = 3;
+		SceneNumber = 2;
 
 		if (SceneNumber == 1) {
 
@@ -614,6 +614,7 @@ public class Controller : MonoBehaviour {
 			}
 		}
 		level++;
+		Debug.Log (level);
 		GameOn = false;
 		//IncreaseRockDollars (5);
 	}
