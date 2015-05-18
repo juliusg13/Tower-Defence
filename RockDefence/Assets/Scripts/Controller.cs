@@ -84,7 +84,7 @@ public class Controller : MonoBehaviour {
 		LevelSequence = new List<Level> ();
 
 		// First Scene
-		SceneNumber = 3;
+		//SceneNumber = 1;
 		if (SceneNumber == 1) {
 
 			Level One = new Level ();
@@ -111,7 +111,7 @@ public class Controller : MonoBehaviour {
 			Four.groupSequence = new List<GroupOfGroupies> ();
 			Four.levelNumber = 4;
 			Four.groupSequence.Add (new GroupOfGroupies ("OldGroupie", 2, 0, 1f));
-			Four.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 30, 0.5f, 0.35f));
+			Four.groupSequence.Add (new GroupOfGroupies ("YoungGroupie", 25, 0.5f, 0.4f));
 			LevelSequence.Add (Four);
 			
 			Level Five = new Level ();
@@ -557,6 +557,7 @@ public class Controller : MonoBehaviour {
 		}
 		level++;
 		GameOn = false;
+		IncreaseRockDollars (5);
 	}
 	
 		
