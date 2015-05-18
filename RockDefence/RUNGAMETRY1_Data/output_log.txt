@@ -1,0 +1,28 @@
+Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Julius\Desktop\Tower-Defence\RockDefence\RUNGAMETRY1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Julius\Desktop\Tower-Defence\RockDefence\RUNGAMETRY1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Julius\Desktop\Tower-Defence\RockDefence\RUNGAMETRY1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Julius\Desktop\Tower-Defence\RockDefence\RUNGAMETRY1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Julius\Desktop\Tower-Defence\RockDefence\RUNGAMETRY1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Julius\Desktop\Tower-Defence\RockDefence\RUNGAMETRY1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.118 seconds
+desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Julius\Desktop\Tower-Defence\RockDefence\RUNGAMETRY1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Julius\Desktop\Tower-Defence\RockDefence\RUNGAMETRY1_Data\Managed\System.dll (this message is harmless)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 81.657478 ms
+
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 1252.
+Total: 36.584091 ms (FindLiveObjects: 4.380189 ms CreateObjectMapping: 0.309118 ms MarkObjects: 23.058935 ms  DeleteObjects: 8.827998 ms)
+
