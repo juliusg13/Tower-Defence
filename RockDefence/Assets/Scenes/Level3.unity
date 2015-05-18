@@ -8169,6 +8169,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 22466802, guid: 0dec223328a5a7d4ea385c43cab8cd29, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 426
+      objectReference: {fileID: 0}
+    - target: {fileID: 22466802, guid: 0dec223328a5a7d4ea385c43cab8cd29, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 331
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0dec223328a5a7d4ea385c43cab8cd29, type: 2}
   m_IsPrefabParent: 0
@@ -12413,6 +12421,14 @@ Prefab:
     - target: {fileID: 11434420, guid: 4a380066bc0055942a9b0ddb17fb22f9, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BackToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 22462900, guid: 4a380066bc0055942a9b0ddb17fb22f9, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 391
+      objectReference: {fileID: 0}
+    - target: {fileID: 22462900, guid: 4a380066bc0055942a9b0ddb17fb22f9, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 331
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a380066bc0055942a9b0ddb17fb22f9, type: 2}
