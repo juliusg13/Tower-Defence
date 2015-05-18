@@ -191,8 +191,8 @@ public class Controller : MonoBehaviour {
 			Level One = new Level ();
 			One.groupSequence = new List<GroupOfGroupies> ();
 			One.levelNumber = 1;
-			One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 15, 0, 1f));
-			One.groupSequence.Add (new GroupOfGroupies ("TankBoss", 6, 0, 0.3f));
+			One.groupSequence.Add (new GroupOfGroupies ("MediumGroupie", 15, 0, 0.9f));
+
 			LevelSequence.Add (One);
 			
 			Level Two = new Level ();
